@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full Stack Developer Portfilio - Programming, Game Design, Music & Art</title>
-  <link rel="stylesheet" href="homeStyle.css"> <!-- Link to your stylesheet -->
+  <title>Full Stack Developer Portfilio - Programming, Game Design, Artt</title>
+  <link rel="stylesheet" href="index.css"> <!-- Style sheet -->
 </head>
 <body>
 
 <!-- Title -->
-
-<h1><div class="margin-offset">Programmer, Game Developer, Creator.</div></h1>
+<h1><div class="margin-offset">Programmer, Game Developer, <span class="yellow-text">Creator.</span></div></h1>
 <a href="https://www.example.com">Visit my projects!</a>
 <img src="profile.jpg" alt="Profile Picture">
 
-<!-- TOP MENUBAR FOR TRAVELING TO OTHER PAGES -->
+<!-- NAVIGATION BAR FOR TRAVELING TO OTHER PAGES -->
+<script src="navbar.js"></script>
+<nav id="navbar">
+  <a href="#Titles">Projects</a>
+  <a href="#Socials">Socials</a>
+  <a href="#Engines">Github</a>
+  <a href="#Music">Creative</a>
+</nav>
 
 <!-- Socials -->
 
@@ -23,6 +29,10 @@
 <!-- Github -->
 
 <!-- End main body -->
-
+<script>
+  window.addEventListener('load', function() {
+    document.body.classList.add('fade-in');
+  });
+</script>
 </body>
 </html>
