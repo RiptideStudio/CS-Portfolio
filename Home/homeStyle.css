@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  background-color: #2e2e2e;
+  font-family: 'Roboto', sans-serif; /* Apply the font */
+  font-size: 20px; /* Set the base font size */
+  text-align: center;
+  width: 85%;
+  color: #dadada;
+}
+
+.margin-offset {
+  margin-top: 80px; /* Pushes the element down from the top */
+  margin-left: 50px; /* Pushes the element to the right from the left */
+}
+
+h1 {
+  font-size: 2em; /* 2 times the size of the base font size */
+}
+
+p {
+  font-size: 1em; /* Keep paragraph text at the base font size */
+  line-height: 1.6; /* Set the line height */
+}
+
+/* You can also set font-weight, font-style, text-transform, and more */
+strong {
+  font-weight: bold; /* Make strong tags bold */
+}
