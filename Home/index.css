@@ -19,6 +19,20 @@ body.fade-in {
   transition: opacity .75s ease-in-out;
 }
 
+.navigation button {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.section {
+  display: none; /* Initially hide all sections */
+}
+
+.section.active {
+  display: block; /* Only show the active section */
+}
+
+
 .margin-offset {
   margin-top: 150px; /* Pushes the element down from the top */
   margin-left: 50px; /* Pushes the element to the right from the left */
@@ -57,7 +71,7 @@ strong {
   transition: top 0.3s; /* Transition for the slide effect */
   z-index: 100; /* Ensure it stays on top of other content */
   border-radius: 24px; /* Rounded corners */
-
+  
 }
 
 #navbar a {
@@ -67,10 +81,11 @@ strong {
   padding: 14px 12px; /* Padding inside the buttons */
   text-decoration: none; /* No underline on links */
   border-radius: 24px; /* Rounded corners */
-  transition: background-color 0.2s, color 0.2s; /* Smooth transition for hover effect */
+  transition: background-color 0.2s, color 0.2s, transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
 #navbar a:hover, #navbar a:active {
   background-color: rgb(255, 212, 11);
   color: black; /* Text color on hover and click */
+  transform: scale(1.1); /* Enlarges the button */
 }
