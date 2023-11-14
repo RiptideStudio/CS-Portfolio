@@ -1,0 +1,127 @@
+#navbar {
+  /* Removed background color for transparent background */
+  background-color: #00000049;
+  position: fixed; /* Fixed position */
+  top: 24px; /* Stick it to the top */
+  width: 100%; /* Full width */
+  text-align: center; /* Center navbar content */
+  transition: top 0.3s; /* Transition for the slide effect */
+  z-index: 100; /* Ensure it stays on top of other content */
+  border-radius: 24px; /* Rounded corners */
+  transition: background-color 0.2s, transform 0.3s ease;
+  transform: translateY(-50px); /* Start above its normal position */
+  opacity: 0; /* Start invisible */
+}
+
+#navbar a {
+  display: inline-block; /* Changed from block to inline-block for centering */
+  margin: 0 10px; /* Add some space between buttons */
+  color: #cdcdcdb0; /* Text color */
+  padding: 14px 12px; /* Padding inside the buttons */
+  text-decoration: none; /* No underline on links */
+  border-radius: 24px; /* Rounded corners */
+  transition: background-color 0.2s, color 0.2s, transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#navbar a:hover, #navbar a:active {
+  background-color: rgb(255, 210, 11);
+  color: black; /* Text color on hover and click */
+  transform: scale(1.2); /* Enlarges the button */
+}
+
+body.fade-in #navbar {
+  transform: translateY(0); /* Slide to the normal position */
+  opacity: 1; /* Fade in to full visibility */
+  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out; /* Apply a smooth transition */
+}
+
+#navbar {
+  /* Removed background color for transparent background */
+  background-color: #00000049;
+  position: fixed; /* Fixed position */
+  top: 24px; /* Stick it to the top */
+  width: 100%; /* Full width */
+  text-align: center; /* Center navbar content */
+  transition: top 0.3s; /* Transition for the slide effect */
+  z-index: 100; /* Ensure it stays on top of other content */
+  border-radius: 24px; /* Rounded corners */
+  transition: background-color 0.2s, transform 0.3s ease;
+  transform: translateY(-50px); /* Start above its normal position */
+  opacity: 0; /* Start invisible */
+}
+
+#navbar a {
+  display: inline-block; /* Changed from block to inline-block for centering */
+  margin: 0 10px; /* Add some space between buttons */
+  color: #cdcdcdb0; /* Text color */
+  padding: 14px 12px; /* Padding inside the buttons */
+  text-decoration: none; /* No underline on links */
+  border-radius: 24px; /* Rounded corners */
+  transition: background-color 0.2s, color 0.2s, transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#navbar a:hover, #navbar a:active {
+  background-color: rgb(255, 210, 11);
+  color: black; /* Text color on hover and click */
+  transform: scale(1.2); /* Enlarges the button */
+}
+
+body.fade-in #navbar {
+  transform: translateY(0); /* Slide to the normal position */
+  opacity: 1; /* Fade in to full visibility */
+  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out; /* Apply a smooth transition */
+}
+
+#navbar a.nav-link {
+  position: relative; /* Establishes a positioning context for pseudo-elements */
+}
+
+/* Show the images on each navbar button on hover */
+#navbar a.projects::after {
+  content: '';
+  background-image: url('Images/Steam.png');
+}
+
+#navbar a.socials::after {
+  content: '';
+  background-image: url('Images/Youtube.png');
+}
+
+#navbar a.github::after {
+  content: '';
+  background-image: url('Images/Github.png');
+}
+
+#navbar a.creative::after {
+  content: '';
+  background-image: url('Images/Blender.png');
+}
+
+/* Common styles for all ::after elements */
+#navbar a.nav-link::after {
+  display: block;
+  width: 40px; /* Adjust as needed */
+  height: 40px; /* Adjust as needed */
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 120%;
+  left: 50%;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s; /* This will be overridden by animation on hover */
+  pointer-events: none;
+  z-index: 101; /* Above other content */
+}
+/* Reset the image to its default state when not hovering */
+
+/* When hovering */
+#navbar a.nav-link:hover::after, #navbar a.nav-link:focus::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* Reset the image to its default state when not hovering */
+#navbar a.nav-link::after {
+  transform: translateX(-50%) translateY(0) scale(0); /* Shrink down and move down */
+  opacity: 0;
+}

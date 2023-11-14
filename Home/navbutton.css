@@ -7,7 +7,7 @@
   }
   
   #left-nav {
-    left: 0;
+    left: 10%;
   }
   
   #left-nav img {
@@ -15,7 +15,7 @@
   }
   
   #right-nav {
-    right: 0;
+    right: 10%;
   }
   
   #right-nav img {
@@ -28,6 +28,6 @@
   }
   
   .nav-button:hover {
-    transform: translateY(-50%) scale(1.1); /* Enlarges the button */
+    transform: translateY(-50%) scale(1.2); /* Enlarges the button */
   }
   

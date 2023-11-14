@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background-color: #2f2d34;
+  background-color: rgb(41, 39, 44);
   font-family: 'Inter'; /* Apply the font */
   font-size: 18px; /* Set the base font size */
   text-align: center;
@@ -14,9 +14,17 @@ body {
   color: #e5e1e1;
 }
 
+.title {
+  margin-top: 175px; /* Pushes the element down from the top */
+  margin-left: 50px; /* Pushes the element to the right from the left */
+  text-shadow: 0px 3px 4px #0000002a; 
+}
+
+
 body.fade-in {
   opacity: 1;
   transition: opacity .75s ease-in-out;
+  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out; /* Apply a smooth transition */
 }
 
 .navigation button {
@@ -30,17 +38,6 @@ body.fade-in {
 
 .section.active {
   display: block; /* Only show the active section */
-}
-
-
-.margin-offset {
-  margin-top: 150px; /* Pushes the element down from the top */
-  margin-left: 50px; /* Pushes the element to the right from the left */
-}
-
-.margin-offset {
-  margin-top: 150px; /* Pushes the element down from the top */
-  margin-left: 50px; /* Pushes the element to the right from the left */
 }
 
 .yellow-text {
@@ -59,33 +56,4 @@ p {
 /* You can also set font-weight, font-style, text-transform, and more */
 strong {
   font-weight: bold; /* Make strong tags bold */
-}
-
-#navbar {
-  /* Removed background color for transparent background */
-  background-color: #00000049;
-  position: fixed; /* Fixed position */
-  top: 24px; /* Stick it to the top */
-  width: 100%; /* Full width */
-  text-align: center; /* Center navbar content */
-  transition: top 0.3s; /* Transition for the slide effect */
-  z-index: 100; /* Ensure it stays on top of other content */
-  border-radius: 24px; /* Rounded corners */
-  
-}
-
-#navbar a {
-  display: inline-block; /* Changed from block to inline-block for centering */
-  margin: 0 10px; /* Add some space between buttons */
-  color: #cdcdcdb0; /* Text color */
-  padding: 14px 12px; /* Padding inside the buttons */
-  text-decoration: none; /* No underline on links */
-  border-radius: 24px; /* Rounded corners */
-  transition: background-color 0.2s, color 0.2s, transform 0.3s ease; /* Smooth transition for hover effect */
-}
-
-#navbar a:hover, #navbar a:active {
-  background-color: rgb(255, 212, 11);
-  color: black; /* Text color on hover and click */
-  transform: scale(1.1); /* Enlarges the button */
 }

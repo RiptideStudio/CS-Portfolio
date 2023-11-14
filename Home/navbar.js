@@ -9,3 +9,11 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('#navbar a.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      // Blur the link to remove focus and prevent the :focus effect.
+      setTimeout(() => link.blur(), 0);
+    });
+  });
+});

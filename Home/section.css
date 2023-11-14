@@ -1,0 +1,34 @@
+.section {
+  display: block;
+  position: absolute; /* Position sections on top of each other */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.35s ease-in-out; /* Smooth transition for sliding */
+}
+
+.section-active {
+  display: block;
+  transform: translateX(0); /* No translation, section is in view */
+}
+
+.section-slide-left {
+  display: block;
+  transform: translateX(-100%); /* Slide section to the left */
+}
+
+.section-slide-right {
+  display: block;
+  transform: translateX(100%); /* Slide section to the right */
+}
+
+.section.active {
+  display: block;
+  /* Other styles */
+}
+
+.section.fade-in {
+  opacity: 1; /* Fade in to full visibility */
+  transition: opacity 0.75s ease-in-out; /* Apply a smooth transition */
+}

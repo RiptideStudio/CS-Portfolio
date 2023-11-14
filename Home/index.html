@@ -4,26 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Full Stack Developer Portfilio - Programming, Game Design, Artt</title>
-  <link rel="stylesheet" href="index.css"> <!-- Style sheet -->
+
+  <!-- Style sheets -->
+  <link rel="stylesheet" href="index.css"> 
   <link rel="stylesheet" href="navbutton.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="section.css">
+
 </head>
 <body>
 
-<!-- Title -->
-<h1><div class="margin-offset">Programmer, Game Developer, <span class="yellow-text">Creator.</span></div></h1>
-<a href="https://www.example.com">Visit my projects!</a>
-<img src="profile.jpg" alt="Profile Picture">
+
+
+<!-- About Page -->
+<script src="navbutton.js"></script>
+<div class="section" id="about">
+
+
+
+</div>
+
+
+<!-- Home Page - this is inbewteen the about and Contact -->
+<div class="section" id="home">
+  <div class="title">
+    <h1>Programmer. Game Developer. <span class="yellow-text">Creator.</span></h1>
+    <a href="https://www.example.com">Visit my projects!</a>
+  </div>
+</div>
+
+
+
+<!-- Contact me page -->
+<script src="navbutton.js"></script>
+<div class="section" id="contact"></div>
+
+
 
 <!-- NAVIGATION BAR FOR TRAVELING TO OTHER PAGES -->
 <script src="navbar.js"></script>
 <nav id="navbar">
-  <a href="#Titles">Projects</a>
-  <a href="#Socials">Socials</a>
-  <a href="#Engines">Github</a>
-  <a href="#Music">Creative</a>
+  <a href="#Titles" class="nav-link projects">Projects</a>
+  <a href="#Socials" class="nav-link socials">Socials</a>
+  <a href="#Engines" class="nav-link github">Github</a>
+  <a href="#Music" class="nav-link creative">Creative</a>
 </nav>
 
-<!-- Navigate Left and Right with arrows -->
+<!-- Navigate Left and Right with arrow buttons -->
 <div id="left-nav" class="nav-button">
   <img src="left-arrow.png" alt="Left Navigation">
 </div>
@@ -34,6 +61,7 @@
 
 
 <!-- Socials -->
+
 
 <!-- Game Projects -->
 
