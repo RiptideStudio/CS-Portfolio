@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
 
 html {
-  height: 100%;
+  height: 125%;
 }
 
 body {
@@ -14,6 +14,12 @@ body {
   color: #e5e1e1;
 }
 
+.body {
+  margin-top: 175px; /* Pushes the element down from the top */
+  margin-left: 50px; /* Pushes the element to the right from the left */
+  text-shadow: 0px 3px 4px #0000002a; 
+}
+
 .title {
   margin-top: 175px; /* Pushes the element down from the top */
   margin-left: 50px; /* Pushes the element to the right from the left */
@@ -23,7 +29,6 @@ body {
 
 body.fade-in {
   opacity: 1;
-  transition: opacity .75s ease-in-out;
   transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out; /* Apply a smooth transition */
 }
 

@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full Stack Developer Portfilio - Programming, Game Design, Artt</title>
+  <title>Full Stack Developer Portfilio - Programming, Game Design, Art</title>
 
   <!-- Style sheets -->
   <link rel="stylesheet" href="index.css"> 
   <link rel="stylesheet" href="navbutton.css">
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="section.css">
+  <link rel="stylesheet" href="word.css">
 
 </head>
 <body>
@@ -19,21 +20,24 @@
 <!-- About Page -->
 <script src="navbutton.js"></script>
 <div class="section" id="about">
+  <div class="body">
 
 
-
+  </div>
 </div>
 
 
 <!-- Home Page - this is inbewteen the about and Contact -->
 <div class="section" id="home">
   <div class="title">
-    <h1>Programmer. Game Developer. <span class="yellow-text">Creator.</span></h1>
+    <h1>
+      <span class="fade-word">Programmer.</span>
+      <span class="fade-word">Game Developer.</span>
+      <span class="yellow-text fade-word">Creator.</span>
+    </h1>
     <a href="https://www.example.com">Visit my projects!</a>
   </div>
 </div>
-
-
 
 <!-- Contact me page -->
 <script src="navbutton.js"></script>
@@ -42,6 +46,7 @@
 
 
 <!-- NAVIGATION BAR FOR TRAVELING TO OTHER PAGES -->
+<span class="fade-word">
 <script src="navbar.js"></script>
 <nav id="navbar">
   <a href="#Titles" class="nav-link projects">Projects</a>
@@ -49,6 +54,7 @@
   <a href="#Engines" class="nav-link github">Github</a>
   <a href="#Music" class="nav-link creative">Creative</a>
 </nav>
+</span>
 
 <!-- Navigate Left and Right with arrow buttons -->
 <div id="left-nav" class="nav-button">
@@ -74,5 +80,8 @@
     document.body.classList.add('fade-in');
   });
 </script>
+<script src="word.js"></script>
+
+
 </body>
 </html>

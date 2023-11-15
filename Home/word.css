@@ -1,0 +1,10 @@
+.fade-word {
+    opacity: 0;
+    transition: opacity 1s ease; /* Control the fade-in effect */
+  }
+  
+  /* This will be applied via JavaScript to trigger the fade-in */
+  .show {
+    opacity: 1;
+  }
+  

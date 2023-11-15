@@ -1,16 +1,30 @@
+/* Initial state of the navbar before any animation */
 #navbar {
-  /* Removed background color for transparent background */
   background-color: #00000049;
-  position: fixed; /* Fixed position */
-  top: 24px; /* Stick it to the top */
-  width: 100%; /* Full width */
-  text-align: center; /* Center navbar content */
-  transition: top 0.3s; /* Transition for the slide effect */
-  z-index: 100; /* Ensure it stays on top of other content */
-  border-radius: 24px; /* Rounded corners */
-  transition: background-color 0.2s, transform 0.3s ease;
-  transform: translateY(-50px); /* Start above its normal position */
-  opacity: 0; /* Start invisible */
+  position: fixed;
+  top: 24px; /* Start off-screen */
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  border-radius: 24px;
+  opacity: 1; /* Start fully transparent */
+  transition: top 0.7s ease, opacity 0.3s ease; /* Transition for scrolling */
+}
+
+/* Animation that runs when the page loads */
+@keyframes slideDown {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 24px;
+    opacity: 1;
+  }
+}
+
+#navbar.fade-in {
+  animation: fadeInSlideDown 0.7s ease forwards;
 }
 
 #navbar a {
@@ -27,49 +41,6 @@
   background-color: rgb(255, 210, 11);
   color: black; /* Text color on hover and click */
   transform: scale(1.2); /* Enlarges the button */
-}
-
-body.fade-in #navbar {
-  transform: translateY(0); /* Slide to the normal position */
-  opacity: 1; /* Fade in to full visibility */
-  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out; /* Apply a smooth transition */
-}
-
-#navbar {
-  /* Removed background color for transparent background */
-  background-color: #00000049;
-  position: fixed; /* Fixed position */
-  top: 24px; /* Stick it to the top */
-  width: 100%; /* Full width */
-  text-align: center; /* Center navbar content */
-  transition: top 0.3s; /* Transition for the slide effect */
-  z-index: 100; /* Ensure it stays on top of other content */
-  border-radius: 24px; /* Rounded corners */
-  transition: background-color 0.2s, transform 0.3s ease;
-  transform: translateY(-50px); /* Start above its normal position */
-  opacity: 0; /* Start invisible */
-}
-
-#navbar a {
-  display: inline-block; /* Changed from block to inline-block for centering */
-  margin: 0 10px; /* Add some space between buttons */
-  color: #cdcdcdb0; /* Text color */
-  padding: 14px 12px; /* Padding inside the buttons */
-  text-decoration: none; /* No underline on links */
-  border-radius: 24px; /* Rounded corners */
-  transition: background-color 0.2s, color 0.2s, transform 0.3s ease; /* Smooth transition for hover effect */
-}
-
-#navbar a:hover, #navbar a:active {
-  background-color: rgb(255, 210, 11);
-  color: black; /* Text color on hover and click */
-  transform: scale(1.2); /* Enlarges the button */
-}
-
-body.fade-in #navbar {
-  transform: translateY(0); /* Slide to the normal position */
-  opacity: 1; /* Fade in to full visibility */
-  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out; /* Apply a smooth transition */
 }
 
 #navbar a.nav-link {
@@ -112,7 +83,6 @@ body.fade-in #navbar {
   pointer-events: none;
   z-index: 101; /* Above other content */
 }
-/* Reset the image to its default state when not hovering */
 
 /* When hovering */
 #navbar a.nav-link:hover::after, #navbar a.nav-link:focus::after {
