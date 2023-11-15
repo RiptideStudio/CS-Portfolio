@@ -5,9 +5,9 @@ html {
 }
 
 body {
-  background-color: rgb(41, 39, 44);
+  background-color: rgb(36,34,36);
   font-family: 'Inter'; /* Apply the font */
-  font-size: 18px; /* Set the base font size */
+  font-size: 16px; /* Set the base font size */
   text-align: center;
   width: 100%;
   opacity: 0;
@@ -21,9 +21,10 @@ body {
 }
 
 .title {
-  margin-top: 175px; /* Pushes the element down from the top */
+  margin-top: 185px; /* Pushes the element down from the top */
   margin-left: 50px; /* Pushes the element to the right from the left */
   text-shadow: 0px 3px 4px #0000002a; 
+  letter-spacing: 0.075em;
 }
 
 
@@ -58,7 +59,3 @@ p {
   line-height: 1.6; /* Set the line height */
 }
 
-/* You can also set font-weight, font-style, text-transform, and more */
-strong {
-  font-weight: bold; /* Make strong tags bold */
-}

@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
     const words = document.querySelectorAll('.fade-word');
-    let delay = 250;
+    let delay = 500;
   
     words.forEach((word, index) => {
       // Set a timeout for each word, increasing the delay for each subsequent word
@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
       }, delay);
   
       // Increment the delay for the next word
-      delay += 500; // 2000ms = 2 seconds between each word
+      delay += 600; // 2000ms = 2 seconds between each word
     });
   });
   

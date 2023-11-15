@@ -1,12 +1,14 @@
 /* Initial state of the navbar before any animation */
 #navbar {
-  background-color: #00000049;
+  background-color: rgb(22,21,24);
   position: fixed;
   top: 24px; /* Start off-screen */
-  width: 100%;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Offset by half of the navbar's width */
+  width: 80%;
   text-align: center;
   z-index: 100;
-  border-radius: 24px;
+  border-radius: 240px;
   opacity: 1; /* Start fully transparent */
   transition: top 0.7s ease, opacity 0.3s ease; /* Transition for scrolling */
 }

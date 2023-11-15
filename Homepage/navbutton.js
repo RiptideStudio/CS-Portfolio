@@ -39,3 +39,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const navButtons = document.querySelectorAll('.nav-button');
+
+  navButtons.forEach(button => {
+    button.addEventListener('mousedown', () => {
+      button.classList.add('clicked'); // Add a class that starts the animation
+    });
+    button.addEventListener('mouseup', () => {
+      button.classList.remove('clicked'); // Remove the class on mouseup
+    });
+    button.addEventListener('animationend', () => {
+      button.classList.remove('clicked'); // Also remove the class when the animation ends
+    });
+  });
+});
