@@ -11,15 +11,32 @@
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="section.css">
   <link rel="stylesheet" href="word.css">
+  <link rel="stylesheet" href="hamburger.css">
 
 </head>
 <body>
 
+<!-- Hamburger Menu Button -->
+<button class="hamburger-menu" aria-label="Open navigation menu">
+  <img src="Images/HamburgerIcon.png" width = 55 height = 45 alt="Menu">
+</button>
+
+<!-- Overlay Menu -->
+<div class="overlay" id="overlayMenu">
+  <a href="javascript:void(0)" class="closebtn" aria-label="Close navigation menu">&times;</a>
+  <div class="overlay-content">
+    <a href="#about">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
 <!-- About Page -->
-<script src="navbutton.js"></script>
 <div class="section" id="about">
   <div class="body">
 
+    I am Callen
 
   </div>
 </div>
@@ -34,22 +51,26 @@
     </h1>
     <a href="https://www.example.com">Visit my projects!</a>
   </div>
+  
+<!-- Quick Navbar for home page -->
+<span class="fade-word">
+  <nav id="navbar">
+    <a href="#Titles" class="nav-link projects">Projects</a>
+    <a href="#Socials" class="nav-link socials">Socials</a>
+    <a href="#Engines" class="nav-link github">Github</a>
+  </nav>
+  </span>
+  
 </div>
 
-<!-- Contact me page -->
-<script src="navbutton.js"></script>
-<div class="section" id="contact"></div>
+<!-- Contact Page -->
+<div class="section" id="contact">
+  <div class="body">
 
-<!-- NAVIGATION BAR FOR TRAVELING TO OTHER PAGES -->
-<span class="fade-word">
-<script src="navbar.js"></script>
-<nav id="navbar">
-  <a href="#Titles" class="nav-link projects">Projects     </a>
-  <a href="#Socials" class="nav-link socials">Socials</a>
-  <a href="#Engines" class="nav-link github">Github</a>
-  <a href="#Music" class="nav-link creative">Creative</a>
-</nav>
-</span>
+    Give me your SSN
+
+  </div>
+</div>
 
 <!-- Navigate Left and Right with arrow buttons -->
 <div id="left-nav" class="nav-button">
@@ -60,23 +81,23 @@
   <img src="Images/LeftArrow.png" width = "80" height = "80" alt="Right Navigation">
 </div>
 
-
 <!-- Socials -->
-
 
 <!-- Game Projects -->
 
 <!-- Github -->
-
 
 <!-- End main body -->
 <script>
   window.addEventListener('load', function() {
     document.body.classList.add('fade-in');
   });
+  
 </script>
 <script src="word.js"></script>
-
+<script src="hamburger.js"></script>
+<script src="navbutton.js"></script>
+<script src="navbar.js"></script>
 
 </body>
 </html>

@@ -5,13 +5,13 @@ html {
 }
 
 body {
-  background-color: rgb(36,34,36);
+  background-color: rgb(41, 41, 41);
   font-family: 'Inter'; /* Apply the font */
   font-size: 16px; /* Set the base font size */
   text-align: center;
   width: 100%;
   opacity: 0;
-  color: #e5e1e1;
+  color: #c9c9c9;
 }
 
 .body {

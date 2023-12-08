@@ -1,0 +1,76 @@
+/* Hamburger Menu Button */
+.hamburger-menu {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  z-index: 100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0; /* Adjust padding as needed */
+  width: 50px; /* Width of the button - adjust as needed */
+  height: 50px; /* Height of the button - adjust as needed */
+  transition: transform 0.3s; /* Animation for hover effect */
+  color: gray;
+}
+
+/* Hamburger Icon Image */
+.hamburger-menu img {
+  width: 100%; /* Make the image fill the button */
+  transition: filter 0.2s, transform 0.3s; /* Transition for filter and transform */
+}
+
+.hamburger-menu:hover img, .hamburger-menu:focus img {
+  filter: none; /* Remove filter on hover/focus to show the original color (white) */
+  transform: scale(1.3); /* Slightly enlarge the icon on hover/focus */
+}
+
+/* Overlay Menu */
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 150;
+  top: 0;
+  left: 0;
+  background-color: rgb(10,10,10, 0.9); /* Black background with opacity */
+  overflow-y: hidden;
+  transition: 0.3s;
+}
+
+/* Overlay Content */
+.overlay-content {
+  position: relative;
+  top: 20%;
+  width: 25%;
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 37.5%;
+  font-size: large;
+}
+
+.overlay a {
+  text-decoration: none;
+  padding: 24px;
+  font-size: 48px;
+  color: rgb(133, 133, 133);
+  display: block;
+  transition: 0.2s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #ffffff;
+  transform: scale(1.3);
+}
+
+/* Close Button */
+.closebtn {
+  position: absolute;
+  top: 0px;
+  right: 16px;
+  width: 50px; /* The actual width of your icon */
+  height: 50px; /* The actual height of your icon */
+  background: url('path-to-your-close-icon.png') no-repeat center center; /* Assuming you're using an image */
+  background-size: contain; /* This ensures that your background image is scaled to fit the content area */
+  transform: scale(1.75);
+}
