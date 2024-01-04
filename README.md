@@ -1,2 +1,2 @@
 # CS-Portfolio
- Custom website used to show my portfolio
+Custom website portfolio built using HTML, CSS, JavaScript
