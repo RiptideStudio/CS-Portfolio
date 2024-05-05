@@ -83,7 +83,7 @@ p {
   margin-top: 80px;     /* Pushes the element down from the top */
   margin-left: 50px;    /* Pushes the element to the right from the left */
   text-shadow: 0px 3px 4px #0000002a;
-  letter-spacing: 0.075em;
+  letter-spacing: 0.175em;
   position: relative;   /* Necessary for positioning pseudo-elements */
 }
 
