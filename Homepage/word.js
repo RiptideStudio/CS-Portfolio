@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
       }, delay);
   
       // Increment the delay for the next word
-      delay += 600; // 2000ms = 2 seconds between each word
+      delay += 500; // 2000ms = 2 seconds between each word
     });
   });
   

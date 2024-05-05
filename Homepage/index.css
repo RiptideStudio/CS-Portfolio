@@ -21,12 +21,29 @@ body {
 }
 
 .title {
-  margin-top: 185px; /* Pushes the element down from the top */
+  margin-top: 120px; /* Pushes the element down from the top */
   margin-left: 50px; /* Pushes the element to the right from the left */
   text-shadow: 0px 3px 4px #0000002a; 
   letter-spacing: 0.075em;
+  position: relative; /* Necessary for positioning pseudo-elements */
 }
 
+/* Styling for decorative underline */
+.title h1 {
+  display: inline-block; /* Make h1 an inline-block to fit the underline nicely */
+  position: relative; /* Needed for positioning the pseudo-element */
+}
+
+.title h1:after {
+  content: '';
+  position: absolute;
+  left: -30px;
+  right: -30px;
+  bottom: -15px; /* Adjust this value to move the underline up or down */
+  height: 3px; /* Thickness of the underline */
+  background: linear-gradient(to right, #797979, #797979, #797979); /* A shiny gradient effect */
+  border-radius: 2px; /* Optional: adds rounded corners to the underline */
+}
 
 body.fade-in {
   opacity: 1;
@@ -59,3 +76,23 @@ p {
   line-height: 1.6; /* Set the line height */
 }
 
+.steamTitle {
+  display: flex;        /* Enables Flexbox */
+  justify-content: center; /* Distributes space between the flex items */
+  align-items: center;  /* Vertically centers the items in the line */
+  margin-top: 80px;     /* Pushes the element down from the top */
+  margin-left: 50px;    /* Pushes the element to the right from the left */
+  text-shadow: 0px 3px 4px #0000002a;
+  letter-spacing: 0.075em;
+  position: relative;   /* Necessary for positioning pseudo-elements */
+}
+
+img {
+  display: block;       /* Ensures the image does not have extra space below it */
+}
+
+.titleWord {
+  text-shadow: 0px 3px 4px #0000002a; 
+  font-size: 1.5em; 
+  margin: 0 20px;
+}
