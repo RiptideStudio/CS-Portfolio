@@ -80,15 +80,11 @@ p {
   display: flex;        /* Enables Flexbox */
   justify-content: center; /* Distributes space between the flex items */
   align-items: center;  /* Vertically centers the items in the line */
-  margin-top: 80px;     /* Pushes the element down from the top */
+  margin-top: 100px;     /* Pushes the element down from the top */
   margin-left: 50px;    /* Pushes the element to the right from the left */
   text-shadow: 0px 3px 4px #0000002a;
   letter-spacing: 0.175em;
   position: relative;   /* Necessary for positioning pseudo-elements */
-}
-
-img {
-  display: block;       /* Ensures the image does not have extra space below it */
 }
 
 .titleWord {
