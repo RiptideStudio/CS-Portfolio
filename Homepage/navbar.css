@@ -5,12 +5,12 @@
   top: 24px; /* Start off-screen */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Offset by half of the navbar's width */
-  width: 65%;
+  width: 50%;
   text-align: center;
   z-index: 100;
   border-radius: 240px;
   opacity: 1; /* Start fully transparent */
-  transition: top 0.7s ease, opacity 0.3s ease; /* Transition for scrolling */
+  transition: top 0.4s ease, opacity 0.3s ease; /* Transition for scrolling */
 }
 
 /* Animation that runs when the page loads */
@@ -49,51 +49,15 @@
   position: relative; /* Establishes a positioning context for pseudo-elements */
 }
 
-/* Show the images on each navbar button on hover */
-#navbar a.projects::after {
-  content: '';
-  background-image: url('Images/Steam.png');
-}
-
-#navbar a.socials::after {
-  content: '';
-  background-image: url('Images/Youtube.png');
-}
-
-#navbar a.github::after {
-  content: '';
-  background-image: url('Images/Github.png');
-}
-
-#navbar a.creative::after {
-  content: '';
-  background-image: url('Images/Blender.png');
-}
-
 /* Common styles for all ::after elements */
 #navbar a.nav-link::after {
   display: block;
-  width: 40px; /* Adjust as needed */
-  height: 40px; /* Adjust as needed */
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
   top: 120%;
-  left: 50%;
   opacity: 0;
   transition: opacity 0.3s, transform 0.3s; /* This will be overridden by animation on hover */
   pointer-events: none;
   z-index: 101; /* Above other content */
-}
-
-/* When hovering */
-#navbar a.nav-link:hover::after, #navbar a.nav-link:focus::after {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0) scale(1);
-}
-
-/* Reset the image to its default state when not hovering */
-#navbar a.nav-link::after {
-  transform: translateX(-50%) translateY(0) scale(0); /* Shrink down and move down */
-  opacity: 0;
 }

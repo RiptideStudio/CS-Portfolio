@@ -34,7 +34,7 @@
   top: 0;
   left: 0;
   background-color: rgb(10,10,10, 0.9); /* Black background with opacity */
-  overflow-y: hidden;
+  overflow: hidden;
   transition: 0.3s;
 }
 
@@ -55,12 +55,12 @@
   font-size: 48px;
   color: rgb(133, 133, 133);
   display: block;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .overlay a:hover, .overlay a:focus {
   color: #ffffff;
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 
 /* Close Button */
@@ -70,7 +70,6 @@
   right: 16px;
   width: 50px; /* The actual width of your icon */
   height: 50px; /* The actual height of your icon */
-  background: url('path-to-your-close-icon.png') no-repeat center center; /* Assuming you're using an image */
   background-size: contain; /* This ensures that your background image is scaled to fit the content area */
   transform: scale(1.75);
 }

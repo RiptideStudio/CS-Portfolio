@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full Stack Developer Portfilio - Programming, Game Design, Art</title>
+  <title>Callen Betts - Game Developer Portfilio</title>
 
   <!-- Style sheets -->
   <link rel="stylesheet" href="index.css"> 
@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="word.css">
   <link rel="stylesheet" href="hamburger.css">
   <link rel="stylesheet" href="Utility/scrollbar.css">
-  <link rel="stylesheet" href="project.css">
+  <link rel="stylesheet" href="carousel-container.css">
+  <link rel="stylesheet" href="Utility/image.css">
 
 </head>
 <body>
@@ -27,19 +28,9 @@
 <div class="overlay" id="overlayMenu">
   <a href="javascript:void(0)" class="closebtn" aria-label="Close navigation menu">&times;</a>
   <div class="overlay-content">
-    <a href="#about">Home</a>
-    <a href="#projects">Projects</a>
+    <a href="contact.html">Projects</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
-  </div>
-</div>
-
-<!-- About Page -->
-<div class="section" id="about">
-  <div class="body">
-
-    I am Callen
-
   </div>
 </div>
 
@@ -54,18 +45,66 @@
   </div>
   
   <div class = "steamTitle">
-    <span class="titleWord">Steam</span>
-    <div class = "image"> <img src="Images/Steam.png" width = "80" height = "80"></div> 
-    <span class="titleWord">Titles</span>
+    <span class="titleWord">Game Titles</span>
   </div>
 
-  <div class="project">
-    <a href="https://example.com" target="_blank">
-      <img src="Images/Thumbnails/Earthward.png">
-    </a>
-    <a href="https://example.com" target="_blank">
-      <img src="Images/Thumbnails/Aesprite.png">
-    </a>
+  <div class="carousel-container" id="carousel1">
+    <div class="carousel-slide">
+      <div class="image-container">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward" class="carousel-image">
+          <div class="overlay-text">Developer</div>
+      </div>
+        <div class="image-container">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+          <div class="overlay-text">Developer</div>
+        </div>
+        <div class="image-container">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+          <div class="overlay-text">Composer</div>
+        </div>
+        <div class="image-container">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+          <div class="overlay-text">Composer</div>
+        </div>
+        <div class="image-container">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+          <div class="overlay-text">Composer</div>
+        </div>
+        <div class="image-container">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+          <div class="overlay-text">Artist</div>
+        </div>
+        <div class="image-container">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+          <div class="overlay-text">Artist</div>
+        </div>
+    </div>
+    <a class="prev" onclick="moveSlide(-1, 'carousel1')">&#10094;</a>
+    <a class="next" onclick="moveSlide(1, 'carousel1')">&#10095;</a>
+  </div>
+
+  <div class = "steamTitle">
+    <span class="titleWord">Custom Game Engines</span>
+  </div>
+
+  <div class="carousel-container" id="carousel2">
+    <div class="carousel-slide">
+      <div class="image-container">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward" class="carousel-image">
+          <div class="overlay-text">Developer</div>
+      </div>
+        <div class="image-container">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+          <div class="overlay-text">Developer</div>
+        </div>
+        <div class="image-container">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+          <div class="overlay-text">Composer</div>
+        </div>
+    </div>
+    
+    <a class="prev" onclick="moveSlide(-1, 'carousel2')">&#10094;</a>
+    <a class="next" onclick="moveSlide(1, 'carousel2')">&#10095;</a>
   </div>
 
 </div>
@@ -75,36 +114,11 @@
   <nav id="navbar">
     <a href="#Titles" class="nav-link projects">Projects</a>
     <a href="#Socials" class="nav-link socials">Socials</a>
-    <a href="#Engines" class="nav-link github">Github</a>
+    <a href="#Engines" class="nav-link github">Contact</a>
     <a href="#AboutMe" class="nav-link github">About</a>
   </nav>
   </span>
-  
 </div>
-
-<!-- Contact Page -->
-<div class="section" id="contact">
-  <div class="body">
-
-    Give me your SSN
-
-  </div>
-</div>
-
-<!-- Navigate Left and Right with arrow buttons -->
-<div id="left-nav" class="nav-button">
-  <img src="Images/LeftArrow.png" width = "80" height = "80" alt="Left Navigation">
-</div>
-
-<div id="right-nav" class="nav-button">
-  <img src="Images/LeftArrow.png" width = "80" height = "80" alt="Right Navigation">
-</div>
-
-<!-- Socials -->
-
-<!-- Game Projects -->
-
-<!-- Github -->
 
 <!-- End main body -->
 <script>
@@ -117,6 +131,7 @@
 <script src="hamburger.js"></script>
 <script src="navbutton.js"></script>
 <script src="navbar.js"></script>
+<script src="carousel-container.js"></script>
 
 </body>
 </html>

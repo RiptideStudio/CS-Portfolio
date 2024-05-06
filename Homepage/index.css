@@ -16,13 +16,11 @@ body {
 
 .body {
   margin-top: 175px; /* Pushes the element down from the top */
-  margin-left: 50px; /* Pushes the element to the right from the left */
   text-shadow: 0px 3px 4px #0000002a; 
 }
 
 .title {
   margin-top: 120px; /* Pushes the element down from the top */
-  margin-left: 50px; /* Pushes the element to the right from the left */
   text-shadow: 0px 3px 4px #0000002a; 
   letter-spacing: 0.075em;
   position: relative; /* Necessary for positioning pseudo-elements */
@@ -81,9 +79,8 @@ p {
   justify-content: center; /* Distributes space between the flex items */
   align-items: center;  /* Vertically centers the items in the line */
   margin-top: 100px;     /* Pushes the element down from the top */
-  margin-left: 50px;    /* Pushes the element to the right from the left */
   text-shadow: 0px 3px 4px #0000002a;
-  letter-spacing: 0.175em;
+  letter-spacing: 0.15em;
   position: relative;   /* Necessary for positioning pseudo-elements */
 }
 
