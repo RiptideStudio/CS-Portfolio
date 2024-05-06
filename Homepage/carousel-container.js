@@ -2,17 +2,26 @@ let slideIndexes = {};
 
 // Function to handle the sliding of the carousel
 function moveSlide(step, carouselId) {
+
     const carousel = document.getElementById(carouselId);
     const slides = carousel.querySelectorAll('.image-container');
 
     if (!slideIndexes.hasOwnProperty(carouselId)) {
         slideIndexes[carouselId] = Math.floor(slides.length / 2);
     }
+    
 
     let newIndex = slideIndexes[carouselId] + step;
     newIndex = ((newIndex % slides.length) + slides.length) % slides.length; // Proper wrap-around
 
     slideIndexes[carouselId] = newIndex; // Update the slide index
+
+    // in the case of small carousels, don't bother sliding
+    if (slides.length <= 3)
+    {
+        updateActiveSlides(carouselId);
+        return;
+    }
 
     const containerWidth = carousel.clientWidth;
     const imageWidth = slides[0].clientWidth;

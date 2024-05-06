@@ -1,13 +1,13 @@
 /* This styles the scrollbar track (part the thumb slides within) */
 ::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Light grey track */
+    background-color: #5d5d5d; /* Light grey track */
   }
   
   /* This styles the scrollbar thumb (the part that is draggable) */
   ::-webkit-scrollbar-thumb {
-    background-color: #888; /* Dark grey thumb */
-    border-radius: 10px; /* Optional: rounds the corners of the scrollbar thumb */
-    border: 3px solid #f1f1f1; /* Optional: adds a border around the thumb */
+    background-color: #bbbbbb; /* Dark grey thumb */
+    border-radius: 8px; /* Optional: rounds the corners of the scrollbar thumb */
+    border: 3px solid #5d5d5d; /* Optional: adds a border around the thumb */
   }
   
   /* This styles the scrollbar itself (overall part, including track and thumb) */
@@ -18,7 +18,7 @@
   
   /* Styling for hover over the scrollbar thumb */
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Darker grey on hover */
+    background-color: #ffffff; /* Darker grey on hover */
   }
   
   html, body {

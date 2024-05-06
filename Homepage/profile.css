@@ -1,0 +1,24 @@
+/* 
+Profile button in top left of screen
+Click to be sent to about page 
+*/
+.profile {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 100;
+  opacity: 0.5;
+  width: 80px;  /* Specifies the width of the image */
+  height: 80px;  /* Specifies the height of the image */
+  cursor: pointer;  /* Changes the cursor on hover to indicate it's clickable */
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5); /* Adjusted shadow to appear more circular */
+  border-radius: 50%; /* Makes the image circular */
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow effects */
+}
+
+.profile:hover {
+  transform: scale(1.1);  /* Scales up the image on hover */
+  transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+  opacity: 1;
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.7); /* Darker and larger shadow on hover */
+}
