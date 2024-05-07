@@ -78,7 +78,6 @@ p {
   display: flex;        /* Enables Flexbox */
   justify-content: center; /* Distributes space between the flex items */
   align-items: center;  /* Vertically centers the items in the line */
-  margin-top: 100px;     /* Pushes the element down from the top */
   text-shadow: 0px 3px 4px #0000002a;
   letter-spacing: 0.15em;
   position: relative;   /* Necessary for positioning pseudo-elements */

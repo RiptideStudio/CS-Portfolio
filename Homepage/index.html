@@ -25,17 +25,18 @@
   <img src="Images/HamburgerIcon.png" width = 55 height = 45 alt="Menu">
 </button>
 
-<a href="/about">
+<a href="about.html" class="profile-container">
   <img src="Images/profile.jpg" alt="Profile" class="profile">
+  <span class="profile-text">Callen Betts</span>
 </a>
 
 <!-- Overlay Menu -->
 <div class="overlay" id="overlayMenu">
   <a href="javascript:void(0)" class="closebtn" aria-label="Close navigation menu">&times;</a>
   <div class="overlay-content">
-    <a href="contact.html">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
   </div>
 </div>
 
@@ -49,87 +50,136 @@
     </h1>
   </div>
 
+<br><br><br><br><br><br>
+
+  <!-- Game Titles -->
   <div class = "steamTitle">
     <span class="titleWord">Game Titles</span>
   </div>
 
   <div class="carousel-container" id="carousel1">
     <div class="carousel-slide">
-      <div class="image-container">
+      <div class="image-container" id = "container1">
           <img src="Images/Thumbnails/Earthward.png" alt="Earthward" class="carousel-image">
           <div class="overlay-text">Developer</div>
+          <img src="Images/Steam.png" class="overlay-image" id="OverlayImage1">
       </div>
-        <div class="image-container">
-          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+        <div class="image-container" id = "container2">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward" class="carousel-image">
           <div class="overlay-text">Developer</div>
+          <img src="Images/Itch.png" class="overlay-image" id="OverlayImage2">
         </div>
-        <div class="image-container">
-          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+        <div class="image-container" id = "container3">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward" class="carousel-image">
           <div class="overlay-text">Composer</div>
+          <img src="Images/Steam.png" class="overlay-image" id="OverlayImage3">
+        </div>
+        <div class="image-container" id = "container4">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward" class="carousel-image">
+          <div class="overlay-text">Earthward</div>
+          <img src="Images/Steam.png" class="overlay-image" id="OverlayImage4">
         </div>
         <div class="image-container">
-          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward" class="carousel-image">
           <div class="overlay-text">Composer</div>
+          <img src="Images/Steam.png" class="overlay-image" id="OverlayImage5">
         </div>
         <div class="image-container">
-          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
-          <div class="overlay-text">Composer</div>
-        </div>
-        <div class="image-container">
-          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward" class="carousel-image">
           <div class="overlay-text">Artist</div>
+          <img src="Images/Steam.png" class="overlay-image" id="OverlayImage6">
         </div>
         <div class="image-container">
-          <img src="Images/Thumbnails/Earthward.png" alt="Earthward">
+          <img src="Images/Thumbnails/Earthward.png" alt="Earthward" class="carousel-image">
           <div class="overlay-text">Artist</div>
+          <img src="Images/Steam.png" class="overlay-image" id="OverlayImage7">
         </div>
     </div>
     <a class="prev" onclick="moveSlide(-1, 'carousel1')">&#10094;</a>
     <a class="next" onclick="moveSlide(1, 'carousel1')">&#10095;</a>
   </div>
 
+  <!-- Custom Game Engines -->
+  <br><br>
   <div class = "steamTitle">
     <span class="titleWord">Custom Game Engines</span>
   </div>
-
+  
   <div class="carousel-container" id="carousel2">
     <div class="carousel-slide">
       <div class="image-container">
-          <img src="Images/Thumbnails/VisualStudio.png" alt="Earthward" class="carousel-image">
-          <div class="overlay-text">2D - OpenGL</div>
+        <img src="Images/Thumbnails/VisualStudio.png" alt="Earthward" class="carousel-image">
+        <div class="overlay-text">2D - OpenGL</div>
+        <img src="Images/OpenGl.png" class="overlay-image" id="OverlayImage4">
       </div>
-        <div class="image-container">
-          <img src="Images/Thumbnails/VisualStudio.png" alt="Earthward">
-          <div class="overlay-text">3D - DirectX</div>
-        </div>
-        <div class="image-container">
-          <img src="Images/Thumbnails/VisualStudio.png" alt="Earthward">
-          <div class="overlay-text">2D - DirectX</div>
-        </div>
+      <div class="image-container">
+        <img src="Images/Thumbnails/VisualStudio.png" alt="Earthward" class="carousel-image">
+        <div class="overlay-text">3D - DirectX</div>
+        <img src="Images/DirectX.png" class="overlay-image" id="OverlayImage4">
+      </div>
+      <div class="image-container">
+        <img src="Images/Thumbnails/VisualStudio.png" alt="Earthward" class="carousel-image">
+        <div class="overlay-text">3D - DirectX</div>
+        <img src="Images/DirectX.png" class="overlay-image" id="OverlayImage4">
+      </div>
     </div>
     
     <a class="prev" onclick="moveSlide(-1, 'carousel2')">&#10094;</a>
     <a class="next" onclick="moveSlide(1, 'carousel2')">&#10095;</a>
   </div>
 
+  <!-- Other Projects -->
+  <br><br>
+  <div class = "steamTitle">
+    <span class="titleWord">Other Projects</span>
+  </div>
+
+  <div class="carousel-container" id="carousel3">
+    <div class="carousel-slide">
+      <div class="image-container">
+        <img src="Images/Thumbnails/VisualStudio.png" alt="Earthward" class="carousel-image">
+        <div class="overlay-text">3D - DirectX</div>
+        <img src="Images/DirectX.png" class="overlay-image" id="OverlayImage4">
+      </div>
+      <div class="image-container">
+        <img src="Images/Thumbnails/VisualStudio.png" alt="Earthward" class="carousel-image">
+        <div class="overlay-text">3D - DirectX</div>
+        <img src="Images/DirectX.png" class="overlay-image" id="OverlayImage4">
+      </div>
+      <div class="image-container">
+        <img src="Images/Thumbnails/VisualStudio.png" alt="Earthward" class="carousel-image">
+        <div class="overlay-text">3D - DirectX</div>
+        <img src="Images/DirectX.png" class="overlay-image" id="OverlayImage4">
+      </div>
+    </div>
+    
+    <a class="prev" onclick="moveSlide(-1, 'carousel3')">&#10094;</a>
+    <a class="next" onclick="moveSlide(1, 'carousel3')">&#10095;</a>
+  </div>
+  <br><br><br><br><br><br><br>
+
+ <!-- Have a question? -->
+ Have a question? Send me an email!
+
+<!-- End of main page -->
+<br><br><br><br><br><br><br>
 </div>
   
 <!-- Quick Navbar for home page -->
-<span class="fade-word">
-  <nav id="navbar">
-    <a href="#Titles" class="nav-link projects">Projects</a>
-    <a href="#Socials" class="nav-link socials">Socials</a>
-    <a href="#Engines" class="nav-link github">Contact</a>
-    <a href="#AboutMe" class="nav-link github">About</a>
-  </nav>
-  </span>
+<nav id="navbar">
+  <a href="index.html" class="nav-link projects">Projects</a>
+  <a href="#Socials" class="nav-link socials">Socials</a>
+  <a href="contact.html" class="nav-link github">Contact</a>
+  <a href="contact.html" class="nav-link github">About</a>
+</nav>
+ 
 </div>
 
 <!-- End main body -->
 <script>
-  window.addEventListener('load', function() {
-    document.body.classList.add('fade-in');
-  });
+window.addEventListener('load', function() {
+  document.body.classList.add('fade-in');
+});
   
 </script>
 <script src="word.js"></script>

@@ -30,6 +30,7 @@
     flex-shrink: 0; /* Prevents images from shrinking */
     transition: transform 0.5s ease, opacity 0.5s ease;
     box-shadow: -12px 12px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 2.5%; /* Makes the image circular */
     transform: scale(0.8); /* Scaled down size */
     opacity: 0.3; /* Lower opacity for far images */
     cursor: pointer;
@@ -55,8 +56,8 @@
 /* Base styles for overlay text */
 .overlay-text {
     position: absolute;
-    bottom: 10px; /* Position text at the bottom of the image */
-    right: 10px; /* Position text at the right of the image */
+    bottom: 20px; /* Position text at the bottom of the image */
+    right: 20px; /* Position text at the right of the image */
     color: rgb(127, 127, 127);
     font-size: 20px;
     font-weight: bold;
@@ -68,6 +69,35 @@
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     pointer-events: none;
     transform: scale(0); /* Start scaled down to match image */
+}
+
+/* Base styles for overlay image */
+.carousel-slide .carousel-image {
+    width: 384px;
+    height: 216px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: scale(0.8);
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.carousel-slide .carousel-image.active {
+    transform: scale(1);
+}
+
+.carousel-slide .image-container .overlay-image {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    object-fit: contain;
+    margin-left: -378px;
+    margin-top: 150px;
+    opacity: 0.75;
+    border-radius: 100%;
+    box-shadow: -12px 12px 8px rgba(0, 0, 0, 0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1;
+    transform: scale(0);
 }
 
 /* When the image is active, scale up the overlay text */

@@ -2,56 +2,71 @@ let slideIndexes = {};
 
 // Function to handle the sliding of the carousel
 function moveSlide(step, carouselId) {
-
     const carousel = document.getElementById(carouselId);
-    const slides = carousel.querySelectorAll('.image-container');
+    const slides = carousel.querySelectorAll('.image-container');  // Select container to manage active status
 
+    // Updating slide indexes to manage wrapping correctly
     if (!slideIndexes.hasOwnProperty(carouselId)) {
         slideIndexes[carouselId] = Math.floor(slides.length / 2);
     }
-    
 
     let newIndex = slideIndexes[carouselId] + step;
-    newIndex = ((newIndex % slides.length) + slides.length) % slides.length; // Proper wrap-around
-
-    slideIndexes[carouselId] = newIndex; // Update the slide index
-
+    newIndex = ((newIndex % slides.length) + slides.length) % slides.length;
+    slideIndexes[carouselId] = newIndex;
     // in the case of small carousels, don't bother sliding
     if (slides.length <= 3)
-    {
-        updateActiveSlides(carouselId);
-        return;
-    }
-
-    const containerWidth = carousel.clientWidth;
-    const imageWidth = slides[0].clientWidth;
-    const offset = (containerWidth - imageWidth) / 2; // Calculate the offset to center the slide
-    let newLeft = -slides[newIndex].offsetLeft + offset; // Adjust based on actual slide offset
-
-    carousel.querySelector('.carousel-slide').style.transform = `translateX(${newLeft}px)`;
-
+        {
+            updateActiveSlides(carouselId);
+            return;
+        }
+    // Adjust slide position based on the new index
+    updateSlidePosition(carouselId, newIndex);
     updateActiveSlides(carouselId);
 }
 
+function updateSlidePosition(carouselId, newIndex) {
+    const carousel = document.getElementById(carouselId);
+    const slides = carousel.querySelectorAll('.image-container');
+    const containerWidth = carousel.clientWidth;
+    const imageWidth = slides[0].clientWidth;
+    const offset = (containerWidth - imageWidth) / 2;
+    const newLeft = -slides[newIndex].offsetLeft + offset;
 
-// Function to update which slide is active
+    carousel.querySelector('.carousel-slide').style.transform = `translateX(${newLeft}px)`;
+}
+
 function updateActiveSlides(carouselId) {
     const carousel = document.getElementById(carouselId);
-    const slides = carousel.querySelectorAll('.image-container img'); // Ensure this selector is correct and that all slides contain an <img>
+    const slides = carousel.querySelectorAll('.image-container');
 
     slides.forEach((slide, index) => {
-        slide.classList.remove('active');
-        slide.style.opacity = '0.3';
+        const img = slide.querySelector('.carousel-image');
+        const overlay = slide.querySelector('.overlay-image');
+
+        console.log(`Slide ${index}: img found = ${!!img}, overlay found = ${!!overlay}`);  // Log whether each slide has the images
+
+        if (img && overlay) {
+            img.classList.remove('active');
+            img.style.opacity = '0.3';
+            overlay.style.opacity = '0.3';
+            overlay.style.opacity = '0.2';
+            overlay.style.transform = 'scale(0.5)';
+        } else {
+            console.error(`Missing .carousel-image or .overlay-image in slide at index ${index}`);
+        }
     });
 
-    if (slides.length > 0 && slideIndexes[carouselId] < slides.length) {
-        const activeSlide = slides[slideIndexes[carouselId]];
-        if (activeSlide) { // Ensure the element exists before attempting to modify it
-            activeSlide.classList.add('active');
-            activeSlide.style.opacity = '0.9';
+    const activeSlide = slides[slideIndexes[carouselId]];
+    if (activeSlide) {
+        const activeImg = activeSlide.querySelector('.carousel-image');
+        const activeOverlay = activeSlide.querySelector('.overlay-image');
+
+        if (activeImg && activeOverlay) {
+            activeImg.classList.add('active');
+            activeImg.style.opacity = '1';
+            activeOverlay.style.opacity = '0.8';
+            activeOverlay.style.transform = 'scale(0.8)';
         }
-    } else {
-        console.error('Error: slide index out of bounds or no slides found', slideIndexes[carouselId], slides.length);
     }
 }
 
@@ -68,6 +83,7 @@ function setupClickListeners(carouselId) {
         });
     });
 }
+
 function initializeCarousel(carouselId) {
     const carousel = document.getElementById(carouselId);
     const slides = Array.from(carousel.querySelectorAll('.image-container')); // Convert NodeList to Array
@@ -89,17 +105,10 @@ function initializeCarousel(carouselId) {
     }
 }
 
-window.addEventListener('resize', function() {
-    document.querySelectorAll('.carousel-container').forEach(carousel => {
-        initializeCarousel(carousel.id);
-    });
-});
-
 document.addEventListener('DOMContentLoaded', function() {
-    const carousels = document.querySelectorAll('.carousel-container');
-    carousels.forEach(carousel => {
+    document.querySelectorAll('.carousel-container').forEach(carousel => {
         const carouselId = carousel.id;
-        setupClickListeners(carouselId);
         initializeCarousel(carouselId);
+        setupClickListeners(carouselId);
     });
 });
