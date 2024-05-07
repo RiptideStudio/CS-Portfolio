@@ -1,17 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
 
+/* Unvisited link */
+a:link {
+  color: rgb(255, 200, 11);
+}
+
+/* Visited link */
+a:visited {
+  color: rgb(255, 200, 11); 
+}
+
+/* Hover over link */
+a:hover {
+  color: rgb(181, 62, 255);
+}
+
+/* Selected link */
+a:active {
+  color: rgb(108, 40, 175);
+}
+
 html {
   height: 125%;
 }
 
 body {
-  background-color: rgb(41, 41, 41);
+  background-color: rgb(14, 14, 14);
   font-family: 'Inter'; /* Apply the font */
   font-size: 16px; /* Set the base font size */
   text-align: center;
   width: 100%;
   opacity: 0;
   color: #c9c9c9;
+  letter-spacing: 0.075em;
 }
 
 .body {
@@ -22,7 +43,8 @@ body {
 .title {
   margin-top: 120px; /* Pushes the element down from the top */
   text-shadow: 0px 3px 4px #0000002a; 
-  letter-spacing: 0.075em;
+  letter-spacing: 0.15em;
+  
   position: relative; /* Necessary for positioning pseudo-elements */
 }
 
@@ -62,7 +84,7 @@ body.fade-in {
 }
 
 .yellow-text {
-  color: rgb(255, 212, 11);
+  color: rgb(255, 194, 11);
 }
 
 h1 {

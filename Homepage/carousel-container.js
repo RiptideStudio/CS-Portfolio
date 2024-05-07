@@ -15,10 +15,10 @@ function moveSlide(step, carouselId) {
     slideIndexes[carouselId] = newIndex;
     // in the case of small carousels, don't bother sliding
     if (slides.length <= 3)
-        {
-            updateActiveSlides(carouselId);
-            return;
-        }
+    {
+        updateActiveSlides(carouselId);
+        return;
+    }
     // Adjust slide position based on the new index
     updateSlidePosition(carouselId, newIndex);
     updateActiveSlides(carouselId);
@@ -38,21 +38,41 @@ function updateSlidePosition(carouselId, newIndex) {
 function updateActiveSlides(carouselId) {
     const carousel = document.getElementById(carouselId);
     const slides = carousel.querySelectorAll('.image-container');
+    const links = carousel.querySelectorAll('a'); 
 
     slides.forEach((slide, index) => {
+
         const img = slide.querySelector('.carousel-image');
         const overlay = slide.querySelector('.overlay-image');
+        const link = links[index];  // Corresponding link for each slide.
 
         console.log(`Slide ${index}: img found = ${!!img}, overlay found = ${!!overlay}`);  // Log whether each slide has the images
 
         if (img && overlay) {
             img.classList.remove('active');
-            img.style.opacity = '0.3';
-            overlay.style.opacity = '0.3';
-            overlay.style.opacity = '0.2';
+            img.style.opacity = '0.4';
+            overlay.style.opacity = '0.4';
             overlay.style.transform = 'scale(0.5)';
+            if (link)
+            {
+                link.style.pointerEvents = 'none';
+            }
         } else {
             console.error(`Missing .carousel-image or .overlay-image in slide at index ${index}`);
+        }
+    });
+
+    slides.forEach((slide, index) => {
+        const link = slide.querySelector('a');
+        if (!link) {
+            console.error(`Link not found in slide at index ${index}`);
+            return;
+        }
+
+        if (slide.classList.contains('active')) {
+            link.style.pointerEvents = 'auto'; // Link is clickable.
+        } else {
+            link.style.pointerEvents = 'none'; // Link is not clickable.
         }
     });
 
@@ -60,12 +80,17 @@ function updateActiveSlides(carouselId) {
     if (activeSlide) {
         const activeImg = activeSlide.querySelector('.carousel-image');
         const activeOverlay = activeSlide.querySelector('.overlay-image');
-
+        const link = activeSlide.querySelector('a');
+        
         if (activeImg && activeOverlay) {
             activeImg.classList.add('active');
             activeImg.style.opacity = '1';
             activeOverlay.style.opacity = '0.8';
             activeOverlay.style.transform = 'scale(0.8)';
+            if (link)
+            {
+                link.style.pointerEvents = 'auto';
+            }
         }
     }
 }
@@ -112,3 +137,15 @@ document.addEventListener('DOMContentLoaded', function() {
         setupClickListeners(carouselId);
     });
 });
+
+document.querySelectorAll('.carousel-container .image-container').forEach(container => {
+    container.addEventListener('click', function() {
+        // Remove active class from all containers
+        document.querySelectorAll('.carousel-container .image-container').forEach(c => {
+            c.classList.remove('active');
+        });
+        // Add active class to clicked container
+        this.classList.add('active');
+        updateActiveSlides(carouselId); // Make sure to pass the correct carouselId
+    });
+})

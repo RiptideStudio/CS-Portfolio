@@ -1,6 +1,6 @@
 /* Initial state of the navbar before any animation */
 #navbar {
-  background-color: rgb(26, 26, 26);
+  background-color: rgb(30, 30, 30);
   position: fixed;
   top: 24px; /* Start off-screen */
   left: 50%; /* Center horizontally */

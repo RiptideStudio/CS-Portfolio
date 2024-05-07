@@ -21,7 +21,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%; /* Makes the image circular */
-  background-color: rgb(26, 26, 26);
+  background-color: rgb(14, 14, 14);
   transition: filter 0.2s, transform 0.3s, background-color 0.2s; /* Transition for filter and transform */
 }
 
