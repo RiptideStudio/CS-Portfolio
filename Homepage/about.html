@@ -7,12 +7,12 @@
 
   <!-- Style sheets -->
   <link rel="stylesheet" href="index.css"> 
-  <link rel="stylesheet" href="navbutton.css">
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="section.css">
   <link rel="stylesheet" href="word.css">
   <link rel="stylesheet" href="hamburger.css">
-  <link rel="stylesheet" href="carousel-container.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="about.css">
   <link rel="stylesheet" href="profile.css">
   <link rel="stylesheet" href="Utility/scrollbar.css">
   <link rel="stylesheet" href="Utility/image.css">
@@ -28,17 +28,17 @@
 </nav>
 
 <!-- Hamburger Menu -->
-<button class="hamburger-menu" aria-label="Open navigation menu">
-  <img src="Images/HamburgerIcon.png" width = 55 height = 45 alt="Menu">
+<button class="hamburger-menu" onclick="toggleSidebar()">
+  <img src="Images/HamburgerIcon.png" alt="Menu">
 </button>
 
-<div class="overlay" id="overlayMenu">
-  <a href="javascript:void(0)" class="closebtn" aria-label="Close navigation menu">&times;</a>
-  <div class="overlay-content">
-    <a href="index.html">Projects</a>
-    <a href="index.html">Socials</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+<div class="sidebar" id="mySidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+  <div class="sidebar-content">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
   </div>
 </div>
 
@@ -48,7 +48,42 @@
   <span class="profile-text">Callen Betts</span>
 </a>
 
+<br><br><br><br><br><br><br><br>
+<!-- Start Main body -->
+
+<div class="aboutTitle">
+  <h1>Hi, I'm Callen!</h1>
+</div>
+
+<div class="about-image-container">
+  <div class="image-left">
+    <img src="Images/About/diverse-office-programmer-working-on-600nw-2079730714.webp" alt="Visual Studio Image">
+    <div class="image-text-right">
+      What's wiggity up my guys? We're going far out with this one!
+    </div>
+  </div>
+</div>
+
+<div class="about-image-container">
+  <div class="image-right">
+    <img src="Images/Thumbnails/VisualStudio.png" alt="Visual Studio Image">
+    <div class="image-text">
+      What's wiggity up my guys? We're going far out with this one!
+    </div>
+  </div>
+</div>
+
+<div class="about-image-container">
+  <div class="image-left">
+    <img src="Images/About/diverse-office-programmer-working-on-600nw-2079730714.webp" alt="Visual Studio Image">
+    <div class="image-text-right">
+      What's wiggity up my guys? We're going far out with this one!
+    </div>
+  </div>
+</div>
+
 <!-- End main body -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <script>
 window.addEventListener('load', function() {
   document.body.classList.add('fade-in');
@@ -56,8 +91,7 @@ window.addEventListener('load', function() {
     
 </script>
 <script src="word.js"></script>
-<script src="hamburger.js"></script>
-<script src="navbutton.js"></script>
+<script src="sidebar.js"></script>
 <script src="navbar.js"></script>
 <script src="carousel-container.js"></script>
   

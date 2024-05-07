@@ -1,0 +1,10 @@
+.title:after {
+    content: '';
+    position: absolute;
+    left: -30px;
+    right: -30px;
+    bottom: -15px; /* Adjust this value to move the underline up or down */
+    height: 3px; /* Thickness of the underline */
+    background: linear-gradient(to right, #797979, #797979, #797979); /* A shiny gradient effect */
+    border-radius: 2px; /* Optional: adds rounded corners to the underline */
+  }

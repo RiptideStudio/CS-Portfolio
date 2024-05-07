@@ -37,7 +37,7 @@
   text-align: center;
   transition: opacity 0.3s ease;
   opacity: 0;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.125em;
   bottom: 50%; /* Positioned directly below the profile image */
   left: 50%;
   transform: translateX(-50%) translateY(10px); /* Adjust for better positioning */

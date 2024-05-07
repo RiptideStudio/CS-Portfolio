@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+/* Sidebar Menu */
+.sidebar {
+    height: 100%;
+    width: 0; /* Start with width 0 to keep the sidebar hidden */
+    position: fixed;
+    z-index: 150;
+    top: 0;
+    right: 0; /* Align to the right side of the screen */
+    background-color: rgb(10, 10, 10); /* Solid black background */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    transition: 0.3s ease-in-out; /* Smooth transition for opening and closing */
+  }
+  
+  /* Sidebar Content */
+  .sidebar-content {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 400px; /* Set a fixed width for the sidebar content */
+    text-align: center;
+    margin-top: 30px;
+    letter-spacing: 0.15em;
+    font-size: large;
+  }
+  
+  .sidebar a {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 36px;
+    color: rgb(133, 133, 133);
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover, .sidebar a:focus {
+    color: #ffffff;
+    transform: scale(1.2);
+  }
+  

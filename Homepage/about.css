@@ -1,0 +1,67 @@
+.aboutTitle h1 {
+  display: inline-block;
+  position: relative;
+}
+
+.aboutTitle h1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -15px;
+  height: 3px;
+  background: linear-gradient(to right, #797979, #797979, #797979);
+  border-radius: 2px;
+}
+
+.about-image-container {
+  margin-top: 100px;
+  padding-bottom: 320px;
+}
+
+img {
+  width: 640px;
+  height: 360px;
+  box-shadow: -12px 12px 12px rgb(0, 0, 0);
+  border-radius: 2.5%;
+}
+
+.image-left {
+  position: absolute;
+  justify-content: left;
+  left: 15%;
+}
+
+.image-right {
+  position: absolute;
+  justify-content: right;
+  right: 15%;
+}
+
+.image-text {
+  position: relative;
+  left: -640px;
+  top: -300px;
+  color: rgb(180, 180, 180);
+  font-size: 16px;
+  letter-spacing: 0.075em;
+  width: 520px;
+  text-align: left;
+  height: 360px;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.image-text-right {
+  position: relative;
+  text-align: left;
+  left: 760px;
+  top: -300px;
+  color: rgb(180, 180, 180);
+  font-size: 16px;
+  letter-spacing: 0.075em;
+  width: 520px;
+  height: 360px;
+  white-space: normal;
+  word-wrap: break-word;
+}

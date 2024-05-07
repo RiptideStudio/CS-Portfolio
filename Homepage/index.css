@@ -44,7 +44,6 @@ body {
   margin-top: 120px; /* Pushes the element down from the top */
   text-shadow: 0px 3px 4px #0000002a; 
   letter-spacing: 0.15em;
-  
   position: relative; /* Necessary for positioning pseudo-elements */
 }
 
@@ -101,7 +100,7 @@ p {
   justify-content: center; /* Distributes space between the flex items */
   align-items: center;  /* Vertically centers the items in the line */
   text-shadow: 0px 3px 4px #0000002a;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.125em;
   position: relative;   /* Necessary for positioning pseudo-elements */
 }
 

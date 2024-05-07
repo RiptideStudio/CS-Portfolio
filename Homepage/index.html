@@ -7,11 +7,11 @@
 
   <!-- Style sheets -->
   <link rel="stylesheet" href="index.css"> 
-  <link rel="stylesheet" href="navbutton.css">
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="section.css">
   <link rel="stylesheet" href="word.css">
   <link rel="stylesheet" href="hamburger.css">
+  <link rel="stylesheet" href="sidebar.css">
   <link rel="stylesheet" href="carousel-container.css">
   <link rel="stylesheet" href="profile.css">
   <link rel="stylesheet" href="Utility/scrollbar.css">
@@ -20,25 +20,29 @@
 </head>
 <body>
 
-<!-- Hamburger Menu Button -->
-<button class="hamburger-menu" aria-label="Open navigation menu">
-  <img src="Images/HamburgerIcon.png" width = 55 height = 45 alt="Menu">
+<!-- Hamburger Menu -->
+<button class="hamburger-menu" onclick="toggleSidebar()">
+  <img src="Images/HamburgerIcon.png" alt="Menu">
 </button>
 
-<a href="about.html" class="profile-container">
-  <img src="Images/profile.jpg" alt="Profile" class="profile">
-  <span class="profile-text">Callen Betts</span>
-</a>
-
-<!-- Overlay Menu -->
-<div class="overlay" id="overlayMenu">
-  <a href="javascript:void(0)" class="closebtn" aria-label="Close navigation menu">&times;</a>
-  <div class="overlay-content">
-    <a href="index.html">Projects</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+<div class="sidebar" id="mySidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+  <div class="sidebar-content">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
   </div>
 </div>
+  
+<!-- Quick Navbar for home page -->
+<nav id="navbar">
+  <a href="index.html" class="nav-link projects">Projects</a>
+  <a href="#Socials" class="nav-link socials">Socials</a>
+  <a href="contact.html" class="nav-link github">Contact</a>
+  <a href="about.html" class="nav-link github">About</a>
+  <a href="earthward.html" class="nav-link github">Earthward</a>
+</nav>
 
 <!-- Home Page - this is inbewteen the about and Contact -->
 <div class="section" id="home">
@@ -172,18 +176,7 @@
 
 <!-- End of main page -->
 <br><br><br><br><br><br><br><br><br><br><br>
-</div>
-  
-<!-- Quick Navbar for home page -->
-<nav id="navbar">
-  <a href="index.html" class="nav-link projects">Projects</a>
-  <a href="#Socials" class="nav-link socials">Socials</a>
-  <a href="contact.html" class="nav-link github">Contact</a>
-  <a href="contact.html" class="nav-link github">About</a>
-  <a href="earthward.html" class="nav-link github">Earthward</a>
-</nav>
- 
-</div>
+
 
 <!-- End main body -->
 <script>
@@ -193,8 +186,7 @@ window.addEventListener('load', function() {
   
 </script>
 <script src="word.js"></script>
-<script src="hamburger.js"></script>
-<script src="navbutton.js"></script>
+<script src="sidebar.js"></script>
 <script src="navbar.js"></script>
 <script src="carousel-container.js"></script>
 
