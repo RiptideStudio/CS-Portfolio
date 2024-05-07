@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callen Betts - Game Developer Portfilio</title>
+
+  <!-- Style sheets -->
+  <link rel="stylesheet" href="index.css"> 
+  <link rel="stylesheet" href="navbutton.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="section.css">
+  <link rel="stylesheet" href="word.css">
+  <link rel="stylesheet" href="hamburger.css">
+  <link rel="stylesheet" href="carousel-container.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="Utility/scrollbar.css">
+  <link rel="stylesheet" href="Utility/image.css">
+
+</head>
+
+<!-- Quick Navbar for home page -->
+<nav id="navbar">
+  <a href="index.html" class="nav-link github">Projects</a>
+  <a href="#Socials" class="nav-link socials">Socials</a>
+  <a href="contact.html" class="nav-link github">Contact</a>
+  <a href="about.html" class="nav-link github">About</a>
+</nav>
+
+<!-- Hamburger Menu -->
+<button class="hamburger-menu" aria-label="Open navigation menu">
+  <img src="Images/HamburgerIcon.png" width = 55 height = 45 alt="Menu">
+</button>
+
+<div class="overlay" id="overlayMenu">
+  <a href="javascript:void(0)" class="closebtn" aria-label="Close navigation menu">&times;</a>
+  <div class="overlay-content">
+    <a href="index.html">Projects</a>
+    <a href="index.html">Socials</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<!-- About Icon -->
+<a href="about.html" class="profile-container">
+  <img src="Images/profile.jpg" alt="Profile" class="profile">
+  <span class="profile-text">Callen Betts</span>
+</a>
+<br><br><br><br><br><br><br><br><br>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/K1zJFZxKmuY?si=Oj-ZXqpLu_m1ngfi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br><br><br>
+<audio controls preload="auto">
+  <source src="Audio/Town Heart.mp3" type="audio/mpeg">
+</audio>
+<br><br><br>
+<audio controls preload="auto">
+  <source src="Audio/Town Lament.wav" type="audio/mpeg">
+</audio>
+
+<!-- End main body -->
+<script>
+window.addEventListener('load', function() {
+  document.body.classList.add('fade-in');
+});
+    
+</script>
+<script src="word.js"></script>
+<script src="hamburger.js"></script>
+<script src="navbutton.js"></script>
+<script src="navbar.js"></script>
+<script src="carousel-container.js"></script>
+  
+</body>
+</html>
