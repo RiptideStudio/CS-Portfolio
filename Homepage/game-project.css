@@ -1,0 +1,59 @@
+/* Description and title of selected game */
+.game-text-container {
+    position: fixed;
+    margin-top: 5%;
+    margin-left: 7%;;
+}
+
+p {
+    width: 640px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* Vertical line separator */
+.vertical-line {
+    position: fixed;
+    top: 5%; /* Aligns with the content vertically */
+    left: 45%; /* Positioning the line correctly between the text and image */
+    height: 45%; /* Adjust based on your design needs */
+    width: 6px; /* Line thickness */
+    background-color: rgb(14, 14, 14);
+}
+
+/* For the display images of the selected game (slideshow images) */
+.slideshow-container {
+    position: fixed;
+    margin-top: 5%;
+    margin-left: 50%;;
+}
+
+.slide {
+    position: relative;
+    bottom: 30px;
+    width:720px;
+    height:400px;
+    border-radius: 16px;
+    box-shadow: -16px 16px 16px rgba(0, 0, 0, 1);
+}
+
+.slide-icon {
+    position: relative;
+    width:64px;
+    height:64px;
+    border-radius: 16px;
+    box-shadow: -16px 16px 16px rgba(0, 0, 0, 1);
+}
+
+.slide-video {
+    width:640px;
+    height:360px;
+    border-radius: 16px;
+    box-shadow: -16px 16px 16px rgba(0, 0, 0, 1);   
+}
+
+/* Link to the game page or more information */
+.game-text-link {
+    color:rgb(129, 129, 129);
+    text-decoration: none;
+}

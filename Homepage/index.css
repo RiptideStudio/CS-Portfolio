@@ -21,36 +21,14 @@ a:active {
 }
 
 html {
-  height: 125%;
+  height: 100%;
 }
 
 body {
-  background-color: rgb(14, 14, 14);
   font-family: 'Inter'; /* Apply the font */
   font-size: 16px; /* Set the base font size */
-  text-align: center;
-  width: 100%;
-  opacity: 0;
   color: #c9c9c9;
   letter-spacing: 0.075em;
-}
-
-.body {
-  margin-top: 175px; /* Pushes the element down from the top */
-  text-shadow: 0px 3px 4px #0000002a; 
-}
-
-.title {
-  margin-top: 120px; /* Pushes the element down from the top */
-  text-shadow: 0px 3px 4px #0000002a; 
-  letter-spacing: 0.15em;
-  position: relative; /* Necessary for positioning pseudo-elements */
-}
-
-/* Styling for decorative underline */
-.title h1 {
-  display: inline-block; /* Make h1 an inline-block to fit the underline nicely */
-  position: relative; /* Needed for positioning the pseudo-element */
 }
 
 .title h1:after {
@@ -96,16 +74,14 @@ p {
 }
 
 .steamTitle {
-  display: flex;        /* Enables Flexbox */
-  justify-content: center; /* Distributes space between the flex items */
-  align-items: center;  /* Vertically centers the items in the line */
   text-shadow: 0px 3px 4px #0000002a;
   letter-spacing: 0.125em;
-  position: relative;   /* Necessary for positioning pseudo-elements */
 }
 
 .titleWord {
-  text-shadow: 0px 3px 4px #0000002a; 
-  font-size: 1.5em; 
-  margin: 0 20px;
+  position:relative;
+  font-size: 1.25em; 
+  text-shadow: 0px 3px 4px #0000002a;
+  letter-spacing: 0.125em;
+  margin-left: 2%;
 }

@@ -5,40 +5,48 @@
   position: fixed;
   top: 24px;
   right: 32px;
-  z-index: 100;
+  z-index: 151;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0; /* Adjust padding as needed */
-  width: 50px; /* Width of the button - adjust as needed */
-  height: 50px; /* Height of the button - adjust as needed */
-  transition: transform 0.3s; /* Animation for hover effect */
-  color: gray;
+  padding: 0;
+  width: 70px; /* Width of the button - adjust as needed */
+  height: 64px; /* Height of the button - adjust as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Distributes spacing evenly */
+  align-items: center; /* Centers bars horizontally */
+  transition: 0.3s; /* Animation for hover effect */
+  border-radius: 32px;
+  padding: 12px;
+  transform: scale(1);
 }
 
-/* Hamburger Icon Image */
-.hamburger-menu img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%; /* Makes the image circular */
-  background-color: rgb(14, 14, 14);
-  transition: filter 0.2s, transform 0.3s, background-color 0.2s; /* Transition for filter and transform */
-  box-shadow: none;
+.hamburger-menu:hover {
+  transition: 0.3s;
+  background-color: rgb(255, 210, 11);
+  padding-top: 6px;
+  padding-bottom: 6px;
+  transform: scale(1.1);
 }
 
-.hamburger-menu:hover img, .hamburger-menu:focus img {
-  filter: none; /* Remove filter on hover/focus to show the original color (white) */
-  transform: scale(1.25); /* Slightly enlarge the icon on hover/focus */
-  background-color: rgb(105, 105, 105);
+.hamburger-menu:active {
+  transition: 0.15s;
+  background-color: rgb(79, 17, 141);
+  padding: 12px;
+  transform: scale(0.9);
 }
 
-/* Close Button */
-.closebtn {
-  position: absolute;
-  top: 10px;
-  right: 8px;
-  width: 50px; /* The actual width of your icon */
-  height: 50px; /* The actual height of your icon */
-  background-size: contain; /* This ensures that your background image is scaled to fit the content area */
-  transform: scale(1.5);
+.hamburger-menu .bar {
+  width: 100%; /* Adjust width to your preference */
+  height: 4px;
+  background-color: #b5b5b5;  /* Color of the hamburger icon */
+  border-radius: 24px;
+  transition: 0.3s;
+}
+
+/* Optional: Add hover effect */
+.hamburger-menu:hover .bar {
+  transition: 0.3s;
+  background-color: #000000;
 }

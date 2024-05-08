@@ -21,27 +21,27 @@
 
 <!-- Quick Navbar for home page -->
 <nav id="navbar">
-  <a href="index.html" class="nav-link github">Projects</a>
-  <a href="#Socials" class="nav-link socials">Socials</a>
+  <a href="index.html" class="nav-link projects">Projects</a>
   <a href="contact.html" class="nav-link github">Contact</a>
   <a href="about.html" class="nav-link github">About</a>
+  <a href="earthward.html" class="nav-link github">Github</a>
 </nav>
 
 <!-- Hamburger Menu -->
 <button class="hamburger-menu" onclick="toggleSidebar()">
-  <img src="Images/HamburgerIcon.png" alt="Menu">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
 </button>
 
 <div class="sidebar" id="mySidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
   <div class="sidebar-content">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
+    <div class="sidebar-text"><a href="index.html"><span>Home</span></a></div><br>
+    <div class="sidebar-text"><a href="about.html"><span>About</span></a></div><br>
+    <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
+    <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories" target = "_blank"><span>Github</span></a></div><br>
   </div>
 </div>
-
 <!-- About Icon -->
 <a href="about.html" class="profile-container">
   <img src="Images/profile.jpg" alt="Profile" class="profile">
@@ -54,7 +54,14 @@
 <div class="aboutTitle">
   <h1>Hi, I'm Callen!</h1>
 </div>
-
+<div class="aboutTitle">
+  <h1>
+    <span class="fade-word">Programmer,</span>
+    <span class="fade-word">Game Developer,</span>
+    <span class="yellow-text fade-word">Creator.</span>
+  </h1>
+</div>
+<br><br><br>
 <div class="about-image-container">
   <div class="image-left">
     <img src="Images/About/diverse-office-programmer-working-on-600nw-2079730714.webp" alt="Visual Studio Image">

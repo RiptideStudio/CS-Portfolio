@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="section.css">
   <link rel="stylesheet" href="word.css">
   <link rel="stylesheet" href="hamburger.css">
+  <link rel="stylesheet" href="sidebar.css">
   <link rel="stylesheet" href="carousel-container.css">
   <link rel="stylesheet" href="profile.css">
   <link rel="stylesheet" href="Utility/scrollbar.css">
@@ -28,17 +29,18 @@
 </nav>
 
 <!-- Hamburger Menu -->
-<button class="hamburger-menu" aria-label="Open navigation menu">
-  <img src="Images/HamburgerIcon.png" width = 55 height = 45 alt="Menu">
+<button class="hamburger-menu" onclick="toggleSidebar()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
 </button>
 
-<div class="overlay" id="overlayMenu">
-  <a href="javascript:void(0)" class="closebtn" aria-label="Close navigation menu">&times;</a>
-  <div class="overlay-content">
-    <a href="index.html">Projects</a>
-    <a href="index.html">Socials</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+<div class="sidebar" id="mySidebar">
+  <div class="sidebar-content">
+    <div class="sidebar-text"><a href="index.html"><span>Home</span></a></div><br>
+    <div class="sidebar-text"><a href="about.html"><span>About</span></a></div><br>
+    <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
+    <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories" target = "_blank"><span>Github</span></a></div><br>
   </div>
 </div>
 
@@ -65,7 +67,7 @@ window.addEventListener('load', function() {
 </script>
 <script src="word.js"></script>
 <script src="hamburger.js"></script>
-<script src="navbutton.js"></script>
+<script src="sidebar.js"></script>
 <script src="navbar.js"></script>
 <script src="carousel-container.js"></script>
   

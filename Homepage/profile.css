@@ -5,8 +5,8 @@
   top: 24px;
   left: 24px;
   z-index: 100;
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   cursor: pointer;
   border-radius: 50%; /* Makes the image circular */
   display: flex;

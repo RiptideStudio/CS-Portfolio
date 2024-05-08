@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Paradigm",
+        "role": "Composer",
+        "description": "Description of Project 1",
+        "overlayImageSrc": "Images/Steam.png",
+        "imageSrc": "Images/Thumbnails/Aesprite.png",
+        "video": "path/to/video.mp4"
+    },
+    {
+        "title": "Lilypad Lowdown",
+        "role": "Developer",
+        "description": "Description of Project 1",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/Earthward.png",
+        "video": "path/to/video.mp4"
+    },
+    {
+        "title": "Earthward",
+        "role": "Developer",
+        "description": "Description of Projecteeeeeeeee",
+        "overlayImageSrc": "Images/Steam.png",
+        "imageSrc": "Images/Thumbnails/Earthward.png",
+        "video": "path/to/video.mp4"
+    },
+    {
+        "title": "Bitlands",
+        "role": "Developer",
+        "description": "Description of Project 1",
+        "overlayImageSrc": "Images/Steam.png",
+        "imageSrc": "Images/Thumbnails/Earthward.png",
+        "video": "path/to/video.mp4"
+    },   
+    {
+        "title": "Koko: The Last Leaf",
+        "role": "Composer",
+        "description": "Description of Project 1",
+        "overlayImageSrc": "Images/Steam.png",
+        "imageSrc": "Images/Thumbnails/Earthward.png",
+        "video": "path/to/video.mp4"
+    }
+]

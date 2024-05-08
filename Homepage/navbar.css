@@ -39,7 +39,7 @@
   transition: background-color 0.2s, color 0.2s, transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
-#navbar a:hover, #navbar a:active {
+#navbar a:hover {
   background-color: rgb(255, 210, 11);
   color: black; /* Text color on hover and click */
   transform: scale(1.2); /* Enlarges the button */

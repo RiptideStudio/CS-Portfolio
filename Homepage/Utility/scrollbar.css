@@ -20,8 +20,30 @@
   ::-webkit-scrollbar-thumb:hover {
     background-color: #ffffff; /* Darker grey on hover */
   }
-  
-  html, body {
-    overflow-x: hidden; /* Hides horizontal scrollbar and prevents horizontal scrolling */
-  }
-  
+
+/* Styling for the whole HTML and body */
+html, body {
+  height: 100%; /* Full height to split into two halves */
+  margin: 0; /* Remove default margin */
+  overflow-x: hidden; /* Hide horizontal scroll */
+}
+
+/* Upper container that should not scroll */
+.upper-container {
+  height: 55%; /* Half of the screen */
+  overflow: hidden; /* No scrolling */
+  background-color: rgb(5, 5, 5);
+}
+
+/* Lower container that should scroll */
+.lower-container {
+  height: 45%; /* Half of the screen */
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: rgb(14, 14, 14);
+}
+
+/* Example of setting z-index */
+.upper-container, .lower-container {
+  position: relative; /* z-index only works on positioned elements */
+  z-index: 1; /* Ensure it's above the base level but adjust according to your needs */
+}
