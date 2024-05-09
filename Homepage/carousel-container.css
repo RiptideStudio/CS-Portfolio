@@ -2,14 +2,13 @@
     position: relative;
     max-width: 100%;
     margin-top: 10px;
+    margin-right: 2%;
     overflow: visible;
-    min-height: 300px;
 }
 
 .carousel-container::before {
     content: "";
     position: absolute;
-    left: 0px;  /* Adjust left to offset horizontally */
     top: -20px;  /* Adjust top to offset vertically */
     width: calc(100%); /* Subtract your left offset from the width */
     height: calc(100% - 40px); /* Subtract your top offset from the height */
@@ -25,7 +24,7 @@
 .carousel-slide img {
     flex-shrink: 0; /* Prevents images from shrinking */
     transition: transform 0.5s ease, opacity 0.5s ease;
-    box-shadow: -12px 12px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: -16px 16px 32px rgba(0, 0, 0, 1);
     border-radius: 15px; /* Makes the image circular */
     transform: scale(0.8); /* Scaled down size */
     opacity: 0.3; /* Lower opacity for far images */
@@ -79,9 +78,10 @@
 .carousel-slide .carousel-image {
     width: 384px;
     height: 216px;
+    margin-left: 40px;
     object-fit: contain; 
     transition: transform 0.5s ease, opacity 0.5s ease;
-    transform: scale(0.8);
+    transform: scale(0.9);
     opacity: 0.3;
     cursor: pointer;
     border: 2px solid #94949400;
@@ -90,7 +90,7 @@
 
 .carousel-slide .carousel-image.active {
     transform: scale(1);
-    border: 2px solid #d8d8d8;
+    border: 2px solid #a1a1a1;
     transition: 0.3s;
 }
 
@@ -118,7 +118,7 @@
 
 .prev, .next {
     position: absolute;
-    top: 25%;
+    top: 33%;
     transform: translateY(-50%);
     font-size: 24px;
     color: white;
@@ -147,4 +147,4 @@
 }
 
 .prev { left: 3%; }
-.next { right: 3%; }
+.next { right: 1%; }

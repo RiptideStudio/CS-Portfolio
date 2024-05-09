@@ -14,12 +14,6 @@ function moveSlide(step, carouselId) {
     newIndex = ((newIndex % slides.length) + slides.length) % slides.length;
     slideIndexes[carouselId] = newIndex;
 
-    // in the case of small carousels, don't bother sliding
-    if (slides.length <= 3)
-    {
-        updateActiveSlides(carouselId);
-        return;
-    }
     console.log(`New active index: ${slideIndexes[carouselId]}`); // In moveSlide
     updateSlidePosition(carouselId, newIndex);
     updateActiveSlides(carouselId);
@@ -39,7 +33,9 @@ function updateSlidePosition(carouselId, newIndex) {
 function updateActiveSlides(carouselId) {
     const carousel = document.getElementById(carouselId);
     const slides = carousel.querySelectorAll('.image-container');
-    const links = carousel.querySelectorAll('a'); 
+    const activeIndex = slideIndexes[carouselId];
+
+    // reset properties of the slides
     slides.forEach((slide, index) => {
 
         const img = slide.querySelector('.carousel-image');
@@ -47,11 +43,25 @@ function updateActiveSlides(carouselId) {
 
         if (img && overlay) {
             img.classList.remove('active');
-            img.style.opacity = '0.4';
+            img.style.opacity = '0.5';
+            img.style.transform = 'scale(1)';
             overlay.style.opacity = '0';
             overlay.style.transform = 'scale(0.5)';
         } else {
             console.error(`Missing .carousel-image or .overlay-image in slide at index ${index}`);
+        }
+    });
+
+    // Enhancing far left or right slides' style
+    slides.forEach((slide, index) => {
+        if (Math.abs(index - activeIndex) > 1) { // Adjust '1' to increase or decrease the range of "far" slides
+            const img = slide.querySelector('.carousel-image');
+            const overlay = slide.querySelector('.overlay-image');
+            if (img) {
+                img.style.opacity = '0.1'; // Far slides opacity
+                img.style.transform = 'scale(1)';
+                overlay.style.opacity = '0';
+            }
         }
     });
 
@@ -63,6 +73,7 @@ function updateActiveSlides(carouselId) {
         if (activeImg && activeOverlay) {
             activeImg.classList.add('active');
             activeImg.style.opacity = '1';
+            activeImg.style.transform = 'scale(1)';
             activeOverlay.style.opacity = '1';
             activeOverlay.style.transform = 'scale(0.8)';
         }

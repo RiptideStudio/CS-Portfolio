@@ -8,11 +8,13 @@
     z-index: 150;
     top: 0;
     right: 0; /* Align to the right side of the screen */
-    background-color: rgb(0, 0, 0); /* Solid black background */
+    background-image: linear-gradient(to bottom, rgb(5, 5, 5), rgb(12, 14, 14));
     overflow-x: hidden; /* Prevent horizontal scroll */
+    opacity: 0;
     transition: 0.3s ease-in-out; /* Smooth transition for opening and closing */
+    box-shadow: -16px -16px 64px black;
   }
-  
+
   /* Sidebar Content */
   .sidebar-content {
     position: absolute;

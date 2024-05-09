@@ -20,21 +20,22 @@
         "projectLink": "https://store.steampowered.com/app/1967980/Koko_the_Last_Leaf/"
     },
     {
-        "title": "Earthward",
+        "title": "Bitlands",
         "role": "Developer",
-        "description": "Description of Project",
+        "genre": "2D Action Platformer",
+        "description": "The Bitlands have plunged into chaos. As a rebel, you must explore a war-torn world to find and overthrow the corrupt king of the Bitlands. With the help of magical allies found along the way, you might just end up saving the world!",
         "overlayImageSrc": "Images/Steam.png",
-        "imageSrc": "Images/Thumbnails/Earthward.png",
+        "imageSrc": "Images/Thumbnails/Bitlands.png",
         "video": "path/to/video.mp4",
         "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/"
     },
     {
-        "title": "Bitlands",
+        "title": "Earthward",
         "role": "Developer",
-        "genre": "2D Action Platformer",
-        "description": "As a human apart of the rebel army, you must explore a war-torn world to find and overthrow the corrupt king of the Bitlands. With the help of magical allies found along the way, you might just end up saving the world!",
+        "genre": "Fantasy Roguelite RPG",
+        "description": "Over one-hundred years ago, the surface was destroyed by an unknown evil, forcing civilization underground. Explore a vast underground filled to the brim with creatures and critters, but beware the various secrets hiding in the caves. Craft armor and weapons to fight powerful monsters, and discover that the surface may not be as uninhabitable as you thought.",
         "overlayImageSrc": "Images/Steam.png",
-        "imageSrc": "Images/Thumbnails/Bitlands.png",
+        "imageSrc": "Images/Thumbnails/Earthward.png",
         "video": "path/to/video.mp4",
         "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/"
     },
@@ -42,7 +43,7 @@
         "title": "Daisy's Quest",
         "role": "Programmer",
         "genre": "Puzzle Comedy",
-        "description": "Death isn't always a bad thing. Traverse a wacky world of characters and puzzles using your corpse as a platform!",
+        "description": "Death isn't always a bad thing. Traverse a wacky world of characters and puzzles by using your corpse as a platform!",
         "overlayImageSrc": "Images/Itch.png",
         "imageSrc": "Images/Thumbnails/Daisy.png",
         "video": "path/to/video.mp4",
