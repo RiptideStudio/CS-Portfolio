@@ -21,14 +21,6 @@
 </head>
 <body>
 
-<div class="upper-container">
-
-<!-- About Icon -->
-<a href="about.html" class="profile-container">
-  <img src="Images/profile.jpg" alt="Profile" class="profile">
-  <span class="profile-text">Callen Betts</span>
-</a>
-
 <!-- Hamburger Menu -->
 <button class="hamburger-menu" onclick="toggleSidebar()">
   <div class="bar"></div>
@@ -45,11 +37,20 @@
   </div>
 </div>
 
+<div class="upper-container">
+
+<!-- About Icon -->
+<a href="about.html" class="profile-container">
+  <img src="Images/profile.jpg" alt="Profile" class="profile">
+  <span class="profile-text">Callen Betts</span>
+</a>
+
 <!-- The informative text -->
 <div class="game-text-container">
   <h1></h1>
+  <div class = "game-text-role">Developer</div>
   <p>
-    <a href=""><div class="game-text-link">Learn more</div></a>
+    <a href="" target = "_blank"><div class="game-text-link">Go to project</div></a>
   </p>
   <img src="Images/Steam.png" class="slide-icon" alt="Icon Description">
 </div>
@@ -57,10 +58,18 @@
 <div class="vertical-line"></div>
 
 <div class="slideshow-container">
-  <!-- Slideshow images -->
-  <img src="Images/Thumbnails/Earthward.png" class="slide">
+  <!-- Placeholder for slideshow image -->
+  <img src="Images/Thumbnails/Earthward.png" class="slide" id="mainImage">
 
+  <div onclick="changeSlide(-1)" class="nav left-nav">&#10094;</div>  <!-- Left navigation arrow -->
+  <div onclick="changeSlide(1)" class="nav right-nav">&#10095;</div> <!-- Right navigation arrow -->
+
+  <div class="game-text-container">
+      <h1 id="slideTitle">Title here</h1>
+      <p id="slideDescription">Description here</p>
+  </div>
 </div>
+
   
 <!-- End of upper container -->
 </div>

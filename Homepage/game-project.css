@@ -2,13 +2,31 @@
 .game-text-container {
     position: fixed;
     margin-top: 5%;
-    margin-left: 7%;;
+    margin-left: 7%;
 }
 
 p {
     width: 640px;
     white-space: normal;
     word-wrap: break-word;
+    letter-spacing: 0.05em;
+}
+
+h1 {
+    margin-top: 10px;
+    letter-spacing: 0.075em;
+    margin-bottom: 40px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    left: 0px; /* Extend the line to the left */
+    right: -10px; /* Extend the line to the right */
+    height: 2px;
+    top: 54px;
+    width: 90%;
+    background-image: linear-gradient(to right, rgb(79, 79, 79), rgba(53, 23, 186, 0));
 }
 
 /* Vertical line separator */
@@ -31,10 +49,11 @@ p {
 .slide {
     position: relative;
     bottom: 30px;
-    width:720px;
-    height:400px;
+    width: 700px;
+    height: 392px;
     border-radius: 16px;
     box-shadow: -16px 16px 16px rgba(0, 0, 0, 1);
+    object-fit: contain;
 }
 
 .slide-icon {
@@ -56,4 +75,61 @@ p {
 .game-text-link {
     color:rgb(129, 129, 129);
     text-decoration: none;
+}
+
+/* Genre of the game */
+.game-text-role {
+    text-decoration: none;
+    font-style: italic;
+    color:rgb(147, 147, 147);
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+/* Genre of the game */
+.game-text-genre {
+    text-decoration: none;
+    font-style: italic;
+    color:rgb(145, 97, 97);
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+.horizontal-line {
+    position: fixed;
+    top: 15%; /* Aligns with the content vertically */
+    left: 7%; /* Positioning the line correctly between the text and image */
+    height: 3px; /* Adjust based on your design needs */
+    width: 480px; /* Line thickness */
+    background-color: rgba(192, 192, 192, 0.683);
+    margin-top: 2px;
+}
+
+.nav {
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.left-nav {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.right-nav {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.nav:hover {
+    background-color: rgba(0,0,0,0.8);
 }

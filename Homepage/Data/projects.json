@@ -2,41 +2,60 @@
     {
         "title": "Paradigm",
         "role": "Composer",
-        "description": "Description of Project 1",
-        "overlayImageSrc": "Images/Steam.png",
-        "imageSrc": "Images/Thumbnails/Aesprite.png",
-        "video": "path/to/video.mp4"
+        "genre": "Puzzle Adventure",
+        "description": "Beckett awakes, and equipped with the ability to make copies of himself, he must navigate a world that is hostile to anyone who goes alone... but he's not alone... not really. To solve the puzzles, you'll have to think differently: In plurality rather then singularity. Will you follow the pattern? Or become the Paradigm?",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/Paradigm.png",
+        "video": "path/to/video.mp4",
+        "projectLink": "https://artindi.itch.io/paradigm"
     },
     {
-        "title": "Lilypad Lowdown",
-        "role": "Developer",
-        "description": "Description of Project 1",
-        "overlayImageSrc": "Images/Itch.png",
-        "imageSrc": "Images/Thumbnails/Earthward.png",
-        "video": "path/to/video.mp4"
+        "title": "Koko: The Last Leaf",
+        "role": "Composer",
+        "genre": "2D Adventure Metroidvania",
+        "description": "Delve into a mysterious world of Gods and magic as the last of the leaf kind. Fight epic battles for revenge against evil forces. Explore fantastical lands inhabited with magical creatures and peculiar allies. Search for the realm of the Gods and stop them from making a grave mistake.",
+        "overlayImageSrc": "Images/Steam.png",
+        "imageSrc": "Images/Thumbnails/Koko.png",
+        "video": "path/to/video.mp4",
+        "projectLink": "https://store.steampowered.com/app/1967980/Koko_the_Last_Leaf/"
     },
     {
         "title": "Earthward",
         "role": "Developer",
-        "description": "Description of Projecteeeeeeeee",
+        "description": "Description of Project",
         "overlayImageSrc": "Images/Steam.png",
         "imageSrc": "Images/Thumbnails/Earthward.png",
-        "video": "path/to/video.mp4"
+        "video": "path/to/video.mp4",
+        "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/"
     },
     {
         "title": "Bitlands",
         "role": "Developer",
-        "description": "Description of Project 1",
+        "genre": "2D Action Platformer",
+        "description": "As a human apart of the rebel army, you must explore a war-torn world to find and overthrow the corrupt king of the Bitlands. With the help of magical allies found along the way, you might just end up saving the world!",
         "overlayImageSrc": "Images/Steam.png",
-        "imageSrc": "Images/Thumbnails/Earthward.png",
-        "video": "path/to/video.mp4"
-    },   
+        "imageSrc": "Images/Thumbnails/Bitlands.png",
+        "video": "path/to/video.mp4",
+        "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/"
+    },
     {
-        "title": "Koko: The Last Leaf",
-        "role": "Composer",
-        "description": "Description of Project 1",
-        "overlayImageSrc": "Images/Steam.png",
-        "imageSrc": "Images/Thumbnails/Earthward.png",
-        "video": "path/to/video.mp4"
+        "title": "Daisy's Quest",
+        "role": "Programmer",
+        "genre": "Puzzle Comedy",
+        "description": "Death isn't always a bad thing. Traverse a wacky world of characters and puzzles using your corpse as a platform!",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/Daisy.png",
+        "video": "path/to/video.mp4",
+        "projectLink": "https://llamaking1.itch.io/daisys-quest"
+    },
+    {
+        "title": "Lilypad Lowdown",
+        "role": "Programmer",
+        "genre": "Top-Down Action",
+        "description": "Play as Lilly the Frog, who wants nothing more than to keep her children safe from the vicious toad army. Fight your way through the frog armada and defeat Lord Gulch before time runs out!",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/LilypadLowdown.png",
+        "video": "path/to/video.mp4",
+        "projectLink": "https://riptide-studios.itch.io/lilly-l"
     }
 ]

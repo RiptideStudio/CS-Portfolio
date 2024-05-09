@@ -4,7 +4,6 @@
     margin-top: 10px;
     overflow: visible;
     min-height: 300px;
-    background-color: transparent; /* Make the default background transparent */
 }
 
 .carousel-container::before {
@@ -27,7 +26,7 @@
     flex-shrink: 0; /* Prevents images from shrinking */
     transition: transform 0.5s ease, opacity 0.5s ease;
     box-shadow: -12px 12px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 2.5%; /* Makes the image circular */
+    border-radius: 15px; /* Makes the image circular */
     transform: scale(0.8); /* Scaled down size */
     opacity: 0.3; /* Lower opacity for far images */
     cursor: pointer;
@@ -59,17 +58,20 @@
 /* Base styles for overlay text */
 .overlay-text {
     position: absolute;
-    bottom: 20px; /* Position text at the bottom of the image */
-    right: 20px; /* Position text at the right of the image */
-    color: rgb(189, 189, 189);
+    bottom: 16px; /* Position text at the bottom of the image */
+    right: 24px; /* Position text at the right of the image */
     font-size: 20px;
     font-weight: bold;
     font-style: italic;
     text-align: left;
     opacity: 0.5; /* Set opacity to visible */
     z-index: 10;
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Include transform in the transition */
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s; /* Include transform in the transition */
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
     transform: scale(0); /* Start scaled down to match image */
 }
 
@@ -77,28 +79,33 @@
 .carousel-slide .carousel-image {
     width: 384px;
     height: 216px;
+    object-fit: contain; 
     transition: transform 0.5s ease, opacity 0.5s ease;
     transform: scale(0.8);
     opacity: 0.3;
     cursor: pointer;
+    border: 2px solid #94949400;
+    transition: 0.3s;
 }
 
 .carousel-slide .carousel-image.active {
     transform: scale(1);
+    border: 2px solid #d8d8d8;
+    transition: 0.3s;
 }
 
 .carousel-slide .image-container .overlay-image {
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
     position: absolute;
     object-fit: contain;
     cursor: pointer;
-    margin-left: -378px;
-    margin-top: 150px;
+    margin-left: -380px;
+    margin-top: 166px;
     opacity: 0.75;
     border-radius: 100%;
-    box-shadow: -12px 12px 8px rgba(0, 0, 0, 0);
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    box-shadow: -12px 12px 12px rgba(0, 0, 0, 0);
+    transition: 0.4s;
     z-index: 1;
     transform: scale(0);
 }
@@ -138,7 +145,6 @@
     color: rgb(108, 40, 175);
     background-color: rgba(0,0,0,0.9); /* Even darker when active */
 }
-
 
 .prev { left: 3%; }
 .next { right: 3%; }

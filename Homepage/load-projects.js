@@ -20,6 +20,9 @@ function createCarouselSlide(item) {
     imageContainer.dataset.description = item.description;  // Store the description
     imageContainer.dataset.overlayImageSrc = item.overlayImageSrc;
     imageContainer.dataset.imageSrc = item.imageSrc;
+    imageContainer.dataset.projectLink = item.projectLink;
+    imageContainer.dataset.genre = item.genre;
+    imageContainer.dataset.role = item.role;
     
     // Add main image
     const img = document.createElement('img');
@@ -68,6 +71,30 @@ function initializeCarousels() {
     });
 }
 
+// Function to change the slide
+let currentSlideIndex = 0;
+let slidesData = []; 
+
+function changeSlide(direction) {
+    currentSlideIndex += direction;
+    if (currentSlideIndex >= slidesData.length) {
+        currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+        currentSlideIndex = slidesData.length - 1;
+    }
+    updateSubActiveSlideDisplay();
+}
+
+// Function to update the display based on the current slide
+function updateSubActiveSlideDisplay() {
+    const slide = slidesData[currentSlideIndex];
+    if (!slide) return;
+
+    document.getElementById('mainImage').src = slide.imageSrc;
+    document.getElementById('slideTitle').textContent = slide.title;
+    document.getElementById('slideDescription').textContent = slide.description;
+}
+
 function updateActiveSlideDisplay(carouselId) {
     const carousel = document.getElementById(carouselId);
     const activeSlide = carousel.querySelector('.image-container.active');  // Assumes you have 'active' class set on the active slide
@@ -84,19 +111,25 @@ function updateActiveSlideDisplay(carouselId) {
     if (activeSlide) {
         const title = activeSlide.dataset.title;
         const description = activeSlide.dataset.description;
-        console.log("Active title:", title); // Debug what title is being pulled
 
         const titleElement = document.querySelector('.game-text-container h1');
         const descriptionElement = document.querySelector('.game-text-container p');
         const imageOverlayElement = document.querySelector('.game-text-container .slide-icon');
         const imageSrcElement = document.querySelector('.slideshow-container .slide');
+        const linkElement = document.querySelector('.game-text-container .game-text-link a');
+        const genreElement = document.querySelector('.game-text-container .game-text-genre');
+        const roleElement = document.querySelector('.game-text-container .game-text-role');
         
-        console.log(imageOverlayElement);
-
+        console.log(linkElement);
+        console.log(activeSlide.dataset.projectLink);
+        
         titleElement.textContent = title;
         descriptionElement.textContent = description;
         imageOverlayElement.src = activeSlide.dataset.overlayImageSrc;
         imageSrcElement.src = activeSlide.dataset.imageSrc;
+        roleElement.textContent = activeSlide.dataset.role+" | "+activeSlide.dataset.genre;
+        // genreElement.textContent = activeSlide.dataset.genre;
+        linkElement.href = activeSlide.dataset.projectLink;
 
     } else {
         console.error("No active slide found.");

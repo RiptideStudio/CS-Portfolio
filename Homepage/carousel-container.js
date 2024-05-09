@@ -44,19 +44,12 @@ function updateActiveSlides(carouselId) {
 
         const img = slide.querySelector('.carousel-image');
         const overlay = slide.querySelector('.overlay-image');
-        const link = links[index];  // Corresponding link for each slide.
-
-        // console.log(`Slide ${index}: img found = ${!!img}, overlay found = ${!!overlay}`);  // Log whether each slide has the images
 
         if (img && overlay) {
             img.classList.remove('active');
             img.style.opacity = '0.4';
-            overlay.style.opacity = '0.4';
+            overlay.style.opacity = '0';
             overlay.style.transform = 'scale(0.5)';
-            if (link)
-            {
-                link.style.pointerEvents = 'none';
-            }
         } else {
             console.error(`Missing .carousel-image or .overlay-image in slide at index ${index}`);
         }
@@ -70,7 +63,7 @@ function updateActiveSlides(carouselId) {
         if (activeImg && activeOverlay) {
             activeImg.classList.add('active');
             activeImg.style.opacity = '1';
-            activeOverlay.style.opacity = '0.8';
+            activeOverlay.style.opacity = '1';
             activeOverlay.style.transform = 'scale(0.8)';
         }
 
