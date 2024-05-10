@@ -30,14 +30,14 @@ html, body {
 
 /* Upper container that should not scroll */
 .upper-container {
-  height: 55%; /* Half of the screen */
+  height: 55vh; /* Half of the screen */
   overflow: hidden; /* No scrolling */
   background-image: linear-gradient(to top, rgb(12, 12, 12), rgb(22, 22, 22));
 }
 
 /* Lower container that should scroll */
 .lower-container {
-  height: 45%; /* Half of the screen */
+  height: 45vh; /* Half of the screen */
   overflow-x: hidden; /* Enable vertical scrolling */
   background-image: linear-gradient(to top, rgb(17, 17, 17), rgb(27, 27, 27));
 }

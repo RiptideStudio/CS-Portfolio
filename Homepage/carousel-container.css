@@ -1,17 +1,14 @@
 .carousel-container {
     position: relative;
     max-width: 100%;
-    margin-top: 10px;
-    margin-right: 2%;
+    margin-right: 2vw;
     overflow: visible;
 }
 
 .carousel-container::before {
     content: "";
     position: absolute;
-    top: -20px;  /* Adjust top to offset vertically */
     width: calc(100%); /* Subtract your left offset from the width */
-    height: calc(100% - 40px); /* Subtract your top offset from the height */
     z-index: -1;
 }
 
@@ -57,9 +54,9 @@
 /* Base styles for overlay text */
 .overlay-text {
     position: absolute;
-    bottom: 16px; /* Position text at the bottom of the image */
-    right: 24px; /* Position text at the right of the image */
-    font-size: 20px;
+    bottom: 2vh; /* Position text at the bottom of the image */
+    right: 1vw; /* Position text at the right of the image */
+    font-size: calc(0.8vw + 0.8vh);
     font-weight: bold;
     font-style: italic;
     text-align: left;
@@ -76,9 +73,9 @@
 
 /* Base styles for overlay image */
 .carousel-slide .carousel-image {
-    width: 384px;
-    height: 216px;
-    margin-left: 40px;
+    width: 20vw;
+    aspect-ratio: 16vw/9vh;
+    margin-left: 2vw;
     object-fit: contain; 
     transition: transform 0.5s ease, opacity 0.5s ease;
     transform: scale(0.9);
@@ -95,13 +92,13 @@
 }
 
 .carousel-slide .image-container .overlay-image {
-    width: 48px;
-    height: 48px;
+    width: 3vw;
+    aspect-ratio: 16vw/9vh;
     position: absolute;
     object-fit: contain;
     cursor: pointer;
-    margin-left: -380px;
-    margin-top: 166px;
+    margin-left: -20vw;
+    bottom: 1.2vh;
     opacity: 0.75;
     border-radius: 100%;
     box-shadow: -12px 12px 12px rgba(0, 0, 0, 0);
@@ -118,12 +115,11 @@
 
 .prev, .next {
     position: absolute;
-    top: 33%;
-    transform: translateY(-50%);
-    font-size: 24px;
+    top: 23%;
+    font-size: calc(1vw + 1vh + .5vmin);
     color: white;
     background-color: rgba(0,0,0,0.5); /* Semi-transparent black background */
-    padding: 20px;
+    padding: calc(1vw + 1vh);
     border-radius: 5%;
     cursor: pointer;
     border: 0; /* No border */

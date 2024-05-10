@@ -3,6 +3,9 @@
     position: fixed;
     margin-top: 4%;
     margin-left: 7%;
+    width: 100%;
+    max-width: 1200px;
+    font-size: calc(0.4vw + 0.4vh + .5vmin);
 }
 
 .game-container {
@@ -11,16 +14,16 @@
 }
 
 p {
-    width: 33%;
+    width: 35vw;
     white-space: normal;
     word-wrap: break-word;
     letter-spacing: 0.05em;
 }
 
 h1 {
-    margin-top: 10px;
+    margin-top: 3vh;
     letter-spacing: 0.075em;
-    margin-bottom: 40px;
+    margin-bottom: 4vh;
 }
 
 h1::after {
@@ -28,35 +31,34 @@ h1::after {
     position: absolute;
     left: 0px; /* Extend the line to the left */
     right: -10px; /* Extend the line to the right */
-    height: 2px;
-    top: 54px;
-    width: 33%;
+    height: .25vh;
+    top: 7.25vh;
+    width: 35%;
     background-image: linear-gradient(to right, rgb(79, 79, 79), rgba(53, 23, 186, 0));
 }
 
 /* For the display images of the selected game (slideshow images) */
 .slideshow-container {
     position: fixed;
-    margin-top: 5%;
-    margin-left: 50%;;
+    margin-top: 2vh;
+    left: 50%;
 }
 
 .slide {
     position: relative;
-    bottom: 5%;
-    width: 100%;
-    height: 392px;
+    bottom: -6vh;
+    width: 40vw;
+    height: 40vh;
     border-radius: 24px;
     box-shadow: -16px 16px 32px rgba(0, 0, 0, 1);
-    object-fit: contain;
     justify-content: center;
-    margin-top: -5%;
+    object-fit:cover;
 }
 
 .slide-icon {
     position: relative;
-    width:64px;
-    height:64px;
+    width: calc(2.5vh + 2.5vw);
+    height: calc(2.5vh + 2.5vw);
     border-radius: 16px;
 }
 
@@ -72,7 +74,7 @@ h1::after {
 
 /* Link to the game page or more information */
 .game-text-link {
-    margin-top: 30px;
+    margin-top: 4vh;
     color:rgb(129, 129, 129);
     text-decoration: none;
 }
@@ -99,6 +101,7 @@ h1::after {
 /* Vertical line separator */
 .vertical-line {
     position: fixed;
+    border-radius: 24px;
     top: 5%; /* Aligns with the content vertically */
     left: 45%; /* Positioning the line correctly between the text and image */
     height: 45%; /* Adjust based on your design needs */
