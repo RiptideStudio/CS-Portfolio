@@ -6,7 +6,6 @@
     width: 0; /* Start with width 0 to keep the sidebar hidden */
     position: fixed;
     z-index: 150;
-    top: 0;
     right: 0; /* Align to the right side of the screen */
     background-image: linear-gradient(to bottom, rgb(5, 5, 5), rgb(12, 14, 14));
     overflow-x: hidden; /* Prevent horizontal scroll */
@@ -21,12 +20,13 @@
     text-align: center;
     letter-spacing: 0.15em;
     font-size: large;
+    top: 25%;
   }
 
   .sidebar-text a {
     padding: 16px;
     font-size: 1.5vw;
-    margin-left: -1.5vw;
+    margin-left: 7.75vw;
     text-decoration: none;
     border-radius: 24px;
     display: block;

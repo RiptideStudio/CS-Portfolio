@@ -2,11 +2,11 @@
 
 .profile-container {
   position: fixed;
-  top: 24px;
-  left: 24px;
+  left: 1vw;
+  top: 2vh;
+  aspect-ratio: 16vw/9vh;
   z-index: 100;
-  width: 72px;
-  height: 72px;
+  width: 4vw;
   cursor: pointer;
   border-radius: 50%; /* Makes the image circular */
   display: flex;

@@ -3,15 +3,15 @@
 /* Hamburger Menu Button */
 .hamburger-menu {
   position: fixed;
-  top: 24px;
-  right: 32px;
+  top: 2%;
+  right: 2%;
   z-index: 151;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  width: 70px; /* Width of the button - adjust as needed */
-  height: 64px; /* Height of the button - adjust as needed */
+  width: 5vw;
+  height: 8vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around; /* Distributes spacing evenly */
@@ -38,8 +38,8 @@
 }
 
 .hamburger-menu .bar {
-  width: 100%; /* Adjust width to your preference */
-  height: 4px;
+  width: 3vw; /* Adjust width to your preference */
+  height: .5vh;
   background-color: #b5b5b5;  /* Color of the hamburger icon */
   border-radius: 24px;
   transition: 0.3s;
