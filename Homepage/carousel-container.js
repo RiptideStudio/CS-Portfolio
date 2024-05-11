@@ -88,6 +88,7 @@ function updateActiveSlides(carouselId) {
 function setupClickListeners(carouselId) {
     const carousel = document.getElementById(carouselId);
     const slides = carousel.querySelectorAll('.image-container');
+    let savedTime = 0;
 
     slides.forEach((slide, index) => {
         slide.addEventListener('click', () => {
@@ -102,8 +103,13 @@ function setupClickListeners(carouselId) {
                 {
                     const videoSource = document.getElementById('video');
                     const player = document.getElementById('player');
-                    videoSource.src = videoPath;
-    
+                    
+                    if (!videoSource.src.includes(videoPath))
+                    {
+                        videoSource.poster = activeSlide.dataset.imageSrc;
+                        videoSource.src = videoPath;
+                    }
+
                     player.style.transform = 'scale(1)';
                     player.style.opacity = '1';
                 }

@@ -23,6 +23,10 @@ document.addEventListener("DOMContentLoaded", function() {
         video.currentTime = (seekbar.value * video.duration) / 100;
     });
 
+    video.addEventListener('loadedmetadata', function() {
+        seekbar.value = (video.currentTime / video.duration) * 100;
+    });
+
     muteToggleButton.addEventListener('click', function() {
         if (video.muted) {
             video.muted = false;
@@ -68,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
     function showControls() {
         controls.style.opacity = '1';
         topBar.style.opacity = '1';
-        closeButton.style.opacity = '1';
         resetTimer();
     }
 
@@ -76,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (video.paused) return;
         controls.style.opacity = '0';
         topBar.style.opacity = '0';
-        closeButton.style.opacity = '0';
     }
 
     function resetTimer() {
@@ -89,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function() {
             if (!video.paused) {                 // Show controls only if video is playing
                 controls.style.opacity = '1';
                 topBar.style.opacity = '1';
-                closeButton.style.opacity = '1';
             }
             cursorVisible = true;
         }
@@ -146,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
         overlay.style.opacity = 0;
         controls.style.opacity = 0;
         topBar.style.opacity = 0;
+        hamburger.style.opacity = 0;
     });
 });
 
