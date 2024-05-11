@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callen Betts - Game Developer Portfilio</title>
+
+  <!-- Style sheets -->
+  <link rel="stylesheet" href="index.css"> 
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="hamburger.css">
+  <link rel="stylesheet" href="video-player.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="Utility/image.css">
+  <link rel="stylesheet" href="Utility/scrollbar.css">
+
+<body>
+
+<!-- Hamburger Menu -->
+<button class="hamburger-menu" onclick="toggleSidebar()">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</button>
+
+<div class="sidebar" id="mySidebar">
+    <div class="sidebar-content">
+        <div class="sidebar-text"><a href="index.html"><span>Home</span></a></div><br>
+        <div class="sidebar-text"><a href="about.html"><span>About</span></a></div><br>
+        <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
+        <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories" target = "_blank"><span>Github</span></a></div><br>
+    </div>
+</div>
+
+<div class="custom-video-player">
+    <div class="top-bar">Navigation Tools</div>
+    <video id="video">
+        <source src="Video/Video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div> <!-- Overlay for play/pause icon -->
+    <div class="controls">
+        <button id="playPause">Play</button>
+        <input type="range" id="seekbar" value="0" min="0">
+        <button id="muteToggle">Mute</button>
+        <button id="fullScreen">Full Screen</button>
+    </div>
+</div>
+
+
+</script>
+<script src="word.js"></script>
+<script src="sidebar.js"></script>
+<script src="video-player.js"></script>
+<script src="navbar.js"></script>
+
+</body>
+</html>

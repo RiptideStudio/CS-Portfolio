@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="word.css">
   <link rel="stylesheet" href="hamburger.css">
   <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="video-player.css">
   <link rel="stylesheet" href="game-project.css">
   <link rel="stylesheet" href="carousel-container.css">
   <link rel="stylesheet" href="profile.css">
@@ -37,14 +38,31 @@
   </div>
 </div>
 
+<div class="custom-video-player" id="player">
+  <div class="top-bar"></div>
+  <button class="close-btn">&#10005;</button> <!-- Unicode character for "X" -->
+  <video id="video">
+      <source src="Videos/Video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+  <div class="video-overlay"></div> <!-- Overlay for play/pause icon -->
+  <div class="controls">
+      <button id="playPause">Play</button>
+      <input type="range" id="seekbar" value="0" min="0">
+      <button id="muteToggle">Mute</button>
+      <button id="fullScreen">Full Screen</button>
+  </div>
+</div>
+
+
 <div class="upper-container">
   <div class="vertical-line"></div>
 
 <!-- About Icon -->
-<a href="about.html" class="profile-container">
+<!-- <a href="about.html" class="profile-container">
   <img src="Images/profile.jpg" alt="Profile" class="profile">
   <span class="profile-text">Callen Betts</span>
-</a>
+</a> -->
 
 <!-- The informative text -->
 <div class="game-container">
@@ -59,12 +77,9 @@
 
 
   <div class="slideshow-container">
-    <!-- Placeholder for slideshow image -->
-    <img src="Images/Thumbnails/Earthward.png" class="slide" id="mainImage">
-
-    <div onclick="changeSlide(-1)" class="nav left-nav">&#10094;</div>  <!-- Left navigation arrow -->
-    <div onclick="changeSlide(1)" class="nav right-nav">&#10095;</div> <!-- Right navigation arrow -->
-
+      <div class="slide" id="mainImage">
+          <img src="Images/Thumbnails/Earthward.png" alt="Slideshow Image">
+      </div>
   </div>
 </div>
   
@@ -81,7 +96,6 @@
 
     <div class="carousel-container" id="games-carousel">
       <div class="carousel-slide">
-
       </div>
       <button class="prev" onclick="moveSlide(-1, 'games-carousel')">&#10094;</button>
       <button class="next" onclick="moveSlide(1, 'games-carousel')">&#10095;</button>
@@ -105,6 +119,7 @@ window.addEventListener('load', function() {
 <script src="word.js"></script>
 <script src="sidebar.js"></script>
 <script src="navbar.js"></script>
+<script src="video-player.js"></script>
 <script src="load-projects.js"></script>
 <script src="carousel-container.js"></script>
 

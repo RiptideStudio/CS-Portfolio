@@ -7,11 +7,11 @@
     position: fixed;
     z-index: 150;
     right: 0; /* Align to the right side of the screen */
-    background-image: linear-gradient(to bottom, rgb(5, 5, 5), rgb(12, 14, 14));
     overflow-x: hidden; /* Prevent horizontal scroll */
     opacity: 0;
     transition: 0.3s ease-in-out; /* Smooth transition for opening and closing */
     box-shadow: -16px -16px 64px black;
+    background-image: linear-gradient(to right, rgb(0, 0, 0, 0.8) -100%, rgb(8, 8, 8) 100%);
   }
 
   /* Sidebar Content */
@@ -20,13 +20,13 @@
     text-align: center;
     letter-spacing: 0.15em;
     font-size: large;
-    top: 25%;
+    top: 29%;
   }
 
   .sidebar-text a {
     padding: 16px;
     font-size: 1.5vw;
-    margin-left: 7.75vw;
+    margin-left: 7vw;
     text-decoration: none;
     border-radius: 24px;
     display: block;

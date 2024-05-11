@@ -42,7 +42,7 @@ html, body {
   background-image: linear-gradient(to top, rgb(17, 17, 17), rgb(27, 27, 27));
 }
 
-.upper-container::before {
+.upper-container::after {
   content: '';
   position: absolute;
   left: 0px;

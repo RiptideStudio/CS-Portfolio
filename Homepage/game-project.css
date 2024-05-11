@@ -39,17 +39,41 @@ h1::after {
 /* For the display images of the selected game (slideshow images) */
 .slideshow-container {
     position: fixed;
-    margin-top: 4vh;
-    left: 50%;
+    left: 46vw;
+    overflow: visible;
 }
 
-.slide {
-    position: relative;
-    width: 40vw;
-    height: 45vh;
+.slide img {
+    width: 53vw;
+    height: 60vh;
+    object-fit: cover;
+    display: block;
+    mask-image: linear-gradient(
+        to right, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.5) 20%, 
+        black 50%, 
+        rgba(0, 0, 0, 0.5) 80%, 
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+.logo img {
+    position: fixed;
+    width: 25%;
+    top: 5vh;
+    left: 59vw;
+    mask-image:none;
     border-radius: 24px;
-    box-shadow: -16px 16px 32px rgba(0, 0, 0, 1);
-    object-fit:cover;
+}
+
+.titleWord {
+  position:relative;
+  font-size: 1.25em; 
+  text-shadow: 0px 3px 4px #0000002a;
+  letter-spacing: 0.125em;
+  margin-left: 2.1%;
+  top: -1%;
 }
 
 .slide-icon {
@@ -74,6 +98,15 @@ h1::after {
     margin-top: 4vh;
     color:rgb(129, 129, 129);
     text-decoration: none;
+}
+
+.titleWord {
+    position:relative;
+    font-size: calc(0.7vw + 0.7vh);
+    text-shadow: 0px 3px 4px #0000002a;
+    letter-spacing: 0.1em;
+    margin-left: 1vw;
+    top: -1vh;
 }
 
 /* Genre of the game */

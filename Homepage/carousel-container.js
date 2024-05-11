@@ -45,8 +45,8 @@ function updateActiveSlides(carouselId) {
             img.classList.remove('active');
             img.style.opacity = '0.5';
             img.style.transform = 'scale(1)';
-            overlay.style.opacity = '0';
-            overlay.style.transform = 'scale(0.5)';
+            overlay.style.transform = 'scale(0)';
+
         } else {
             console.error(`Missing .carousel-image or .overlay-image in slide at index ${index}`);
         }
@@ -60,7 +60,6 @@ function updateActiveSlides(carouselId) {
             if (img) {
                 img.style.opacity = '0.1'; // Far slides opacity
                 img.style.transform = 'scale(1)';
-                overlay.style.opacity = '0';
             }
         }
     });
@@ -74,10 +73,8 @@ function updateActiveSlides(carouselId) {
             activeImg.classList.add('active');
             activeImg.style.opacity = '1';
             activeImg.style.transform = 'scale(1)';
-            activeOverlay.style.opacity = '1';
-            activeOverlay.style.transform = 'scale(0.8)';
+            activeOverlay.style.transform = 'scale(0.75)';
         }
-
     }
 
     slides.forEach((slide, index) => {
@@ -95,15 +92,34 @@ function setupClickListeners(carouselId) {
     slides.forEach((slide, index) => {
         slide.addEventListener('click', () => {
             let currentIndex = slideIndexes[carouselId];
-            let step = index - currentIndex; // Calculate the steps needed to make the clicked slide the active slide
-            moveSlide(step, carouselId); // Call moveSlide with the calculated step
-            // Clear active class from all slides
-            slides.forEach(s => s.classList.remove('active'));
-            // Set active class to the clicked slide
-            slide.classList.add('active');
+            if (currentIndex === index) {
+                
+                // cause the video player's z Index to be primary target, and scale up the video player (animation)
+                const activeSlide = carousel.querySelector('.image-container.active');
+                const videoPath = activeSlide.dataset.video;
+                
+                if (videoPath)
+                {
+                    const videoSource = document.getElementById('video');
+                    const player = document.getElementById('player');
+                    videoSource.src = videoPath;
+    
+                    player.style.transform = 'scale(1)';
+                    player.style.opacity = '1';
+                }
+
+            } else {
+                let step = index - currentIndex; // Calculate the steps needed to make the clicked slide the active slide
+                moveSlide(step, carouselId); // Call moveSlide with the calculated step
+                // Clear active class from all slides
+                slides.forEach(s => s.classList.remove('active'));
+                // Set active class to the clicked slide
+                slide.classList.add('active');
+            }
         });
     });
 }
+
 
 function initializeCarousel(carouselId) {
     const carousel = document.getElementById(carouselId);

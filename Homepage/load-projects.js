@@ -23,6 +23,9 @@ function createCarouselSlide(item) {
     imageContainer.dataset.projectLink = item.projectLink;
     imageContainer.dataset.genre = item.genre;
     imageContainer.dataset.role = item.role;
+    imageContainer.dataset.background = item.background;
+    imageContainer.dataset.logo = item.logo;
+    imageContainer.dataset.video = item.video;
     
     // Add main image
     const img = document.createElement('img');
@@ -40,7 +43,7 @@ function createCarouselSlide(item) {
     const overlayImg = document.createElement('img');
     overlayImg.className = 'overlay-image';
     overlayImg.style.transform = 'scale(0.5)';
-    overlayImg.src = item.overlayImageSrc;
+    overlayImg.src = 'Images/PlayButton.png';
     imageContainer.appendChild(overlayImg);
 
     console.log("Creating slide for:", item.title);
@@ -125,17 +128,28 @@ function updateActiveSlideDisplay(carouselId) {
         const titleElement = document.querySelector('.game-text-container h1');
         const descriptionElement = document.querySelector('.game-text-container p');
         const imageOverlayElement = document.querySelector('.game-text-container .slide-icon');
-        const imageSrcElement = document.querySelector('.slideshow-container .slide');
+        const imageSrcElement = document.querySelector('.slideshow-container .slide img');
         const linkElement = document.querySelector('.game-text-container .game-text-link a');
         const roleElement = document.querySelector('.game-text-container .game-text-role');
-
 
         titleElement.textContent = title;
         descriptionElement.textContent = description;
         imageOverlayElement.src = activeSlide.dataset.overlayImageSrc;
-        imageSrcElement.src = activeSlide.dataset.imageSrc;
         roleElement.textContent = activeSlide.dataset.role+" - "+activeSlide.dataset.genre;
         linkElement.href = activeSlide.dataset.projectLink;
+
+        // set the slide image based on whether we have a logo or background
+        const background = activeSlide.dataset.background;
+        if (background)
+        {
+            imageSrcElement.src = background;
+        }
+        else
+        {
+            // default to the thumbnail
+            imageSrcElement.src = activeSlide.dataset.imageSrc;
+        }
+
 
     } else {
         console.error("No active slide found.");

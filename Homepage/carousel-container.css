@@ -1,15 +1,6 @@
 .carousel-container {
     position: relative;
-    max-width: 100%;
-    margin-right: 2vw;
     overflow: visible;
-}
-
-.carousel-container::before {
-    content: "";
-    position: absolute;
-    width: calc(100%); /* Subtract your left offset from the width */
-    z-index: -1;
 }
 
 .carousel-slide {
@@ -60,7 +51,7 @@
     font-weight: bold;
     font-style: italic;
     text-align: left;
-    opacity: 0.5; /* Set opacity to visible */
+    opacity: 0; /* Set opacity to visible */
     z-index: 10;
     transition: transform 0.4s; /* Include transform in the transition */
     text-shadow:
@@ -81,7 +72,7 @@
     transform: scale(0.9);
     opacity: 0.3;
     cursor: pointer;
-    border: 2px solid #94949400;
+    border: 2px transparent;
     transition: 0.3s;
 }
 
@@ -92,25 +83,28 @@
 }
 
 .carousel-slide .image-container .overlay-image {
-    width: 3vw;
-    aspect-ratio: 16vw/9vh;
+    width: 4vw;
     position: absolute;
     object-fit: contain;
     cursor: pointer;
-    margin-left: -20vw;
-    bottom: 1.2vh;
-    opacity: 0.75;
+    margin-left: -12vw;
+    bottom: 7vh;
     border-radius: 100%;
-    box-shadow: -12px 12px 12px rgba(0, 0, 0, 0);
+    box-shadow: -8px 8px 32px rgba(0, 0, 0, 1);
     transition: 0.4s;
     z-index: 1;
-    transform: scale(0);
+    opacity: 0;
+    border: 32px black;
 }
 
-/* When the image is active, scale up the overlay text */
-.carousel-slide img.active + .overlay-text {
-    transform: scale(1); /* Scale up the text to match the image */
-    opacity: 1; /* Make the text fully visible */
+.carousel-slide .image-container:active  .overlay-image {
+    transition: 0.15s;   
+}
+
+.carousel-slide .image-container:hover .overlay-image {
+    transition: 0.3s;
+    opacity: 1;
+    border: 4px white;
 }
 
 .prev, .next {
@@ -119,7 +113,7 @@
     font-size: calc(1vw + 1vh + .5vmin);
     color: white;
     background-color: rgba(0,0,0,0.5); /* Semi-transparent black background */
-    padding: calc(1vw + 1vh);
+    padding: calc(1vw + 1vh - 0.5vmin);
     border-radius: 5%;
     cursor: pointer;
     border: 0; /* No border */
@@ -143,4 +137,4 @@
 }
 
 .prev { left: 3%; }
-.next { right: 1%; }
+.next { right: 3%; }
