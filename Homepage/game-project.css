@@ -67,6 +67,45 @@ h1::after {
     border-radius: 24px;
 }
 
+.player-button {
+    position: fixed;
+    left: 33%;
+    top: 42%;
+    width: 8vw;
+    font-size: calc(0.5vw + 0.5vh + .5vmin);
+    height: 6.5vh;
+    color:rgb(159, 159, 159);
+    border-radius: 8px;
+    background-color: rgb(51, 51, 51);
+    transition: 0.25s;
+    transform: scale(1);
+    cursor: pointer;
+    display: flex;        /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center;  /* Center vertically */
+    text-align: center; 
+    border: none;
+}
+
+.player-button i {
+    margin-left: 8px; /* Space between text and icon */
+    font-size: calc(0.7vw + 0.7vh); /* Slightly larger icon than text */
+}
+
+.player-button:hover {
+    background-color: rgb(255, 210, 11);
+    color:black;
+    transition: 0.25s;
+    transform: scale(1.1);
+}
+
+.player-button:active {
+    background-color: rgb(79, 17, 141);
+    color:black;
+    transition: 0.25s;
+    transform: scale(0.9);
+}
+
 .titleWord {
   position:relative;
   font-size: 1.25em; 
@@ -74,6 +113,21 @@ h1::after {
   letter-spacing: 0.125em;
   margin-left: 2.1%;
   top: -1%;
+}
+
+.slide-video img {
+    width: 53vw;
+    height: 60vh;
+    object-fit: cover;
+    display: block;
+    mask-image: linear-gradient(
+        to right, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.5) 20%, 
+        black 50%, 
+        rgba(0, 0, 0, 0.5) 80%, 
+        rgba(0, 0, 0, 0) 100%
+    );
 }
 
 .slide-icon {

@@ -26,6 +26,7 @@ html, body {
   height: 100%; /* Full height to split into two halves */
   margin: 0; /* Remove default margin */
   overflow-x: hidden; /* Hide horizontal scroll */
+  color:wheat;
 }
 
 /* Upper container that should not scroll */

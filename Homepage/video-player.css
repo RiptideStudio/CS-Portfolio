@@ -19,7 +19,6 @@ html, body {
     transform: scale(0);
     opacity: 0;
     z-index: 10000;
-    background-color: rgba(0, 0, 0, 0.75); /* Dark background for better visibility */
     transition: 0.4s ease-in-out;
 }
 
@@ -29,6 +28,9 @@ html, body {
     right: 2vw;
     border: none;
     background: none;
+    display: flex;
+    align-items: center; /* Centers the content horizontally in the flex container */
+    justify-content: center; /* Centers the content vertically in the flex container */
     color: rgb(186, 186, 186);
     font-size: calc(2vw + 2vh);
     cursor: pointer;
@@ -49,7 +51,7 @@ html, body {
     transform: scale(0.9);
     transition: 0.3s;
     background-color: rgb(108, 40, 175);
-} 
+}
 
 .custom-video-player video {
     width: 90vw;
@@ -57,15 +59,14 @@ html, body {
     justify-content: center;
     object-fit: cover;
     opacity: 1;
-    border: 3px solid #d0d0d077;
-    border-radius: 16px;
+    border: 1px solid #d0d0d077;
     transform: scale(0.75);
 }
 
 .custom-video-player .controls {
     width: 65%;
     position: fixed;
-    background-color: rgba(32, 32, 32, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border-radius: 24px;
     margin-bottom: 10vh;
@@ -85,8 +86,7 @@ html, body {
 
 .custom-video-player .video-overlay {
     position: fixed;
-    margin-top: -8vh;
-    margin-left: 1vw;
+    margin-top: -4vh;
     font-size: calc(4vw + 4vh);
     color: white;
     height: 100%;
@@ -97,6 +97,7 @@ html, body {
     pointer-events: none;  /* Allows clicks to pass through to the video */
     opacity: 0; /* Initially hidden */
     transition: 0.4s;
+    z-index: 10005;
 }
 
 .controls {    
@@ -107,8 +108,6 @@ html, body {
     bottom: 4vh;
     width: 90%;
     display: flex;
-    justify-content: space-between;
-    background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent background for controls */
     color: white;
     z-index: 2; /* Ensures controls are above the video */
 }
@@ -116,10 +115,26 @@ html, body {
 .controls button {
     cursor: pointer;
     background: none;
-    border: 1px solid white;
+    border: 0px solid rgb(154, 154, 154);
     color: white;
-    padding: 24px 30px;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 24px 24px;
     border-radius: 16px;
+    transition: 0.2s;
+}
+
+.controls button:hover {
+    background-color: rgb(255, 210, 11);
+    color: rgb(0, 0, 0);
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.controls button:active {
+    background-color: rgb(79, 17, 141);
+    color: rgb(0, 0, 0);
+    transform: scale(0.9);
+    transition: 0.2s;
 }
 
 .controls input[type="range"] {

@@ -129,6 +129,7 @@ function updateActiveSlideDisplay(carouselId) {
         const descriptionElement = document.querySelector('.game-text-container p');
         const imageOverlayElement = document.querySelector('.game-text-container .slide-icon');
         const imageSrcElement = document.querySelector('.slideshow-container .slide img');
+        const videoSrcElement = document.querySelector('.slideshow-container .slide-video');
         const linkElement = document.querySelector('.game-text-container .game-text-link a');
         const roleElement = document.querySelector('.game-text-container .game-text-role');
 

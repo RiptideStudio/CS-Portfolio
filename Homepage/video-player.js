@@ -5,16 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const muteToggleButton = document.getElementById('muteToggle');
     const fullScreenButton = document.getElementById('fullScreen');
 
-    playPauseButton.addEventListener('click', function() {
-        if (video.paused) {
-            video.play();
-            playPauseButton.textContent = 'Pause';
-        } else {
-            video.pause();
-            playPauseButton.textContent = 'Play';
-        }
-    });
-
     video.addEventListener('timeupdate', function() {
         seekbar.value = (video.currentTime / video.duration) * 100;
     });
@@ -27,28 +17,53 @@ document.addEventListener("DOMContentLoaded", function() {
         seekbar.value = (video.currentTime / video.duration) * 100;
     });
 
-    muteToggleButton.addEventListener('click', function() {
-        if (video.muted) {
-            video.muted = false;
-            muteToggleButton.textContent = 'Mute';
+    const playPauseIcon = playPauseButton.querySelector('i');
+    playPauseButton.addEventListener('click', function() {
+        if (video.paused) {
+            video.play();
+            playPauseIcon.className = 'fas fa-pause'; // Change icon to 'pause'
         } else {
-            video.muted = true;
-            muteToggleButton.textContent = 'Unmute';
+            video.pause();
+            playPauseIcon.className = 'fas fa-play'; // Change icon to 'play'
         }
     });
 
+    const muteToggleIcon = muteToggleButton.querySelector('i');
+    muteToggleButton.addEventListener('click', function() {
+        if (video.muted) {
+            video.muted = false;
+            muteToggleIcon.className = 'fas fa-volume-up'; // Change icon to 'volume up'
+        } else {
+            video.muted = true;
+            muteToggleIcon.className = 'fas fa-volume-mute'; // Change icon to 'volume mute'
+        }
+    });
+    
+    const fullScreenIcon = fullScreenButton.querySelector('i');
     fullScreenButton.addEventListener('click', function() {
-        if (video.requestFullscreen) {
+        if (!document.fullscreenElement) {
             video.requestFullscreen();
-        } else if (video.mozRequestFullScreen) { /* Firefox */
-            video.mozRequestFullScreen();
-        } else if (video.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-            video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) { /* IE/Edge */
-            video.msRequestFullscreen();
+            fullScreenIcon.className = 'fas fa-compress'; // Change icon to 'compress'
+        } else {
+            document.exitFullscreen();
+            fullScreenIcon.className = 'fas fa-expand'; // Change icon to 'expand'
         }
     });
 });
+
+function closeVideoPlayer()
+{
+    const videoPlayer = document.querySelector('.custom-video-player');
+    const video = document.getElementById('video');
+
+    videoPlayer.style.opacity = '0';
+    videoPlayer.style.transform = 'scale(0)';
+    const overlaySource = document.getElementById('page-overlay');
+    overlaySource.style.opacity = 1;
+    const hamburgerSource = document.getElementById('hamburger');
+    hamburgerSource.style.opacity = 1;
+    video.pause();
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     const videoPlayer = document.querySelector('.custom-video-player');
@@ -103,9 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
     video.addEventListener('pause', showControls);
 
     closeButton.addEventListener('click', function() {
-        videoPlayer.style.opacity = '0';
-        videoPlayer.style.transform = 'scale(0)';
-        video.pause();
+        closeVideoPlayer();
     });
 
     resetTimer();  // Start the timer initially
@@ -121,6 +134,21 @@ document.addEventListener("DOMContentLoaded", function() {
     video.addEventListener('click', function() {
         togglePlayPause();
     });
+
+    function isClickOnInteractiveElements(target) {
+        // Check if the click is on video or any child of controls
+        return target === video || controls.contains(target);
+    }
+
+    videoPlayer.addEventListener('click', function(event) {
+        if (!isClickOnInteractiveElements(event.target)) {
+            console.log("Clicked on non-interactive area of the video player.");
+            closeVideoPlayer();
+        } else {
+            console.log("Clicked on video or controls.");
+        }
+    });
+
 
     function togglePlayPause() {
         if (video.paused) {
@@ -151,3 +179,16 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById('video');
+
+    video.addEventListener('loadedmetadata', function() {
+        // Set a timeout to delay video play
+        setTimeout(() => {
+            video.play().catch(error => {
+                console.log("Error trying to autoplay the video: ", error.message);
+                // Handle the failure gracefully, perhaps by showing a play button
+            });
+        }, 1000); // Delay in milliseconds (3000 ms = 3 seconds)
+    });
+});

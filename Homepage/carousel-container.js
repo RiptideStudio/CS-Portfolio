@@ -84,11 +84,32 @@ function updateActiveSlides(carouselId) {
     updateActiveSlideDisplay(carouselId);
 }
 
+function startVideo(activeSlide)
+{
+    const videoSource = document.getElementById('video');
+    const player = document.getElementById('player');
+    const overlaySource = document.getElementById('page-overlay');
+    const hamburgerSource = document.getElementById('hamburger');
+    const videoPath = activeSlide.dataset.video;
+
+    if (!videoSource.src.includes(videoPath))
+    {
+        videoSource.poster = activeSlide.dataset.imageSrc;
+        videoSource.src = videoPath;
+    }
+
+    hamburgerSource.style.opacity = 0;
+    overlaySource.style.opacity = 0.2;
+    player.style.transform = 'scale(1)';
+    player.style.opacity = '1';
+}
+
 // Function to add click events to each slide
 function setupClickListeners(carouselId) {
     const carousel = document.getElementById(carouselId);
     const slides = carousel.querySelectorAll('.image-container');
-    let savedTime = 0;
+
+    // handle clicking the play button to do same logic
 
     slides.forEach((slide, index) => {
         slide.addEventListener('click', () => {
@@ -101,17 +122,7 @@ function setupClickListeners(carouselId) {
                 
                 if (videoPath)
                 {
-                    const videoSource = document.getElementById('video');
-                    const player = document.getElementById('player');
-                    
-                    if (!videoSource.src.includes(videoPath))
-                    {
-                        videoSource.poster = activeSlide.dataset.imageSrc;
-                        videoSource.src = videoPath;
-                    }
-
-                    player.style.transform = 'scale(1)';
-                    player.style.opacity = '1';
+                    startVideo(activeSlide);
                 }
 
             } else {
@@ -125,7 +136,6 @@ function setupClickListeners(carouselId) {
         });
     });
 }
-
 
 function initializeCarousel(carouselId) {
     const carousel = document.getElementById(carouselId);
