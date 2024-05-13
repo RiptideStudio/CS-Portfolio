@@ -1,15 +1,15 @@
 [
     {
-        "title": "Paradigm",
-        "role": "Composer",
-        "background": "",
+        "title": "Daisy's Quest",
+        "role": "Programmer",
+        "genre": "Puzzle Comedy",
+        "background": "Images/Backgrounds/DaisyQuest.png",
         "logo": "",
-        "genre": "Puzzle Adventure",
-        "description": "Beckett awakes, and equipped with the ability to make copies of himself, he must navigate a world that is hostile to anyone who goes alone... but he's not alone... not really. To solve the puzzles, you'll have to think differently: In plurality rather then singularity. Will you follow the pattern? Or become the Paradigm?",
+        "description": "Death isn't always a bad thing. Traverse a wacky world of characters and puzzles by using your corpse as a platform!",
         "overlayImageSrc": "Images/Itch.png",
-        "imageSrc": "Images/Thumbnails/Paradigm.png",
-        "video": "",
-        "projectLink": "https://artindi.itch.io/paradigm"
+        "imageSrc": "Images/Thumbnails/Daisy.png",
+        "video": "Videos/DaisyQuest.mp4",
+        "projectLink": "https://llamaking1.itch.io/daisys-quest"
     },
     {
         "title": "Koko: The Last Leaf",
@@ -24,18 +24,6 @@
         "projectLink": "https://store.steampowered.com/app/1967980/Koko_the_Last_Leaf/"
     },
     {
-        "title": "Bitlands",
-        "role": "Developer",
-        "background": "Images/Backgrounds/Bitlands.png",
-        "logo": "Images/Logos/Bitlands.png",
-        "genre": "2D Action Platformer",
-        "description": "The Bitlands have plunged into chaos. As a rebel, you must explore a war-torn world to find and overthrow the corrupt king of the Bitlands. With the help of magical allies found along the way, you might just end up saving the world!",
-        "overlayImageSrc": "Images/Steam.png",
-        "imageSrc": "Images/Thumbnails/Bitlands.png",
-        "video": "Videos/Bitlands.mp4",
-        "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/"
-    },
-    {
         "title": "Earthward",
         "role": "Developer",
         "logo": "",
@@ -48,27 +36,39 @@
         "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/"
     },
     {
-        "title": "Daisy's Quest",
-        "role": "Programmer",
-        "genre": "Puzzle Comedy",
-        "background": "",
+        "title": "Bitlands",
+        "role": "Developer",
+        "background": "Images/Backgrounds/Bitlands.png",
+        "logo": "Images/Logos/Bitlands.png",
+        "genre": "2D Action Platformer",
+        "description": "The Bitlands have plunged into chaos. As a rebel, you must explore a war-torn world to find and overthrow the corrupt king of the Bitlands. With the help of magical allies found along the way, you might just end up saving the world!",
+        "overlayImageSrc": "Images/Steam.png",
+        "imageSrc": "Images/Thumbnails/Bitlands.png",
+        "video": "Videos/Bitlands.mp4",
+        "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/"
+    },
+    {
+        "title": "Paradigm",
+        "role": "Composer",
+        "background": "Images/Backgrounds/Paradigm.png",
         "logo": "",
-        "description": "Death isn't always a bad thing. Traverse a wacky world of characters and puzzles by using your corpse as a platform!",
+        "genre": "Puzzle Adventure",
+        "description": "Beckett awakes, and equipped with the ability to make copies of himself, he must navigate a world that is hostile to anyone who goes alone... but he's not alone... not really. To solve the puzzles, you'll have to think differently: In plurality rather then singularity. Will you follow the pattern? Or become the Paradigm?",
         "overlayImageSrc": "Images/Itch.png",
-        "imageSrc": "Images/Thumbnails/Daisy.png",
-        "video": "",
-        "projectLink": "https://llamaking1.itch.io/daisys-quest"
+        "imageSrc": "Images/Thumbnails/Paradigm.png",
+        "video": "Videos/Paradigm.mp4",
+        "projectLink": "https://artindi.itch.io/paradigm"
     },
     {
         "title": "Lilypad Lowdown",
         "role": "Programmer",
         "genre": "Top-Down Action",
-        "background": "",
+        "background": "Images/Backgrounds/LilypadLowdown.png",
         "logo": "",
         "description": "Play as Lilly the Frog, who wants nothing more than to keep her children safe from the vicious toad army. Fight your way through the frog armada and defeat Lord Gulch before time runs out!",
         "overlayImageSrc": "Images/Itch.png",
         "imageSrc": "Images/Thumbnails/LilypadLowdown.png",
-        "video": "",
+        "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://riptide-studios.itch.io/lilly-l"
     }
 ]

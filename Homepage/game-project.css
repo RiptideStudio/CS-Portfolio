@@ -44,6 +44,7 @@ h1::after {
 }
 
 .slide img {
+    margin-top: -3vh;
     width: 53vw;
     height: 60vh;
     object-fit: cover;
@@ -115,36 +116,11 @@ h1::after {
   top: -1%;
 }
 
-.slide-video img {
-    width: 53vw;
-    height: 60vh;
-    object-fit: cover;
-    display: block;
-    mask-image: linear-gradient(
-        to right, 
-        rgba(0, 0, 0, 0) 0%, 
-        rgba(0, 0, 0, 0.5) 20%, 
-        black 50%, 
-        rgba(0, 0, 0, 0.5) 80%, 
-        rgba(0, 0, 0, 0) 100%
-    );
-}
-
 .slide-icon {
     position: relative;
     width: calc(2.5vh + 2.5vw);
     height: calc(2.5vh + 2.5vw);
     border-radius: 16px;
-}
-
-.slide-video {
-    position: relative;
-    bottom: 5%;
-    width: 100%;
-    height: 392px;
-    border-radius: 24px;
-    box-shadow: -16px 16px 16px rgba(0, 0, 0, 1);
-    object-fit: contain;
 }
 
 /* Link to the game page or more information */

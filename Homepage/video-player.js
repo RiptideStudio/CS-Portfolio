@@ -151,12 +151,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     function togglePlayPause() {
+
+        const playPauseButton = document.getElementById('playPause');
+        const playPauseIcon = playPauseButton.querySelector('i');
+
         if (video.paused) {
             video.play();
             overlay.innerHTML = '&#10074;&#10074;';  // Unicode for pause symbol
+            playPauseIcon.className = 'fas fa-pause';
         } else {
             video.pause();
             overlay.innerHTML = '&#9658;';  // Unicode for play symbol
+            playPauseIcon.className = 'fas fa-play';
         }
     }
 
@@ -176,19 +182,5 @@ document.addEventListener("DOMContentLoaded", function() {
         controls.style.opacity = 0;
         topBar.style.opacity = 0;
         hamburger.style.opacity = 0;
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const video = document.getElementById('video');
-
-    video.addEventListener('loadedmetadata', function() {
-        // Set a timeout to delay video play
-        setTimeout(() => {
-            video.play().catch(error => {
-                console.log("Error trying to autoplay the video: ", error.message);
-                // Handle the failure gracefully, perhaps by showing a play button
-            });
-        }, 1000); // Delay in milliseconds (3000 ms = 3 seconds)
     });
 });

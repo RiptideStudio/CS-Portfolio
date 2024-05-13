@@ -1,6 +1,7 @@
 .carousel-container {
     position: relative;
     overflow: visible;
+    margin-bottom: 13vh;
 }
 
 .carousel-slide {
@@ -88,6 +89,7 @@
     width: 4vw;
     position: absolute;
     object-fit: contain;
+    text-align: center;
     cursor: pointer;
     margin-left: -12vw;
     bottom: 7vh;
@@ -111,7 +113,7 @@
 
 .prev, .next {
     position: absolute;
-    top: 23%;
+    top: 27%;
     font-size: calc(1vw + 1vh + .5vmin);
     color: white;
     background-color: rgba(0,0,0,0.5); /* Semi-transparent black background */

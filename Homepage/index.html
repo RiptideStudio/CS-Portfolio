@@ -59,7 +59,6 @@
 
 <div class = "page-overlay" id = "page-overlay">
   <div class="upper-container">
-    <div class="vertical-line"></div>
 
   <!-- The informative text -->
   <div class="game-container">
@@ -79,7 +78,7 @@
         </div>
     </div>
     
-    <button class="player-button">
+    <button class="player-button" id = "playButton">
       Play <i class="fas fa-play-circle"></i> <!-- Font Awesome Play Icon -->
     </button>
   </div>
@@ -100,6 +99,13 @@
         </div>
         <button class="prev" onclick="moveSlide(-1, 'games-carousel')">&#10094;</button>
         <button class="next" onclick="moveSlide(1, 'games-carousel')">&#10095;</button>
+      </div>
+
+      <div class="carousel-container" id="engines-carousel">
+        <div class="carousel-slide">
+        </div>
+        <button class="prev" onclick="moveSlide(-1, 'engines-carousel')">&#10094;</button>
+        <button class="next" onclick="moveSlide(1, 'engines-carousel')">&#10095;</button>
       </div>
 
       <br><br><br><br><br>

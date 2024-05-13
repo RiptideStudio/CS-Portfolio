@@ -92,6 +92,9 @@ function startVideo(activeSlide)
     const hamburgerSource = document.getElementById('hamburger');
     const videoPath = activeSlide.dataset.video;
 
+    if (!videoPath)
+        return;
+
     if (!videoSource.src.includes(videoPath))
     {
         videoSource.poster = activeSlide.dataset.imageSrc;
@@ -108,8 +111,19 @@ function startVideo(activeSlide)
 function setupClickListeners(carouselId) {
     const carousel = document.getElementById(carouselId);
     const slides = carousel.querySelectorAll('.image-container');
+    const playButton = document.getElementById('playButton');
 
     // handle clicking the play button to do same logic
+    if (playButton)
+    {
+        playButton.addEventListener('click', () => {
+            const activeSlide = carousel.querySelector('.image-container.active');
+            if (activeSlide) {
+                // Simulate clicking the active slide
+                startVideo(activeSlide);
+            }
+        });
+    }
 
     slides.forEach((slide, index) => {
         slide.addEventListener('click', () => {
@@ -118,12 +132,7 @@ function setupClickListeners(carouselId) {
                 
                 // cause the video player's z Index to be primary target, and scale up the video player (animation)
                 const activeSlide = carousel.querySelector('.image-container.active');
-                const videoPath = activeSlide.dataset.video;
-                
-                if (videoPath)
-                {
-                    startVideo(activeSlide);
-                }
+                startVideo(activeSlide);
 
             } else {
                 let step = index - currentIndex; // Calculate the steps needed to make the clicked slide the active slide
@@ -143,7 +152,7 @@ function initializeCarousel(carouselId) {
     const carouselSlideContainer = carousel.querySelector('.carousel-slide');
 
     if (slides.length > 0) {
-        const middleIndex = Math.floor(slides.length / 2);
+        const middleIndex = Math.round((slides.length / 2)-1);
         slideIndexes[carouselId] = middleIndex; // Set the middle slide as the starting index
 
         const containerWidth = carousel.clientWidth;
