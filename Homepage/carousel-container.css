@@ -1,7 +1,7 @@
 .carousel-container {
     position: relative;
     overflow: visible;
-    margin-bottom: 13vh;
+    margin-bottom: 9vh;
 }
 
 .carousel-slide {
@@ -92,7 +92,7 @@
     text-align: center;
     cursor: pointer;
     margin-left: -12vw;
-    bottom: 7vh;
+    bottom: 35%;
     border-radius: 100%;
     box-shadow: -8px 8px 32px rgba(0, 0, 0, 1);
     transition: 0.4s;

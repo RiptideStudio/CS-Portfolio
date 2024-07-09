@@ -1,5 +1,18 @@
 [
     {
+        "title": "Seashore Siege",
+        "role": "Programmer",
+        "background": "Images/Backgrounds/SeashoreSiege.png",
+        "logo": "",
+        "genre": "Tower Defense",
+        "description": "Fight sea creatures and create a sandy defense to protect your sandcastle kingdom! Seashore Siege is a top-down tower defense game with a unique cast of creatures and towers. Collect sand dollars to purchase and place towers, and try to get the highest score on the leaderboard!",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/SeashoreSiege.png",
+        "video": "Videos/SeashoreSiege.mp4",
+        "projectLink": "https://riptide-studios.itch.io/sandshore-siege",
+        "carousel": "Games"
+    },
+    {
         "title": "Daisy's Quest",
         "role": "Programmer",
         "genre": "Puzzle Comedy",
@@ -9,7 +22,8 @@
         "overlayImageSrc": "Images/Itch.png",
         "imageSrc": "Images/Thumbnails/Daisy.png",
         "video": "Videos/DaisyQuest.mp4",
-        "projectLink": "https://llamaking1.itch.io/daisys-quest"
+        "projectLink": "https://llamaking1.itch.io/daisys-quest",
+        "carousel": "Games"
     },
     {
         "title": "Koko: The Last Leaf",
@@ -21,7 +35,8 @@
         "overlayImageSrc": "Images/Steam.png",
         "imageSrc": "Images/Thumbnails/Koko.png",
         "video": "Videos/Koko.mp4",
-        "projectLink": "https://store.steampowered.com/app/1967980/Koko_the_Last_Leaf/"
+        "projectLink": "https://store.steampowered.com/app/1967980/Koko_the_Last_Leaf/",
+        "carousel": "Games"
     },
     {
         "title": "Earthward",
@@ -33,7 +48,8 @@
         "overlayImageSrc": "Images/Steam.png",
         "imageSrc": "Images/Thumbnails/Earthward.png",
         "video": "Videos/Earthward.mp4",
-        "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/"
+        "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/",
+        "carousel": "Games"
     },
     {
         "title": "Bitlands",
@@ -45,7 +61,8 @@
         "overlayImageSrc": "Images/Steam.png",
         "imageSrc": "Images/Thumbnails/Bitlands.png",
         "video": "Videos/Bitlands.mp4",
-        "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/"
+        "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/",
+        "carousel": "Games"
     },
     {
         "title": "Paradigm",
@@ -57,7 +74,8 @@
         "overlayImageSrc": "Images/Itch.png",
         "imageSrc": "Images/Thumbnails/Paradigm.png",
         "video": "Videos/Paradigm.mp4",
-        "projectLink": "https://artindi.itch.io/paradigm"
+        "projectLink": "https://artindi.itch.io/paradigm",
+        "carousel": "Games"
     },
     {
         "title": "Lilypad Lowdown",
@@ -69,6 +87,46 @@
         "overlayImageSrc": "Images/Itch.png",
         "imageSrc": "Images/Thumbnails/LilypadLowdown.png",
         "video": "Videos/LilypadLowdown.mp4",
-        "projectLink": "https://riptide-studios.itch.io/lilly-l"
+        "projectLink": "https://riptide-studios.itch.io/lilly-l",
+        "carousel": "Games"
+    },
+    {
+        "title": "Overglow Engine",
+        "role": "Programmer, Developer",
+        "genre": "3D FPS",
+        "background": "Images/Thumbnails/VisualStudio.png",
+        "logo": "",
+        "description": "Built for windows and created using DirectX 11, this engine was created to make Overglow, a first person 3D RPG game. It features a lighting engine, physics, FBX model loading and animation.",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/VisualStudio.png",
+        "video": "Videos/LilypadLowdown.mp4",
+        "projectLink": "https://riptide-studios.itch.io/lilly-l",
+        "carousel": "Engines"
+    },
+    {
+        "title": "Starlight Engine",
+        "role": "Programmer, Developer",
+        "genre": "2D Adventure",
+        "background": "Images/Thumbnails/VisualStudio.png",
+        "logo": "",
+        "description": "Currently under development, the Starlight Engine will be used to create Moonborne, a story-heavy RPG with a focus in exploration and discovery.",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/VisualStudio.png",
+        "video": "Videos/LilypadLowdown.mp4",
+        "projectLink": "https://riptide-studios.itch.io/lilly-l",
+        "carousel": "Engines"
+    },
+    {
+        "title": "The Workshop",
+        "role": "Gameplay Programmer, Artist, Composer",
+        "genre": "2D Wave Shooter",
+        "background": "Images/Thumbnails/VisualStudio.png",
+        "logo": "",
+        "description": "Developed entirely in C, this engine was used to create 'Santa's Last Christmas', a sidescrolling wave-shooter set in the North Pole. This engine was created alongside four other developers as a school project.",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/VisualStudio.png",
+        "video": "Videos/LilypadLowdown.mp4",
+        "projectLink": "https://riptide-studios.itch.io/lilly-l",
+        "carousel": "Engines"
     }
 ]

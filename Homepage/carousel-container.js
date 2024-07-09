@@ -1,4 +1,6 @@
 let slideIndexes = {};
+var carouselsCreated = 0;
+var selectedCarouselId = -1;
 
 // Function to handle the sliding of the carousel
 function moveSlide(step, carouselId) {
@@ -17,6 +19,35 @@ function moveSlide(step, carouselId) {
     console.log(`New active index: ${slideIndexes[carouselId]}`); // In moveSlide
     updateSlidePosition(carouselId, newIndex);
     updateActiveSlides(carouselId);
+    
+    deactivateAllSlides(carouselId);
+}
+
+// Function to deactivate all slides in all carousels
+function deactivateAllSlides(currentCarouselId) {
+    const allCarousels = document.querySelectorAll('.carousel-container');
+
+    // Iterate over each carousel
+    allCarousels.forEach(carousel => {
+        const carouselId = carousel.id;
+        if (carouselId && slideIndexes.hasOwnProperty(carouselId) && carouselId != currentCarouselId) {
+
+            // make all slides faded out in that carousel
+            const slides = carousel.querySelectorAll('.image-container');
+            slides.forEach((slide, index) => {
+
+                const img = slide.querySelector('.carousel-image');
+                const overlay = slide.querySelector('.overlay-image');
+
+                if (img && overlay) {
+                    img.classList.remove('active');
+                    img.style.opacity = '0.25';
+                    img.style.transform = 'scale(1)';
+                    overlay.style.transform = 'scale(0)';
+                } 
+            });
+        }
+    });
 }
 
 function updateSlidePosition(carouselId, newIndex) {
@@ -40,6 +71,7 @@ function updateActiveSlides(carouselId) {
 
         const img = slide.querySelector('.carousel-image');
         const overlay = slide.querySelector('.overlay-image');
+        slide.classList.remove('active');
 
         if (img && overlay) {
             img.classList.remove('active');
@@ -56,7 +88,7 @@ function updateActiveSlides(carouselId) {
     slides.forEach((slide, index) => {
         if (Math.abs(index - activeIndex) > 1) { // Adjust '1' to increase or decrease the range of "far" slides
             const img = slide.querySelector('.carousel-image');
-            const overlay = slide.querySelector('.overlay-image');
+
             if (img) {
                 img.style.opacity = '0.1'; // Far slides opacity
                 img.style.transform = 'scale(1)';
@@ -80,7 +112,13 @@ function updateActiveSlides(carouselId) {
     slides.forEach((slide, index) => {
         slides.forEach(s => s.classList.remove('active'));
     });
-    activeSlide.classList.add('active');
+
+    // if the active slide is valid, flag it as such
+    if (activeSlide)
+    {
+        activeSlide.classList.add('active');
+    }
+
     updateActiveSlideDisplay(carouselId);
 }
 
@@ -107,6 +145,10 @@ function startVideo(activeSlide)
     player.style.opacity = '1';
 }
 
+function moveSlideActiveCarousel(step, id)
+{
+
+}
 // Function to add click events to each slide
 function setupClickListeners(carouselId) {
     const carousel = document.getElementById(carouselId);
@@ -118,30 +160,41 @@ function setupClickListeners(carouselId) {
     {
         playButton.addEventListener('click', () => {
             const activeSlide = carousel.querySelector('.image-container.active');
-            if (activeSlide) {
-                // Simulate clicking the active slide
-                startVideo(activeSlide);
-            }
+            // Simulate clicking the active slide
+            startVideo(activeSlide);
         });
     }
 
     slides.forEach((slide, index) => {
+
         slide.addEventListener('click', () => {
             let currentIndex = slideIndexes[carouselId];
-            if (currentIndex === index) {
-                
-                // cause the video player's z Index to be primary target, and scale up the video player (animation)
-                const activeSlide = carousel.querySelector('.image-container.active');
-                startVideo(activeSlide);
 
-            } else {
-                let step = index - currentIndex; // Calculate the steps needed to make the clicked slide the active slide
-                moveSlide(step, carouselId); // Call moveSlide with the calculated step
-                // Clear active class from all slides
-                slides.forEach(s => s.classList.remove('active'));
-                // Set active class to the clicked slide
-                slide.classList.add('active');
+            if (carouselId == selectedCarouselId)
+            {
+                if (currentIndex === index) {
+                    // cause the video player's z Index to be primary target, and scale up the video player (animation)
+                    const activeSlide = carousel.querySelector('.image-container.active');
+                    startVideo(activeSlide);
+                } else {
+                    let step = index - currentIndex; // Calculate the steps needed to make the clicked slide the active slide
+                    moveSlide(step, carouselId); // Call moveSlide with the calculated step
+                    // Clear active class from all slides
+                    slides.forEach(s => s.classList.remove('active'));
+                    // Set active class to the clicked slide
+                    slide.classList.add('active');
+                }
             }
+            else
+            {
+                    let step = index - currentIndex; // Calculate the steps needed to make the clicked slide the active slide
+                    moveSlide(step, carouselId); // Call moveSlide with the calculated step
+                    // Clear active class from all slides
+                    slides.forEach(s => s.classList.remove('active'));
+                    // Set active class to the clicked slide
+                    slide.classList.add('active');       
+            }
+            selectedCarouselId = carouselId;
         });
     });
 }
@@ -150,19 +203,42 @@ function initializeCarousel(carouselId) {
     const carousel = document.getElementById(carouselId);
     const slides = Array.from(carousel.querySelectorAll('.image-container')); // Convert NodeList to Array
     const carouselSlideContainer = carousel.querySelector('.carousel-slide');
-
+    
     if (slides.length > 0) {
         const middleIndex = Math.round((slides.length / 2)-1);
-        slideIndexes[carouselId] = middleIndex; // Set the middle slide as the starting index
-
         const containerWidth = carousel.clientWidth;
         const imageWidth = slides[0].clientWidth;
-        const totalWidthOfSlides = slides.reduce((acc, slide) => acc + slide.clientWidth, 0);
 
         let offset = (containerWidth - imageWidth) / 2; // Centering the middle slide
         let newLeft = -slides[middleIndex].offsetLeft + offset;
 
         carouselSlideContainer.style.transform = `translateX(${newLeft}px)`;
-        updateActiveSlides(carouselId);
+        const allCarousels = document.querySelectorAll('.carousel-container');
+
+        // set the starting index of the first carousel
+        if (carouselsCreated == 0)
+        {
+            slideIndexes[carouselId] = middleIndex; // Set the middle slide as the starting index
+            updateActiveSlides(carouselId);
+        }
+        else
+        {
+            slideIndexes[carouselId] = -1;
+            
+            slides.forEach((slide, index) => {
+
+                const img = slide.querySelector('.carousel-image');
+                const overlay = slide.querySelector('.overlay-image');
+
+                if (img && overlay) {
+                    img.classList.remove('active');
+                    img.style.opacity = '0.25';
+                    img.style.transform = 'scale(1)';
+                    overlay.style.transform = 'scale(0)';
+                } 
+            });
+        }
+        
+        carouselsCreated++;
     }
 }

@@ -9,9 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function createCarouselSlide(item) {
-    const carouselId = 'games-carousel';  // Adjust this ID as needed
-    const carousel = document.getElementById(carouselId);
-    const carouselSlide = carousel.querySelector('.carousel-slide');
 
     // Create image container
     const imageContainer = document.createElement('div');
@@ -26,7 +23,11 @@ function createCarouselSlide(item) {
     imageContainer.dataset.background = item.background;
     imageContainer.dataset.logo = item.logo;
     imageContainer.dataset.video = item.video;
-    
+ 
+    const carouselId = item.carousel.toLowerCase() + '-carousel';  // Adjust this ID as needed
+    const carousel = document.getElementById(carouselId);
+    const carouselSlide = carousel.querySelector('.carousel-slide');
+
     // Add main image
     const img = document.createElement('img');
     img.className = 'carousel-image';
@@ -67,9 +68,6 @@ function initializeCarousels() {
         setupClickListeners(carouselId);
 
         const slides = carousel.querySelectorAll('.image-container');
-        if (!carousel.querySelector('.image-container.active') && slides.length > 0) {
-            slides[0].classList.add('active'); // Set the first slide as active
-        }
         updateActiveSlideDisplay(carouselId);
     });
 }
