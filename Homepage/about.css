@@ -1,6 +1,7 @@
 .aboutTitle h1 {
   display: inline-block;
   position: relative;
+  left: 33%;
 }
 
 .aboutTitle h1::after {
@@ -8,9 +9,9 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -15px;
+  bottom: -4px;
   height: 3px;
-  background: linear-gradient(to right, #797979, #797979, #797979);
+  background: linear-gradient(to right, #797979af, #797979, #7979798e);
   border-radius: 2px;
 }
 
@@ -64,4 +65,8 @@ img {
   height: 360px;
   white-space: normal;
   word-wrap: break-word;
+}
+
+.about-page {
+    background-image: linear-gradient(to top, rgb(12, 12, 12), rgb(22, 22, 22));
 }

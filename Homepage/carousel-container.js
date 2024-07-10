@@ -17,9 +17,12 @@ function moveSlide(step, carouselId) {
     slideIndexes[carouselId] = newIndex;
 
     console.log(`New active index: ${slideIndexes[carouselId]}`); // In moveSlide
+
     updateSlidePosition(carouselId, newIndex);
     updateActiveSlides(carouselId);
-    
+
+   carousel.scrollIntoView({ behavior: 'smooth', block: 'center'});
+
     deactivateAllSlides(carouselId);
 }
 
