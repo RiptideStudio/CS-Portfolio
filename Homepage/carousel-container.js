@@ -21,7 +21,7 @@ function moveSlide(step, carouselId) {
     updateSlidePosition(carouselId, newIndex);
     updateActiveSlides(carouselId);
 
-   carousel.scrollIntoView({ behavior: 'smooth', block: 'center'});
+    carousel.scrollIntoView({ behavior: 'smooth', block: 'center'});
 
     deactivateAllSlides(carouselId);
 }
@@ -54,14 +54,35 @@ function deactivateAllSlides(currentCarouselId) {
 }
 
 function updateSlidePosition(carouselId, newIndex) {
-    const carousel = document.getElementById(carouselId);
-    const slides = carousel.querySelectorAll('.image-container');
-    const containerWidth = carousel.clientWidth;
-    const imageWidth = slides[0].clientWidth;
-    const offset = (containerWidth - imageWidth) / 2;
-    const newLeft = -slides[newIndex].offsetLeft + offset;
 
-    carousel.querySelector('.carousel-slide').style.transform = `translateX(${newLeft}px)`;
+    const carousel = document.getElementById(carouselId);
+    const carouselSlideContainer = carousel.querySelector('.carousel-slide');
+    const slides = carousel.querySelectorAll('.image-container');
+    
+    if (slides.length === 0) return;  // Early exit if no slides
+
+    const containerWidth = carousel.clientWidth;
+    const imageWidth = slides[0].clientWidth;  // Assumes all slides are the same width
+    const totalSlideWidth = slides.length * imageWidth;
+    const offset = (containerWidth - imageWidth) / 2;  // Center offset
+
+    // Calculate the position to align the slide's center with the carousel's center
+    let newLeft = -slides[newIndex].offsetLeft + offset;
+    let leftOffset = (totalSlideWidth/2)-imageWidth*1.75;
+    let rightOffset = -leftOffset;
+
+    // clamp our values to the left and right
+    if (newLeft > leftOffset)
+    {
+        newLeft = leftOffset;
+    }
+    if (newLeft < rightOffset)
+    {
+        newLeft = rightOffset;
+    }
+
+    // Apply the transformation
+    carouselSlideContainer.style.transform = `translateX(${newLeft}px)`;
 }
 
 function updateActiveSlides(carouselId) {
@@ -136,6 +157,7 @@ function startVideo(activeSlide)
     if (!videoPath)
         return;
 
+    console.log(videoPath);
     if (!videoSource.src.includes(videoPath))
     {
         videoSource.poster = activeSlide.dataset.imageSrc;
@@ -148,10 +170,6 @@ function startVideo(activeSlide)
     player.style.opacity = '1';
 }
 
-function moveSlideActiveCarousel(step, id)
-{
-
-}
 // Function to add click events to each slide
 function setupClickListeners(carouselId) {
     const carousel = document.getElementById(carouselId);
@@ -162,7 +180,8 @@ function setupClickListeners(carouselId) {
     if (playButton)
     {
         playButton.addEventListener('click', () => {
-            const activeSlide = carousel.querySelector('.image-container.active');
+            const activeCarousel = document.getElementById(selectedCarouselId);
+            const activeSlide = activeCarousel.querySelector('.image-container.active');
             // Simulate clicking the active slide
             startVideo(activeSlide);
         });
@@ -208,26 +227,24 @@ function initializeCarousel(carouselId) {
     const carouselSlideContainer = carousel.querySelector('.carousel-slide');
     
     if (slides.length > 0) {
-        const middleIndex = Math.round((slides.length / 2)-1);
-        const containerWidth = carousel.clientWidth;
+        // const middleIndex = Math.round((slides.length / 2)-1);
+        // const containerWidth = carousel.clientWidth;
         const imageWidth = slides[0].clientWidth;
+        // let offset = (containerWidth); // Centering the middle slide
 
-        let offset = (containerWidth - imageWidth) / 2; // Centering the middle slide
-        let newLeft = -slides[middleIndex].offsetLeft + offset;
+        const initialOffset = -slides[0].offsetLeft+imageWidth/2;
 
-        carouselSlideContainer.style.transform = `translateX(${newLeft}px)`;
-        const allCarousels = document.querySelectorAll('.carousel-container');
+        carouselSlideContainer.style.transform = `translateX(${initialOffset}px)`;
 
         // set the starting index of the first carousel
         if (carouselsCreated == 0)
         {
-            slideIndexes[carouselId] = middleIndex; // Set the middle slide as the starting index
+            slideIndexes[carouselId] = 0;
             updateActiveSlides(carouselId);
         }
         else
         {
-            slideIndexes[carouselId] = -1;
-            
+            slideIndexes[carouselId] = 0;
             slides.forEach((slide, index) => {
 
                 const img = slide.querySelector('.carousel-image');

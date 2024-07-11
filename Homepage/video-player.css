@@ -59,6 +59,7 @@ html, body {
     justify-content: center;
     object-fit: cover;
     opacity: 1;
+    border: 1px solid #d0d0d077;
     border: 0.11vw solid #d0d0d077;
     transform: scale(0.75);
 }

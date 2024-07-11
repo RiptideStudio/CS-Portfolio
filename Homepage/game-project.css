@@ -4,7 +4,7 @@
     margin-top: 5vh;
     margin-left: 6vw;
     width: 100%;
-    max-width: 1200px;
+    max-width: 33%;
     font-size: calc(0.4vw + 0.4vh + .5vmin);
 }
 
@@ -89,7 +89,7 @@ h1::after {
 }
 
 .player-button i {
-    margin-left: 8px; /* Space between text and icon */
+    margin-left: 0.35vw; /* Space between text and icon */
     font-size: calc(0.7vw + 0.7vh); /* Slightly larger icon than text */
 }
 

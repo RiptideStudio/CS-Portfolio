@@ -81,7 +81,7 @@
 
 .carousel-slide .carousel-image.active {
     transform: scale(1);
-    border: 2px solid #a1a1a1;
+    border: 2px solid #c0c0c0;
     transition: 0.3s;
 }
 

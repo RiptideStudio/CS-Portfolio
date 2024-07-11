@@ -1,5 +1,17 @@
 [
     {
+        "title": "Fresh Fruits",
+        "role": "Programmer, Artist, Composer",
+        "genre": "Dungeon Crawler",
+        "background": "Images/Backgrounds/FreshFruit.png",
+        "description": "In this supermarket, the produce comes alive! Play as an avocado, traversing procedurally generated rooms while discovering new abilities, so you can defeat the evil fruit and escape the supermarket.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/FreshFruit.png",
+        "video": "Videos/FreshFruit.mp4",
+        "projectLink": "https://riptide-studios.itch.io/sandshore-siege",
+        "carousel": "Games"
+    },
+    {
         "title": "Seashore Siege",
         "role": "Programmer",
         "background": "Images/Backgrounds/SeashoreSiege.png",
@@ -13,24 +25,12 @@
         "carousel": "Games"
     },
     {
-        "title": "Fresh Fruit",
-        "role": "Programmer, Artist, Composer",
-        "genre": "Dungeon Crawler",
-        "background": "Images/Backgrounds/SeashoreSiege.png",
-        "description": "During the day, it's a normal supermarket. At night, the produce comes alive! Play as an avocado, traversing procedurally generated rooms while discovering new abilities, so you can defeat the evil fruit and escape the supermarket.",
-        "overlayImageSrc": "Images/Github.png",
-        "imageSrc": "Images/Thumbnails/SeashoreSiege.png",
-        "video": "Videos/SeashoreSiege.mp4",
-        "projectLink": "https://riptide-studios.itch.io/sandshore-siege",
-        "carousel": "Games"
-    },
-    {
         "title": "Daisy's Quest",
         "role": "Programmer",
         "genre": "Puzzle Comedy",
         "background": "Images/Backgrounds/DaisyQuest.png",
         "logo": "",
-        "description": "Death isn't always a bad thing. Traverse a wacky world of characters and puzzles by using your corpse as a platform!",
+        "description": "Death isn't always bad. Traverse a wacky world of characters and puzzles by using your corpse as a platform!",
         "overlayImageSrc": "Images/Itch.png",
         "imageSrc": "Images/Thumbnails/Daisy.png",
         "video": "Videos/DaisyQuest.mp4",
@@ -80,7 +80,6 @@
         "title": "Paradigm",
         "role": "Composer",
         "background": "Images/Backgrounds/Paradigm.png",
-        "logo": "",
         "genre": "Puzzle Adventure",
         "description": "Beckett awakes, and equipped with the ability to make copies of himself, he must navigate a world that is hostile to anyone who goes alone... but he's not alone... not really. To solve the puzzles, you'll have to think differently: In plurality rather then singularity. Will you follow the pattern? Or become the Paradigm?",
         "overlayImageSrc": "Images/Itch.png",
@@ -94,7 +93,6 @@
         "role": "Programmer",
         "genre": "Top-Down Action",
         "background": "Images/Backgrounds/LilypadLowdown.png",
-        "logo": "",
         "description": "Play as Lilly the Frog, who wants nothing more than to keep her children safe from the vicious toad army. Fight your way through the frog armada and defeat Lord Gulch before time runs out!",
         "overlayImageSrc": "Images/Itch.png",
         "imageSrc": "Images/Thumbnails/LilypadLowdown.png",
@@ -105,26 +103,26 @@
     {
         "title": "Santa's Last Christmas",
         "role": "Programmer",
-        "background": "Images/Backgrounds/SeashoreSiege.png",
-        "logo": "",
+        "background": "Images/Backgrounds/Santa.png",
         "genre": "Tower Defense",
-        "description": "Fight sea creatures and create a sandy defense to protect your sandcastle kingdom! Seashore Siege is a top-down tower defense game with a unique cast of creatures and towers. Collect sand dollars to purchase and place towers, and try to get the highest score on the leaderboard!",
+        "description": "Mrs. Claus has taken control of the North Pole! Battle your former elf workers, collect peppermints, and upgrade your weapons at Santa's Workshop! Will you survive this deadly christmas onslaught?",
         "overlayImageSrc": "Images/Itch.png",
-        "imageSrc": "Images/Thumbnails/SeashoreSiege.png",
+        "imageSrc": "Images/Logos/Santa.png",
         "video": "Videos/SeashoreSiege.mp4",
         "projectLink": "https://riptide-studios.itch.io/sandshore-siege",
         "carousel": "Games"
     },
 
 
+
     {
-        "title": "Real Engine",
+        "title": "Otherglow Engine",
         "role": "Programmer, Developer",
-        "genre": "3D Engine",
+        "genre": "3D Fantasy RPG",
         "background": "Images/Backgrounds/Otherglow.png",
-        "description": "This engine was created with the sole purpose of learning more about game engines and the graphics pipeline. It features a rendering system, global lighting and simple physics created using DirectX 11.",
+        "description": "Built for windows and created using DirectX 11, this engine is currently being made to develop 'Otherglow', a first person RPG. It features a lighting engine, physics, model rendering/animation, and cellular automata.",
         "overlayImageSrc": "Images/C++.png",
-        "imageSrc": "Images/Thumbnails/VisualStudio.png",
+        "imageSrc": "Images/Thumbnails/OtherGlow.png",
         "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://github.com/RiptideStudio/GlowEngine",
         "carousel": "Engines"
@@ -133,22 +131,34 @@
         "title": "Lynx Engine",
         "role": "General Programmer",
         "genre": "2D Engine",
-        "background": "Images/Thumbnails/Otherglow.png",
-        "description": "Lynx Engine was developed for a school project, intended as a general 2D game engine that can be scripted in simple C++. It features a robust graphics pipeline, shader support, collision physics, json parsing, ImGui integration, scene saving, custom math for vectors and interpolation, and many gameplay components that can be given to entities.",
+        "background": "Images/Thumbnails/LynxEngine.png",
+        "description": "Lynx Engine was developed with a team of seven people, intended as a general 2D game engine that can be easily scripted in simple C++. It features a robust graphics pipeline, shader support, collision, physics, ImGui integration, world saving, custom math libraries, and many gameplay components that can be given to entities.",
         "overlayImageSrc": "Images/C++.png",
-        "imageSrc": "Images/Thumbnails/VisualStudio.png",
+        "imageSrc": "Images/Thumbnails/LynxEngine.png",
         "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://github.com/RiptideStudio/GlowEngine",
         "carousel": "Engines"
     },
-    {
-        "title": "Otherglow Engine",
-        "role": "Programmer, Developer",
-        "genre": "3D Fantasy RPG",
+{
+        "title": "BIB Engine",
+        "role": "Systems Programmer",
+        "genre": "2D Platformer",
         "background": "Images/Backgrounds/Otherglow.png",
-        "description": "Built for windows and created using DirectX 11, this engine is currently being made to develop 'Otherglow', a first person RPG. It features a lighting engine, physics, advanced model rendering and procedural generation.",
-        "overlayImageSrc": "Images/C++.png",
+        "description": "Developed entirely in C, this engine was used to create 'Santa's Last Christmas', a sidescrolling wave-shooter set in the North Pole. This project was created with a team of five developers.",
+        "overlayImageSrc": "Images/C.png",
         "imageSrc": "Images/Thumbnails/VisualStudio.png",
+        "video": "Videos/LilypadLowdown.mp4",
+        "projectLink": "https://riptide-studios.itch.io/lilly-l",
+        "carousel": "Engines"
+    },
+    {
+        "title": "Real Engine",
+        "role": "Programmer, Developer",
+        "genre": "3D Engine",
+        "background": "Images/Backgrounds/RealEngine.png",
+        "description": "This engine was created with the sole purpose of learning more about game engines and the graphics pipeline. It features a rendering system, global lighting and simple physics created using DirectX 11.",
+        "overlayImageSrc": "Images/C++.png",
+        "imageSrc": "Images/Backgrounds/RealEngine.png",
         "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://github.com/RiptideStudio/GlowEngine",
         "carousel": "Engines"
@@ -157,68 +167,56 @@
         "title": "Starlight Engine",
         "role": "Programmer, Developer",
         "genre": "2D Top-Down",
-        "background": "Images/Backgrounds/Otherglow.png",
+        "background": "Images/Thumbnails/StarlightEngine.png",
         "description": "Currently under development, the Starlight Engine will be used to create 'Moonborne', a story-heavy RPG with a focus in exploration and discovery.",
         "overlayImageSrc": "Images/C++.png",
-        "imageSrc": "Images/Thumbnails/VisualStudio.png",
+        "imageSrc": "Images/Thumbnails/StarlightEngine.png",
         "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://github.com/RiptideStudio/GlowEngine",
         "carousel": "Engines"
     },
+
+
+
     {
-        "title": "The Workshop",
-        "role": "Systems Programmer",
-        "genre": "2D Platformer",
+        "title": "ShowIt",
+        "role": "Developer",
+        "genre": "Website Portfolio",
         "background": "Images/Backgrounds/Otherglow.png",
-        "description": "Developed entirely in C, this engine was used to create 'Santa's Last Christmas', a sidescrolling wave-shooter set in the North Pole. This engine was created alongside four other developers as a school project.",
-        "overlayImageSrc": "Images/C.png",
-        "imageSrc": "Images/Thumbnails/VisualStudio.png",
+        "description": "The website you're currently using is custom made, created using Javascript, CSS, and HTML. Data for projects is completely serialized into JSON objects, making it easy to add a new project!",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/Portfolio.png",
         "video": "Videos/LilypadLowdown.mp4",
-        "projectLink": "https://riptide-studios.itch.io/lilly-l",
-        "carousel": "Engines"
+        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
+        "carousel": "Other"
     },
-
-
-
     {
         "title": "Archery Overhaul",
-        "role": "Developer",
+        "role": "Creator",
         "genre": "Terraria Mod (tModloader)",
-        "background": "Images/Backgrounds/Otherglow.png",
-        "description": "This portfolio you're currently using is entirely custom built, created with Javascript, CSS, and HTML.",
+        "background": "Images/Backgrounds/ArcheryOverhaul3.png",
+        "description": "Tired of using the same old bow and arrow? Look no further! Archery Overhaul adds 150+ items, including new weapons, accessories, materials, and NPCs. Explore several new crafting trees with fully completed progression, even up to the Moonlord!",
         "overlayImageSrc": "Images/Terraria.png",
-        "imageSrc": "Images/Thumbnails/Terraria.png",
-        "video": "Videos/LilypadLowdown.mp4",
-        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
-        "carousel": "Other"
-    },
-    {
-        "title": "Portfolio",
-        "role": "Developer",
-        "genre": "Website",
-        "background": "Images/Backgrounds/Otherglow.png",
-        "description": "This portfolio you're currently using is entirely custom built, created using a mixture of Javascript, CSS, and HTML. Projects are stored as JSON objects.",
-        "overlayImageSrc": "Images/Github.png",
-        "imageSrc": "Images/Thumbnails/Website.png",
-        "video": "Videos/LilypadLowdown.mp4",
-        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
-        "carousel": "Other"
-    },
-    {
-        "title": "Sorcery Overhaul",
-        "role": "Developer",
-        "genre": "Terraria Mod (tModloader)",
-        "background": "Images/Backgrounds/Otherglow.png",
-        "description": "This portfolio you're currently using is entirely custom built, created with Javascript, CSS, and HTML.",
-        "overlayImageSrc": "Images/Terraria.png",
-        "imageSrc": "Images/Thumbnails/Terraria.png",
+        "imageSrc": "Images/Thumbnails/ArcheryOverhaul.png",
         "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://github.com/RiptideStudio/GlowEngine",
         "carousel": "Other"
     },
     {
         "title": "Spear Overhaul",
-        "role": "Developer",
+        "role": "Creator",
+        "genre": "Terraria Mod (tModloader)",
+        "background": "Images/Backgrounds/SpearOverhaul.png",
+        "description": "This portfolio you're currently using is entirely custom built, created with Javascript, CSS, and HTML.",
+        "overlayImageSrc": "Images/Terraria.png",
+        "imageSrc": "Images/Thumbnails/SpearOverhaul.png",
+        "video": "Videos/LilypadLowdown.mp4",
+        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
+        "carousel": "Other"
+    },
+    {
+        "title": "Sorcery Overhaul",
+        "role": "Creator",
         "genre": "Terraria Mod (tModloader)",
         "background": "Images/Backgrounds/Otherglow.png",
         "description": "This portfolio you're currently using is entirely custom built, created with Javascript, CSS, and HTML.",
@@ -228,4 +226,5 @@
         "projectLink": "https://github.com/RiptideStudio/GlowEngine",
         "carousel": "Other"
     }
+
 ]
