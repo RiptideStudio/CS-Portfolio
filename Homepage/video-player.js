@@ -55,14 +55,30 @@ function closeVideoPlayer()
 {
     const videoPlayer = document.querySelector('.custom-video-player');
     const video = document.getElementById('video');
+    const iframe = videoPlayer.querySelector('iframe');
+    const closeButton = videoPlayer.querySelector('.close-btn');
+    const controls = document.querySelector('.controls');
 
     videoPlayer.style.opacity = '0';
     videoPlayer.style.transform = 'scale(0)';
+    video.style.display = 'none';
+    controls.style.display = 'none';
+
     const overlaySource = document.getElementById('page-overlay');
     overlaySource.style.opacity = 1;
     const hamburgerSource = document.getElementById('hamburger');
     hamburgerSource.style.opacity = 1;
-    video.pause();
+    closeButton.style.display = 'none';
+
+    if (iframe)
+    {
+        iframe.src = '';
+    }
+
+    if (video)
+    {
+        video.pause();
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -123,6 +139,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     resetTimer();  // Start the timer initially
 });
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const video = document.getElementById('video');

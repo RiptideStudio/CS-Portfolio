@@ -24,6 +24,7 @@ function createCarouselSlide(item) {
     imageContainer.dataset.logo = item.logo;
     imageContainer.dataset.video = item.video;
     imageContainer.dataset.year = item.year;
+    imageContainer.dataset.youtube = item.youtube;
  
     const carouselId = item.carousel.toLowerCase() + '-carousel';  // Adjust this ID as needed
     const carousel = document.getElementById(carouselId);
@@ -64,11 +65,16 @@ function createCarouselSlide(item) {
 
 function initializeCarousels() {
     document.querySelectorAll('.carousel-container').forEach(carousel => {
+
         const carouselId = carousel.id;
+
+        // the first carousel is the selected carousel
+        if (carouselsCreated == 0)
+            selectedCarouselId = carouselId;
+
+        // initialize all the slides and select the first slide
         initializeCarousel(carouselId);
         setupClickListeners(carouselId);
-
-        const slides = carousel.querySelectorAll('.image-container');
         updateActiveSlideDisplay(carouselId);
     });
 }
@@ -121,28 +127,30 @@ function updateActiveSlideDisplay(carouselId) {
     titleElement.textContent = title;
 
     if (activeSlide) {
+
         const title = activeSlide.dataset.title;
         const description = activeSlide.dataset.description;
+        const year = activeSlide.dataset.year;
 
         const titleElement = document.querySelector('.game-text-container h1');
         const descriptionElement = document.querySelector('.game-text-container p');
         const imageOverlayElement = document.querySelector('.game-text-container .slide-icon');
         const imageSrcElement = document.querySelector('.slideshow-container .slide img');
-        const videoSrcElement = document.querySelector('.slideshow-container .slide-video');
         const linkElement = document.querySelector('.game-text-container .game-text-link a');
         const roleElement = document.querySelector('.game-text-container .game-text-role');
-        const year = activeSlide.dataset.year;
 
         titleElement.textContent = title;
         descriptionElement.textContent = description;
         imageOverlayElement.src = activeSlide.dataset.overlayImageSrc;
         roleElement.textContent = activeSlide.dataset.role+" - "+activeSlide.dataset.genre;
 
+        // append a year if it exists
         if (year != 'undefined')
         {
             roleElement.textContent += " ("+year+")";
         }
         
+        // add a link to the official project page
         linkElement.href = activeSlide.dataset.projectLink;
 
         // set the slide image based on whether we have a logo or background
@@ -156,6 +164,8 @@ function updateActiveSlideDisplay(carouselId) {
             // default to the thumbnail
             imageSrcElement.src = activeSlide.dataset.imageSrc;
         }
+
+        // add a youtube link if it exists
 
 
     } else {

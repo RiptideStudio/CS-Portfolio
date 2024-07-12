@@ -2,6 +2,27 @@ let slideIndexes = {};
 var carouselsCreated = 0;
 var selectedCarouselId = -1;
 
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+let whooshBuffer;
+fetch('Audio/Whoosh.ogg')
+    .then(response => response.arrayBuffer())
+    .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
+    .then(audioBuffer => {
+        whooshBuffer = audioBuffer;
+    })
+    .catch(e => console.error('Error loading audio file:', e));
+
+// Function to play the Whoosh sound at a random pitch
+function playWhooshSound() {
+    if (whooshBuffer) {
+        const source = audioContext.createBufferSource();
+        source.buffer = whooshBuffer;
+        source.playbackRate.value = Math.random() * (1.5 - 0.75) + 0.75;
+        source.connect(audioContext.destination);
+        source.start();
+    }
+}
+
 // Function to handle the sliding of the carousel
 function moveSlide(step, carouselId) {
     const carousel = document.getElementById(carouselId);
@@ -24,6 +45,7 @@ function moveSlide(step, carouselId) {
     carousel.scrollIntoView({ behavior: 'smooth', block: 'center'});
 
     deactivateAllSlides(carouselId);
+    playWhooshSound();
 }
 
 // Function to deactivate all slides in all carousels
@@ -148,26 +170,105 @@ function updateActiveSlides(carouselId) {
 
 function startVideo(activeSlide)
 {
-    const videoSource = document.getElementById('video');
+    let videoSource = document.getElementById('video');
     const player = document.getElementById('player');
     const overlaySource = document.getElementById('page-overlay');
+    const videoOverlay = document.querySelector('.video-overlay');
     const hamburgerSource = document.getElementById('hamburger');
     const videoPath = activeSlide.dataset.video;
+    const youtubeLink = activeSlide.dataset.youtube;
+    const controls = document.querySelector('.controls');
+    let closeButton = player.querySelector('.close-btn');
 
-    if (!videoPath)
+    console.log(videoOverlay);
+    if (videoPath == 'undefined' && youtubeLink == 'undefined')
         return;
 
-    console.log(videoPath);
-    if (!videoSource.src.includes(videoPath))
-    {
-        videoSource.poster = activeSlide.dataset.imageSrc;
-        videoSource.src = videoPath;
+    // Clear any existing YouTube iframe if present
+    const existingIframe = player.querySelector('iframe');
+    if (existingIframe) {
+        existingIframe.remove();
     }
 
+    // adjust the style of overlaying elements
     hamburgerSource.style.opacity = 0;
     overlaySource.style.opacity = 0.2;
     player.style.transform = 'scale(1)';
     player.style.opacity = '1';
+
+    // close button should come back
+    closeButton.style.display = 'block';
+    player.style.display = 'flex';
+
+    // if the link is a youtube link, set the youtube video player
+    if (youtubeLink !== 'undefined')
+    {
+        // append the youtube embed URL if we have one
+        const youtubeEmbedUrl = `https://www.youtube.com/embed/${youtubeLink}?autoplay=1`;
+
+        // Create or update the iframe for YouTube video
+        let iframe = player.querySelector('iframe');
+        if (!iframe) {
+            iframe = document.createElement('iframe');
+            iframe.width = '75%';
+            iframe.height = '84%';
+            iframe.frameBorder = '0';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            iframe.style.zIndex = '100000'
+            player.appendChild(iframe);
+        }
+        iframe.src = youtubeEmbedUrl;
+
+        // we need to add back our close button to youtube videos
+        if (!closeButton) {
+            closeButton = document.createElement('button');
+            closeButton.className = 'close-btn';
+            closeButton.innerHTML = '&#10005;';
+            player.appendChild(closeButton);
+        }
+
+        closeButton.onclick = function() {
+            closeVideoPlayer();
+        };
+
+        if (videoSource) 
+            videoSource.style.display = 'none';
+
+        controls.style.display = 'none';
+        videoOverlay.style.display = 'none';
+    }
+    else
+    {
+        // If the video is an in-page video, load custom video player
+        if (!videoSource) {
+            // Create video element if it doesn't exist
+            videoSource = document.createElement('video');
+            videoSource.id = 'video';
+            player.appendChild(videoSource);
+        }
+
+        // if the video is an in-page video, load custom video player
+        videoSource.poster = activeSlide.dataset.imageSrc;
+        videoSource.src = videoPath;
+        
+        let closeButton = player.querySelector('.close-btn');
+        if (!closeButton) {
+            closeButton = document.createElement('button');
+            closeButton.className = 'close-btn';
+            closeButton.innerHTML = '&#10005;';
+            player.appendChild(closeButton);
+        }
+
+        player.appendChild(videoSource);
+
+        closeButton.onclick = function() {
+            closeVideoPlayer();
+        };
+
+        controls.style.display = 'flex';
+        videoSource.style.display = 'block';
+    }
 }
 
 // Function to add click events to each slide
@@ -191,6 +292,8 @@ function setupClickListeners(carouselId) {
 
         slide.addEventListener('click', () => {
             let currentIndex = slideIndexes[carouselId];
+            console.log(currentIndex);
+            console.log(index);
 
             if (carouselId == selectedCarouselId)
             {
