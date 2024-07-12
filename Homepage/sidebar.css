@@ -11,7 +11,7 @@
     opacity: 0;
     transition: 0.3s ease-in-out; /* Smooth transition for opening and closing */
     box-shadow: -16px -16px 64px black;
-    background-image: linear-gradient(to right, rgb(0, 0, 0, 0.8) -100%, rgb(8, 8, 8) 100%);
+    background-image: linear-gradient(to right, rgb(0, 0, 0, 1) -100%, rgb(20, 20, 20) 100%);
   }
 
   /* Sidebar Content */

@@ -1,56 +1,5 @@
 [
     {
-        "title": "Fresh Fruits",
-        "role": "Programmer, Artist, Composer",
-        "genre": "Dungeon Crawler",
-        "background": "Images/Backgrounds/FreshFruit.png",
-        "description": "In this supermarket, the produce comes alive! Play as an avocado, traversing procedurally generated rooms while discovering new abilities, so you can defeat the evil fruit and escape the supermarket.",
-        "overlayImageSrc": "Images/Github.png",
-        "imageSrc": "Images/Thumbnails/FreshFruit.png",
-        "video": "Videos/FreshFruit.mp4",
-        "projectLink": "https://riptide-studios.itch.io/sandshore-siege",
-        "carousel": "Games"
-    },
-    {
-        "title": "Seashore Siege",
-        "role": "Programmer",
-        "background": "Images/Backgrounds/SeashoreSiege.png",
-        "logo": "",
-        "genre": "Tower Defense",
-        "description": "Fight sea creatures and create a sandy defense to protect your sandcastle kingdom! Seashore Siege is a top-down tower defense game with a unique cast of creatures and towers. Collect sand dollars to purchase and place towers, and try to get the highest score on the leaderboard!",
-        "overlayImageSrc": "Images/Itch.png",
-        "imageSrc": "Images/Thumbnails/SeashoreSiege.png",
-        "video": "Videos/SeashoreSiege.mp4",
-        "projectLink": "https://riptide-studios.itch.io/sandshore-siege",
-        "carousel": "Games"
-    },
-    {
-        "title": "Daisy's Quest",
-        "role": "Programmer",
-        "genre": "Puzzle Comedy",
-        "background": "Images/Backgrounds/DaisyQuest.png",
-        "logo": "",
-        "description": "Death isn't always bad. Traverse a wacky world of characters and puzzles by using your corpse as a platform!",
-        "overlayImageSrc": "Images/Itch.png",
-        "imageSrc": "Images/Thumbnails/Daisy.png",
-        "video": "Videos/DaisyQuest.mp4",
-        "projectLink": "https://llamaking1.itch.io/daisys-quest",
-        "carousel": "Games"
-    },
-    {
-        "title": "Koko: The Last Leaf",
-        "role": "Composer",
-        "logo": "",
-        "background": "Images/Backgrounds/Koko.png",
-        "genre": "2D Adventure Metroidvania",
-        "description": "Delve into a mysterious world of Gods and magic as the last of the leaf kind. Fight epic battles for revenge against evil forces. Explore fantastical lands inhabited with magical creatures and peculiar allies. Search for the realm of the Gods and stop them from making a grave mistake.",
-        "overlayImageSrc": "Images/Steam.png",
-        "imageSrc": "Images/Thumbnails/Koko.png",
-        "video": "Videos/Koko.mp4",
-        "projectLink": "https://store.steampowered.com/app/1967980/Koko_the_Last_Leaf/",
-        "carousel": "Games"
-    },
-    {
         "title": "Earthward",
         "role": "Developer",
         "logo": "",
@@ -61,7 +10,8 @@
         "imageSrc": "Images/Thumbnails/Earthward.png",
         "video": "Videos/Earthward.mp4",
         "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/",
-        "carousel": "Games"
+        "carousel": "Games",
+        "year": "2024"
     },
     {
         "title": "Bitlands",
@@ -74,19 +24,22 @@
         "imageSrc": "Images/Thumbnails/Bitlands.png",
         "video": "Videos/Bitlands.mp4",
         "projectLink": "https://store.steampowered.com/app/1881710/Bitlands/",
-        "carousel": "Games"
+        "carousel": "Games",
+        "year": "2022"
     },
     {
-        "title": "Paradigm",
+        "title": "Koko: The Last Leaf",
         "role": "Composer",
-        "background": "Images/Backgrounds/Paradigm.png",
-        "genre": "Puzzle Adventure",
-        "description": "Beckett awakes, and equipped with the ability to make copies of himself, he must navigate a world that is hostile to anyone who goes alone... but he's not alone... not really. To solve the puzzles, you'll have to think differently: In plurality rather then singularity. Will you follow the pattern? Or become the Paradigm?",
-        "overlayImageSrc": "Images/Itch.png",
-        "imageSrc": "Images/Thumbnails/Paradigm.png",
-        "video": "Videos/Paradigm.mp4",
-        "projectLink": "https://artindi.itch.io/paradigm",
-        "carousel": "Games"
+        "logo": "",
+        "background": "Images/Backgrounds/Koko.png",
+        "genre": "2D Adventure Metroidvania",
+        "description": "Delve into a mysterious world of Gods and magic as the last of the leaf kind. Fight epic battles for revenge against evil forces. Explore fantastical lands inhabited with magical creatures and peculiar allies. Search for the realm of the Gods and stop them from making a grave mistake.",
+        "overlayImageSrc": "Images/Steam.png",
+        "imageSrc": "Images/Thumbnails/Koko.png",
+        "video": "Videos/Koko.mp4",
+        "projectLink": "https://store.steampowered.com/app/1967980/Koko_the_Last_Leaf/",
+        "carousel": "Games",
+        "year": "2022"
     },
     {
         "title": "Lilypad Lowdown",
@@ -98,58 +51,104 @@
         "imageSrc": "Images/Thumbnails/LilypadLowdown.png",
         "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://riptide-studios.itch.io/lilly-l",
-        "carousel": "Games"
+        "carousel": "Games",
+        "year": "2022"
     },
     {
-        "title": "Santa's Last Christmas",
-        "role": "Programmer",
-        "background": "Images/Backgrounds/Santa.png",
-        "genre": "Tower Defense",
-        "description": "Mrs. Claus has taken control of the North Pole! Battle your former elf workers, collect peppermints, and upgrade your weapons at Santa's Workshop! Will you survive this deadly christmas onslaught?",
+        "title": "Paradigm",
+        "role": "Composer",
+        "background": "Images/Backgrounds/Paradigm.png",
+        "genre": "Puzzle Adventure",
+        "description": "Beckett awakes, and equipped with the ability to make copies of himself, he must navigate a world that is hostile to anyone who goes alone... but he's not alone... not really. To solve the puzzles, you'll have to think differently: In plurality rather then singularity. Will you follow the pattern? Or become the Paradigm?",
         "overlayImageSrc": "Images/Itch.png",
-        "imageSrc": "Images/Logos/Santa.png",
+        "imageSrc": "Images/Thumbnails/Paradigm.png",
+        "video": "Videos/Paradigm.mp4",
+        "projectLink": "https://artindi.itch.io/paradigm",
+        "carousel": "Games",
+        "year": "2021"
+    },
+    {
+        "title": "Daisy's Quest",
+        "role": "Programmer",
+        "genre": "Puzzle Comedy",
+        "background": "Images/Backgrounds/DaisyQuest.png",
+        "logo": "",
+        "description": "Death isn't always bad. Traverse a wacky world of characters and puzzles by using your corpse as a platform!",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/Daisy.png",
+        "video": "Videos/DaisyQuest.mp4",
+        "projectLink": "https://llamaking1.itch.io/daisys-quest",
+        "carousel": "Games",
+        "year": "2021"
+    },
+    {
+        "title": "Fresh Fruits",
+        "role": "Programmer, Artist, Composer",
+        "genre": "Dungeon Crawler",
+        "background": "Images/Backgrounds/FreshFruit.png",
+        "description": "In this supermarket, the produce comes alive! Play as an avocado, traversing procedurally generated rooms while discovering new abilities, so you can defeat the evil fruit and escape the supermarket.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/FreshFruit.png",
+        "video": "Videos/FreshFruit.mp4",
+        "projectLink": "https://riptide-studios.itch.io/sandshore-siege",
+        "carousel": "Games",
+        "year": "2024"
+    },
+    {
+        "title": "Seashore Siege",
+        "role": "Programmer",
+        "background": "Images/Backgrounds/SeashoreSiege.png",
+        "logo": "",
+        "genre": "Tower Defense",
+        "description": "Fight sea creatures and create a sandy defense to protect your sandcastle kingdom! Seashore Siege is a top-down tower defense game with a unique cast of creatures and towers. Collect sand dollars to purchase and place towers, and try to get the highest score on the leaderboard!",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/SeashoreSiege.png",
         "video": "Videos/SeashoreSiege.mp4",
         "projectLink": "https://riptide-studios.itch.io/sandshore-siege",
-        "carousel": "Games"
+        "carousel": "Games",
+        "year": "2022"
     },
 
 
 
     {
         "title": "Otherglow Engine",
-        "role": "Programmer, Developer",
-        "genre": "3D Fantasy RPG",
+        "role": "Developer",
+        "genre": "3D Engine",
         "background": "Images/Backgrounds/Otherglow.png",
         "description": "Built for windows and created using DirectX 11, this engine is currently being made to develop 'Otherglow', a first person RPG. It features a lighting engine, physics, model rendering/animation, and cellular automata.",
         "overlayImageSrc": "Images/C++.png",
         "imageSrc": "Images/Thumbnails/OtherGlow.png",
         "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://github.com/RiptideStudio/GlowEngine",
-        "carousel": "Engines"
+        "carousel": "Engines",
+        "year": "In Development"
     },
     {
         "title": "Lynx Engine",
         "role": "General Programmer",
         "genre": "2D Engine",
-        "background": "Images/Thumbnails/LynxEngine.png",
+        "background": "Images/Backgrounds/LynxEngine.png",
         "description": "Lynx Engine was developed with a team of seven people, intended as a general 2D game engine that can be easily scripted in simple C++. It features a robust graphics pipeline, shader support, collision, physics, ImGui integration, world saving, custom math libraries, and many gameplay components that can be given to entities.",
         "overlayImageSrc": "Images/C++.png",
         "imageSrc": "Images/Thumbnails/LynxEngine.png",
         "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://github.com/RiptideStudio/GlowEngine",
-        "carousel": "Engines"
+        "carousel": "Engines",
+        "year": "2024"
     },
 {
         "title": "BIB Engine",
         "role": "Systems Programmer",
-        "genre": "2D Platformer",
-        "background": "Images/Backgrounds/Otherglow.png",
+        "genre": "2D Engine",
+        "background": "Images/Backgrounds/BIBEngine.png",
         "description": "Developed entirely in C, this engine was used to create 'Santa's Last Christmas', a sidescrolling wave-shooter set in the North Pole. This project was created with a team of five developers.",
         "overlayImageSrc": "Images/C.png",
-        "imageSrc": "Images/Thumbnails/VisualStudio.png",
+        "imageSrc": "Images/Thumbnails/BIBEngine.png",
         "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://riptide-studios.itch.io/lilly-l",
-        "carousel": "Engines"
+        "carousel": "Engines",
+        "year": "2022"
     },
     {
         "title": "Real Engine",
@@ -158,73 +157,79 @@
         "background": "Images/Backgrounds/RealEngine.png",
         "description": "This engine was created with the sole purpose of learning more about game engines and the graphics pipeline. It features a rendering system, global lighting and simple physics created using DirectX 11.",
         "overlayImageSrc": "Images/C++.png",
-        "imageSrc": "Images/Backgrounds/RealEngine.png",
+        "imageSrc": "Images/Thumbnails/RealEngine.png",
         "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://github.com/RiptideStudio/GlowEngine",
-        "carousel": "Engines"
+        "carousel": "Engines",
+        "year": "2022"
     },
     {
         "title": "Starlight Engine",
         "role": "Programmer, Developer",
-        "genre": "2D Top-Down",
+        "genre": "2D Engine",
         "background": "Images/Thumbnails/StarlightEngine.png",
         "description": "Currently under development, the Starlight Engine will be used to create 'Moonborne', a story-heavy RPG with a focus in exploration and discovery.",
         "overlayImageSrc": "Images/C++.png",
         "imageSrc": "Images/Thumbnails/StarlightEngine.png",
         "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://github.com/RiptideStudio/GlowEngine",
-        "carousel": "Engines"
+        "carousel": "Engines",
+        "year": "In Development"
     },
 
 
 
     {
-        "title": "ShowIt",
+        "title": "Portfolio",
         "role": "Developer",
-        "genre": "Website Portfolio",
+        "genre": "Website",
         "background": "Images/Backgrounds/Otherglow.png",
-        "description": "The website you're currently using is custom made, created using Javascript, CSS, and HTML. Data for projects is completely serialized into JSON objects, making it easy to add a new project!",
+        "description": "The website you're currently using is custom made, created using Javascript, CSS, and HTML. It features easy to make project slides, complete with thumbnails, backgrounds, and trailers! Data is completely serialized as JSON objects, making it easy to add a new project.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/Portfolio.png",
         "video": "Videos/LilypadLowdown.mp4",
         "projectLink": "https://github.com/RiptideStudio/GlowEngine",
-        "carousel": "Other"
+        "carousel": "Other",
+        "year": "2024"
     },
     {
         "title": "Archery Overhaul",
-        "role": "Creator",
-        "genre": "Terraria Mod (tModloader)",
+        "role": "Developer",
+        "genre": "Terraria Mod",
         "background": "Images/Backgrounds/ArcheryOverhaul3.png",
         "description": "Tired of using the same old bow and arrow? Look no further! Archery Overhaul adds 150+ items, including new weapons, accessories, materials, and NPCs. Explore several new crafting trees with fully completed progression, even up to the Moonlord!",
         "overlayImageSrc": "Images/Terraria.png",
         "imageSrc": "Images/Thumbnails/ArcheryOverhaul.png",
         "video": "Videos/LilypadLowdown.mp4",
-        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
-        "carousel": "Other"
+        "projectLink": "https://steamcommunity.com/sharedfiles/filedetails/?id=2829105343&searchtext=sorcery",
+        "carousel": "Other",
+        "year": "tModloader, 2019"
     },
     {
         "title": "Spear Overhaul",
-        "role": "Creator",
-        "genre": "Terraria Mod (tModloader)",
+        "role": "Developer",
+        "genre": "Terraria Mod",
         "background": "Images/Backgrounds/SpearOverhaul.png",
-        "description": "This portfolio you're currently using is entirely custom built, created with Javascript, CSS, and HTML.",
+        "description": "Spear Overhaul adds 20 new spears to establish a progression for the spear sub-class! Spears can now be thrown, dealing spear damage, which is increased by crafting new gear and accessories.",
         "overlayImageSrc": "Images/Terraria.png",
         "imageSrc": "Images/Thumbnails/SpearOverhaul.png",
         "video": "Videos/LilypadLowdown.mp4",
-        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
-        "carousel": "Other"
+        "projectLink": "https://steamcommunity.com/sharedfiles/filedetails/?id=2873374899&searchtext=sorcery",
+        "carousel": "Other",
+        "year": "tModloader, 2023"
     },
     {
         "title": "Sorcery Overhaul",
-        "role": "Creator",
-        "genre": "Terraria Mod (tModloader)",
-        "background": "Images/Backgrounds/Otherglow.png",
-        "description": "This portfolio you're currently using is entirely custom built, created with Javascript, CSS, and HTML.",
+        "role": "Developer",
+        "genre": "Terraria Mod",
+        "background": "Images/Backgrounds/SorceryOverhaul.png",
+        "description": "There's a lot of magic in Terraria, but sometimes it can be underwhelming. Sorcery Overhaul adds 100+ items, ranging from tomes, staffs, accessories, and more! Explore new weapon progressions and armor sets as well as new mana based mechanics.",
         "overlayImageSrc": "Images/Terraria.png",
-        "imageSrc": "Images/Thumbnails/Terraria.png",
+        "imageSrc": "Images/Thumbnails/SorceryOverhaul.png",
         "video": "Videos/LilypadLowdown.mp4",
-        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
-        "carousel": "Other"
+        "projectLink": "https://steamcommunity.com/sharedfiles/filedetails/?id=2925249383&searchtext=sorcery",
+        "carousel": "Other",
+        "year": "tModloader, 2023"
     }
 
 ]

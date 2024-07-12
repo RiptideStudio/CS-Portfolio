@@ -23,6 +23,7 @@ function createCarouselSlide(item) {
     imageContainer.dataset.background = item.background;
     imageContainer.dataset.logo = item.logo;
     imageContainer.dataset.video = item.video;
+    imageContainer.dataset.year = item.year;
  
     const carouselId = item.carousel.toLowerCase() + '-carousel';  // Adjust this ID as needed
     const carousel = document.getElementById(carouselId);
@@ -130,11 +131,18 @@ function updateActiveSlideDisplay(carouselId) {
         const videoSrcElement = document.querySelector('.slideshow-container .slide-video');
         const linkElement = document.querySelector('.game-text-container .game-text-link a');
         const roleElement = document.querySelector('.game-text-container .game-text-role');
+        const year = activeSlide.dataset.year;
 
         titleElement.textContent = title;
         descriptionElement.textContent = description;
         imageOverlayElement.src = activeSlide.dataset.overlayImageSrc;
         roleElement.textContent = activeSlide.dataset.role+" - "+activeSlide.dataset.genre;
+
+        if (year != 'undefined')
+        {
+            roleElement.textContent += " ("+year+")";
+        }
+        
         linkElement.href = activeSlide.dataset.projectLink;
 
         // set the slide image based on whether we have a logo or background
