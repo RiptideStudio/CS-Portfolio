@@ -1,11 +1,11 @@
 /* Initial state of the navbar before any animation */
 #navbar {
-  background-color: rgb(39, 39, 39);
+  background-color: rgb(51, 51, 51);
   position: fixed;
   top: 24px; /* Start off-screen */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Offset by half of the navbar's width */
-  width: 50%;
+  width: 35%;
   text-align: center;
   z-index: 100;
   border-radius: 240px;
