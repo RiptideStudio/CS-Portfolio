@@ -9,8 +9,8 @@
   background: none;
   border: none;
   cursor: pointer;
-  width: 4vw;
-  height: 6vh;
+  width: calc(2vw + 2vh);
+  height: calc(2vw + 2vh);
   display: flex;
   flex-direction: column;
   justify-content: space-around; /* Distributes spacing evenly */

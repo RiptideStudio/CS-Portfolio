@@ -1,13 +1,14 @@
 .aboutTitle {
   text-align: left;
   margin-top: 25vh;
-  margin-left: 46%;
+  font-size: calc(0.6vw + 0.6vh);
+  margin-left: 45vw;
   position: absolute;
 }
 
 .info-card {
   color: rgb(200, 200, 200);
-  margin-left: 3.5vw;
+  margin-left: 48px;
   margin-top: 3.5vh;
   display: inline-block;
   font-size: larger;
@@ -16,13 +17,13 @@
 .info-card::before {
     content: '';
     display: inline-block;
-    width: 1vw;
-    height: 1vw;
+    width: 16px;
+    height: 16px;
     background-color: rgb(121, 29, 187);
     border-radius: 50%;
     position: absolute;
-    margin-left: -1.75vw;
-    margin-top: 0.25vh;
+    margin-left: -26px;
+    margin-top: 0.35vh;
 }
 
 .info-card-description {
@@ -32,15 +33,14 @@
   font-size: small;
 }
 
-.aboutTitle h3::after {
-  content: '';
+/* For bottom information links on about page */
+.horizontal-line {
+  border: none;
+  height: 1.5px;
   position: absolute;
-  left: 0%;
-  width: 175%;
-  bottom: 1.25vh;
-  height: 0.2vh;
-  background: linear-gradient(to right, #4f4f4f, #4f4f4f, #79797900);
-  border-radius: 2px;
+  background-color: #393939;
+  width: 94%;
+  margin: 18vh 3%
 }
 
 /* Styling for the whole HTML and body */
@@ -55,7 +55,7 @@ body.fade-in {
 }
 
 html {
-  background-image: linear-gradient(to top, rgb(22, 22, 22), rgb(30, 30, 30));
+  background-image: radial-gradient(circle, rgb(32, 32, 32), rgb(16, 16, 16));
 }
 
 body {
@@ -63,50 +63,39 @@ body {
 }
 
 img {
-  width: 150%;
+  width: calc(15.6vw + 15.6vh);
   box-shadow: -12px 12px 12px rgba(0, 0, 0, 0.25);
   border-radius: 100%;
-  margin-left: 40%;
-  margin-top: 0%;
+  margin-left: 22vw;
+  margin-top: 24vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.image-left {
-  position: absolute;
-  justify-content: left;
-  top: 20%;
-  left: 15%;
+.text-wrapper {
+  margin-left: 2vw;
+  margin-top: -10vh;
 }
 
 .image-text-right {
   position: absolute;
   text-align: left;
-  left: 31vw;
-  top: 25vh;
   color: rgb(200, 200, 200);
-  font-size: 16px;
+  font-size: calc(0.6vw + 0.6vh);
   letter-spacing: 0.075em;
   width: 36vw;
-  height: 360px;
   white-space: normal;
   word-wrap: break-word;
-}
-
-/* For bottom information links on about page */
-.horizontal-line {
-  border: none;
-  height: 2px;
-  position: absolute;
-  background-color: #393939;
-  width: 94%;
-  margin: 38% 3%
 }
 
 .info-container {
   display: inline-block;
   position: relative;
   left: 3.1%;
-  margin-top: 41%;
-  margin-right: 13vw;
+  top: 22vh;
+  margin-right: 12vw;
+  font-size: calc(0.5vw + 0.5vh);
 }
 
 .info-title {
@@ -115,14 +104,46 @@ img {
 }
 
 .info-text {
-  font-size: small;
   color: #919191;
   margin-top: 0.75vh;
+  font-size: calc(0.45vw + 0.45vh);
 }
 
 .copyright-text {
-  font-size: small;
   color: #919191;
   margin-left: 82%;
-  margin-top: -5vh;;
+  margin-top: 18vh;
+  font-size: calc(0.45vw + 0.45vh);
+}
+
+.project-select a {
+  text-decoration: none;
+  color: inherit;
+}
+.project-select {
+  font-size: calc(0.5vw + 0.5vh);
+  color:rgb(179, 179, 179);
+  position: absolute;
+  align-content: center;
+  text-align: center;
+  margin-top: -5vh;
+  left: 47%;
+  width: 8vw;
+  height: 5vh;
+  background-color: rgb(51, 51, 51);
+  border-radius: 24px;
+  transition: 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.025em;
+}
+
+.project-select:hover {
+  background-color: rgb(231, 200, 0);
+  scale: 1.1;
+  color: black;
+}
+
+.project-select:active {
+  background-color: rgb(231, 200, 0);
+  scale: 0.9;
 }
