@@ -10,8 +10,7 @@
     overflow-x: hidden; /* Prevent horizontal scroll */
     opacity: 0;
     transition: 0.3s ease-in-out; /* Smooth transition for opening and closing */
-    box-shadow: -16px 0px 16px rgba(0, 0, 0, 0.406);
-    background-image: linear-gradient(to right, rgb(12, 12, 12) -100%, rgb(12, 12, 12) 100%);
+    background-color: rgb(9, 9, 9);
   }
 
   /* Sidebar Content */
@@ -21,6 +20,15 @@
     letter-spacing: 0.15em;
     font-size: large;
     top: 29%;
+  }
+
+  .sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2px;
   }
 
   .sidebar-text a {

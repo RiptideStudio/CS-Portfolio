@@ -1,15 +1,16 @@
 /* Initial state of the navbar before any animation */
 #navbar {
   position: fixed;
-  top: 24px; /* Start off-screen */
+  top: 2.25%; /* Start off-screen */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Offset by half of the navbar's width */
-  width: 40dvw;
+  width: 40vw;
   text-align: center;
   z-index: 100;
   border-radius: 240px;
   opacity: 1; /* Start fully transparent */
   transition: top 0.4s ease, opacity 0.3s ease; /* Transition for scrolling */
+  font-size: calc(0.6vw + 0.6vh);
 }
 
 /* Animation that runs when the page loads */
