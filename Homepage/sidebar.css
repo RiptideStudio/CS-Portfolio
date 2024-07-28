@@ -57,3 +57,21 @@
     transform: scale(1);
     background-color: rgb(79, 17, 141);
   }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 100;
+  }
+
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }

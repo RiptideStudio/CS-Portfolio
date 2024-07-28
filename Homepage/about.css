@@ -38,11 +38,11 @@
 /* For bottom information links on about page */
 .horizontal-line {
   border: none;
-  height: 9%;
+  height: 10%;
   position: absolute;
   background-color: #1f1f1f;
   width: 100%;
-  top: -1%;
+  top: -2vh;
   z-index: -1;
 }
 /* For bottom information links on about page */
@@ -132,10 +132,9 @@ img {
 
 .copyright-text {
   color: #919191;
-  margin-left: 84%;
-  display: inline-block;
-  position: relative;
-  top: 11vh;
+  margin-left: 85%;
+  position: absolute;
+  bottom: 7%;
   font-size: calc(0.45vw + 0.45vh);
 }
 

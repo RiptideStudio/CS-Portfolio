@@ -1,75 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Callen Betts - Game Developer Portfilio</title>
 
   <!-- Style sheets -->
-  <link rel="stylesheet" href="index.css"> 
-  <link rel="stylesheet" href="navbutton.css">
+  <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="section.css">
   <link rel="stylesheet" href="word.css">
   <link rel="stylesheet" href="hamburger.css">
+  <link rel="stylesheet" href="contact.css">
   <link rel="stylesheet" href="sidebar.css">
-  <link rel="stylesheet" href="carousel-container.css">
+  <link rel="stylesheet" href="about.css">
   <link rel="stylesheet" href="profile.css">
   <link rel="stylesheet" href="Utility/scrollbar.css">
   <link rel="stylesheet" href="Utility/image.css">
 
 </head>
 
-<!-- Quick Navbar for home page -->
-<nav id="navbar">
-  <a href="index.html" class="nav-link github">Projects</a>
-  <a href="#Socials" class="nav-link socials">Socials</a>
-  <a href="contact.html" class="nav-link github">Contact</a>
-  <a href="about.html" class="nav-link github">About</a>
-</nav>
+<div class="about-page">
+  <!-- Quick Navbar for home page -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-link projects">Projects</a>
+    <a href="about.html" class="nav-link github">Home</a>
+    <a href="socials.html" class="nav-link github">Socials</a>
+    <a href="https://github.com/RiptideStudio?tab=repositories" target="_blank" class="nav-link github">Github</a>
+  </nav>
 
-<!-- Hamburger Menu -->
-<button class="hamburger-menu" onclick="toggleSidebar()">
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-</button>
+  <!-- Hamburger Menu -->
+  <button class="hamburger-menu" onclick="toggleSidebar()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </button>
 
-<div class="sidebar" id="mySidebar">
-  <div class="sidebar-content">
-    <div class="sidebar-text"><a href="index.html"><span>Home</span></a></div><br>
-    <div class="sidebar-text"><a href="about.html"><span>About</span></a></div><br>
-    <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
-    <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories" target = "_blank"><span>Github</span></a></div><br>
+  <div class="sidebar" id="mySidebar">
+    <div class="sidebar-content">
+      <div class="sidebar-text"><a href="about.html"><span>Home</span></a></div><br>
+      <div class="sidebar-text"><a href="index.html"><span>Projects</span></a></div><br>
+      <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
+      <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories"
+          target="_blank"><span>Github</span></a></div><br>
+    </div>
   </div>
-</div>
+  <div id="overlay" class="overlay"></div>
 
-<!-- About Icon -->
-<a href="about.html" class="profile-container">
-  <img src="Images/profile.jpg" alt="Profile" class="profile">
-  <span class="profile-text">Callen Betts</span>
-</a>
-<br><br><br><br><br><br><br><br><br>
-<!-- Start Main body -->
+  <!-- MAIN BODY -->
 
+  <div class = "chat-text-wrapper">
+    <div class = "chat-text">
+      I really like chatting.
+      <br><br> 
+      Especially if you're working on something cool.
+    </div>
+    <div class = "chat-subtext">
+      Want to work together? Let me know!
+    </div>
+  </div>
 
-<div class = "steamTitle">
-  <span class="titleWord">Hi, I'm Callen.</span>
-</div>
-
-
-<!-- End main body -->
-<script>
-window.addEventListener('load', function() {
-  document.body.classList.add('fade-in');
-});
-    
-</script>
-<script src="word.js"></script>
-<script src="hamburger.js"></script>
-<script src="sidebar.js"></script>
-<script src="navbar.js"></script>
-<script src="carousel-container.js"></script>
+  <div class="message-box-wrapper">
+    <div class="message-box-title">
+      Send me a message.
+    </div>
+    <div class="gmail-image">
+      <img src="Images/Contact/Gmail.png">
+    </div>
+    <div id = "name" class="message-box">
+      <textarea id = "nameText" placeholder="Name*"></textarea>
+    </div>
+    <div id = "email" class="message-box">
+      <textarea id = "emailText" placeholder="Email*"></textarea>
+    </div>
+    <div id = "subject" class="message-box">
+      <textarea id = "subjectText" placeholder="Subject"></textarea>
+    </div>
+    <div id = "message" class="message-box-description">
+      <textarea id = "messageText" placeholder="What do you want to say?"></textarea>
+    </div>
+    <button id = "sendButton" class="send-button">
+      <image src = "Images/Contact/SendButton.png"></image>
+      Send
+    </button>
+  </div>
   
-</body>
+  <!-- Top left info card -->
+  <div class="info-card">
+    Callen Betts
+  </div>
+
+  <div class="info-card-description">
+    Computer Science/Game Design Student
+  </div>
+
+  <hr class="horizontal-line">
+  <hr class="horizontal-line-thin">
+
+
+
+  <!-- End main body -->
+
+  <script>
+    window.addEventListener('load', function () {
+      document.body.classList.add('fade-in');
+    });
+  </script>
+
+  <script src="word.js"></script>
+  <script src="sidebar.js"></script>
+  <script src="navbar.js"></script>
+  <script src="contact.js"></script>
+
+  </body>
+
 </html>
