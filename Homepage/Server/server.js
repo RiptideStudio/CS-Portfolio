@@ -14,8 +14,8 @@ app.post('/send-message', async (req, res) => {
     const { email, message } = req.body;
     console.log(message);
     console.log(email);
-
     if (!email || !message) {
+        alert('Please enter a valid email and message.');
         return res.status(400).json({ success: false, error: 'Email and message are required.' });
     }
 

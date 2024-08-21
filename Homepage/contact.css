@@ -17,11 +17,15 @@
   font-size: calc(0.65vw + 0.65vh);
 }
 
+.form iframe{
+  left: 50%;
+}
+
 .gmail-image img {
-  margin-top: -12%;
-  margin-left: 91%;
-  width: 48px;
-  height: 48px;
+  margin-top: -14%;
+  margin-left: 90%;
+  width: 10%;
+  height: 10%;
   display: flex;
   justify-content: center;
   object-fit: contain;
@@ -69,7 +73,7 @@
 }
 
 .message-box {
-  color:rgb(160, 160, 160);
+  color: rgb(150, 150, 150);
   background-color: rgb(61, 61, 61);
   border-radius: calc(0.5vw + 0.5vh);
   margin-top: 3.3vh;
@@ -90,7 +94,7 @@
 }
 
 .message-box-description {
-  color: rgb(160, 160, 160);
+  color: rgb(150, 150, 150);
   background-color: rgb(71, 71, 71);
   border-radius: 16px;
   margin-top: 5%;
