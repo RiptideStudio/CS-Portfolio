@@ -144,15 +144,15 @@ img {
 }
 
 .project-select {
-  font-size: calc(0.5vw + 0.5vh);
+  font-size: calc(0.6vw + 0.6vh);
   color:rgb(179, 179, 179);
   position: absolute;
   align-content: center;
   text-align: center;
   top: 65%;
   left: 47%;
-  width: 8vw;
-  height: 5vh;
+  width: 9vw;
+  height: 6vh;
   background-color: rgb(43, 43, 43);
   border-radius: 24px;
   transition: 0.2s;

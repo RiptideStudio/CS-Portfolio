@@ -1,7 +1,28 @@
 document.getElementById('sendButton').addEventListener('click', function() {
     var email = document.getElementById('emailText').value;
     var message = document.getElementById('messageText').value;
-    var deployment = 'https://script.google.com/macros/s/AKfycbwOs1Uwwacd7cgXICnnCflACI1UDx-e4o8Ib_wPhTsFucUSAZ430E2J9JUxnSCuJl9G/exec';
+    var name = document.getElementById('nameText').value;
+    var subject = document.getElementById('subjectText').value;
+
+    // Rate limiter using localStorage
+    const maxRequests = 5; // Maximum allowed requests
+    const windowMs = 15 * 60 * 1000; // 15 minutes in milliseconds
+    const now = Date.now();
+
+    // Retrieve the submission history from localStorage
+    let submissionHistory = JSON.parse(localStorage.getItem('submissionHistory')) || [];
+
+    // Filter out submissions that are older than the window
+    submissionHistory = submissionHistory.filter(timestamp => now - timestamp < windowMs);
+
+    if (submissionHistory.length >= maxRequests) {
+        alert("Too many requests, please try again later.");
+        return;
+    }
+
+    // Add the current timestamp to the submission history
+    submissionHistory.push(now);
+    localStorage.setItem('submissionHistory', JSON.stringify(submissionHistory));
 
     // Regular expression to validate email format
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -16,30 +37,20 @@ document.getElementById('sendButton').addEventListener('click', function() {
         return;
     }
 
-    var data = {
+    var templateParams = {
         email: email,
-        message: message
+        message: message,
+        reply_to: email,
+        subject: subject,
+        from_name: name
     };
 
-    fetch(deployment, { // Replace with your Google Apps Script URL
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            email: email,
-            message: message
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Message sent successfully!');
-        } else {
-            alert('Error sending message.');
-        }
-    })
-    .catch(error => {
-        alert('Error sending message: ' + error.message);
+    emailjs.send('service_zutcgda', 'template_nylct2n', templateParams)
+    .then(function(response) {
+        alert('Message sent!');
+    }, function(error) {
+        alert('Failed to send message: ' + error.text);
     });
 });
+
+
