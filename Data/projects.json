@@ -135,19 +135,7 @@
         "carousel": "Engines",
         "year": "2024"
     },
-{
-        "title": "BIB Engine",
-        "role": "Systems Programmer",
-        "genre": "2D Engine",
-        "background": "Images/Backgrounds/BIBEngine.png",
-        "description": "Developed entirely in C, this engine was used to create 'Santa's Last Christmas', a sidescrolling wave-shooter set in the North Pole. This project was created with a team of five developers.",
-        "overlayImageSrc": "Images/Github.png",
-        "imageSrc": "Images/Thumbnails/BIBEngine.png",
-        "video": "Videos/LilypadLowdown.mp4",
-        "projectLink": "https://riptide-studios.itch.io/lilly-l",
-        "carousel": "Engines",
-        "year": "2022"
-    },
+
     {
         "title": "Real Engine",
         "role": "Programmer, Developer",
@@ -211,7 +199,7 @@
         "description": "Spear Overhaul adds 20 new spears to establish a progression for the spear sub-class! Spears can now be thrown, dealing spear damage, which is increased by crafting new gear and accessories.",
         "overlayImageSrc": "Images/Terraria.png",
         "imageSrc": "Images/Thumbnails/SpearOverhaul.png",
-        "video": "Videos/LilypadLowdown.mp4",
+        "video": "Videos/SpearOverhaul.mp4",
         "projectLink": "https://steamcommunity.com/sharedfiles/filedetails/?id=2873374899&searchtext=sorcery",
         "carousel": "Other",
         "year": "tModloader, 2023"
