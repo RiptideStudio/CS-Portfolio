@@ -2,7 +2,7 @@
   position: absolute;
   display: inline-block;
   left: 20%;
-  top: 33%;
+  top: 30%;
   max-width: 25%;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .gmail-image img {
-  margin-top: -14%;
+  margin-top: -9%;
   margin-left: 90%;
   width: 10%;
   height: 10%;
@@ -37,7 +37,7 @@
     position: absolute;
     display: inline-block;
     left: 50%;
-    top: 18%;
+    top: 15%;
     padding: 32px;
     border-radius: 24px;
     background-color: rgb(38, 38, 38);
@@ -68,7 +68,6 @@
 .message-box-title {
   color: white;
   font-size: calc(0.9vw + 0.9vh);
-  margin-bottom: 5%;
   outline: none;
 }
 
@@ -106,6 +105,12 @@
   outline-color: rgba(140, 140, 140, 0);
   outline-style: solid;
   transition: 0.3s;
+}
+
+.info-card-container {
+  position: absolute;
+  top: 71%;
+  left: 1%;
 }
 
 .message-box-description:hover {
