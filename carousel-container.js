@@ -163,6 +163,19 @@ function updateActiveSlides(carouselId) {
     if (activeSlide)
     {
         activeSlide.classList.add('active');
+
+        // disable the trailer button if we have no video
+        const trailerButton = document.getElementById('playButton');
+        const videoPath = activeSlide.dataset.video;
+        const youtubeLink = activeSlide.dataset.youtube;
+
+        trailerButton.style.display = 'block';
+
+        if (videoPath == 'undefined' && youtubeLink == 'undefined')
+        {
+            console.log(videoPath);
+            trailerButton.style.display = 'none';   
+        }
     }
 
     updateActiveSlideDisplay(carouselId);
@@ -182,7 +195,9 @@ function startVideo(activeSlide)
 
     console.log(videoOverlay);
     if (videoPath == 'undefined' && youtubeLink == 'undefined')
+    {
         return;
+    }
 
     // Clear any existing YouTube iframe if present
     const existingIframe = player.querySelector('iframe');
