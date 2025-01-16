@@ -106,57 +106,69 @@
         "carousel": "Games",
         "year": "2022"
     },
-
+    {
+        "title": "Phase Pong",
+        "role": "Creator",
+        "background": "Images/Backgrounds/SeashoreSiege.png",
+        "genre": "Action",
+        "description": "Phase Pong might seem like regular pong, but don't be fooled! The better you do, the smaller your paddle gets! Be the first to reach five points, and stake your claim on the leaderboard!",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/PhasePong.png",
+        "video": "Videos/SeashoreSiege.mp4",
+        "projectLink": "https://riptide-studios.itch.io/phase-pong-game",
+        "carousel": "Games",
+        "year": "2024"
+    },
 
 
     {
-        "title": "Otherglow Engine",
-        "role": "Developer",
+        "title": "Otherglow",
+        "role": "Creator",
         "genre": "3D Engine",
         "background": "Images/Backgrounds/Otherglow.png",
-        "description": "Built for windows and created using DirectX 11, this engine is currently being made to develop 'Otherglow', a first person RPG. It features a lighting engine, editor, collision physics, and fully serializable components.",
+        "description": "Built for windows and created using DirectX 11, this engine is currently being made to develop 'Otherglow', a first person RPG. It features a lighting engine, editor, collision physics, and serializable game components.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/OtherGlowThumbnail.png",
         "projectLink": "https://github.com/RiptideStudio/GlowEngine",
+        "video": "Videos/GlowEnginePreview.mp4",
         "carousel": "Engines",
         "year": "In Development"
     },
     {
         "title": "Lynx Engine",
-        "role": "General Programmer",
+        "role": "Graphics Programmer",
         "genre": "2D Engine",
         "background": "Images/Backgrounds/LynxEngineBackground.png",
-        "description": "Lynx Engine was developed with a team of seven people, intended as a general 2D game engine that can be easily scripted in simple C++. It features a robust graphics pipeline, shader support, collision, physics, ImGui, level serialization, custom math libraries, and many gameplay components.",
+        "description": "Lynx Engine was developed with a team of seven people, used to make the game 'Fresh Fruits'. It works as a general 2D game engine with heavily abstracted C++ scripting. It features a robust graphics pipeline, shader support, collision, physics, ImGui, level serialization, custom math libraries, and many gameplay components.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/LynxEngineThumbnail.png",
         "projectLink": "https://github.com/Swedeachu/LynxEngine-Wiki/wiki",
         "carousel": "Engines",
         "year": "2024"
     },
-
     {
-        "title": "Real Engine",
-        "role": "Programmer, Developer",
-        "genre": "3D Engine",
-        "background": "Images/Backgrounds/RealEngineBackground.png",
-        "description": "This engine was created with the sole purpose of learning more about game engines and the graphics pipeline. It can generate vertices for 3D objects, and light them using simple point lights created in DirectX 11.",
-        "overlayImageSrc": "Images/Github.png",
-        "imageSrc": "Images/Thumbnails/RealEngineThumbnail.png",
-        "projectLink": "https://github.com/RiptideStudio/Real-Engine",
-        "carousel": "Engines",
-        "year": "2022"
-    },
-    {
-        "title": "Starlight Engine",
-        "role": "Programmer, Developer",
+        "title": "Moonborne",
+        "role": "Creator",
         "genre": "2D Engine",
-        "background": "Images/Thumbnails/VisualStudio.png",
-        "description": "Currently under development, the Starlight Engine will be used to create 'Moonborne', a story-heavy RPG with a focus in exploration and discovery. This engine is being developed in OpenGL.",
+        "background": "Images/Backgrounds/StarlightEngine.png",
+        "description": "Currently under development, the Moonborne Engine will be used to make 'Moonborne', a narrative-heavy RPG focusing on exploration and adventure. It features a tilemap painter and scene editor, allowing the developer to edit objects and rooms in-game.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/StarlightEngine.png",
         "projectLink": "",
         "carousel": "Engines",
         "year": "In Development"
+    },
+    {
+        "title": "Graphics Engine",
+        "role": "Creator",
+        "genre": "3D Engine",
+        "background": "Images/Backgrounds/RealEngineBackground.png",
+        "description": "This engine was created with the sole purpose of learning more about game engines and the graphics pipeline. It can generate vertices for 3D objects, and light them using simple point lights, all done in DirectX 11.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/RealEngineThumbnail.png",
+        "projectLink": "https://github.com/RiptideStudio/Real-Engine",
+        "carousel": "Engines",
+        "year": "2022"
     },
 
 

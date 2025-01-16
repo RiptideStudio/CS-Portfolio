@@ -106,7 +106,19 @@
         "carousel": "Games",
         "year": "2022"
     },
-
+    {
+        "title": "Phase Pong",
+        "role": "Creator",
+        "background": "Images/Backgrounds/SeashoreSiege.png",
+        "genre": "Action",
+        "description": "Phase Pong might seem like regular pong, but don't be fooled! The better you do, the smaller your paddle gets! Be the first to reach five points, and stake your claim on the leaderboard!",
+        "overlayImageSrc": "Images/Itch.png",
+        "imageSrc": "Images/Thumbnails/PhasePong.png",
+        "video": "Videos/SeashoreSiege.mp4",
+        "projectLink": "https://riptide-studios.itch.io/phase-pong-game",
+        "carousel": "Games",
+        "year": "2024"
+    },
 
 
     {

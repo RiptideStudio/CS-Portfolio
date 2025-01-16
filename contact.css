@@ -1,9 +1,9 @@
 .chat-text-wrapper {
   position: absolute;
   display: inline-block;
-  left: 20%;
-  top: 30%;
-  max-width: 25%;
+  left: 15%;
+  top: 35%;
+  max-width: 30%;
 }
 
 .chat-text {

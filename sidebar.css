@@ -17,9 +17,9 @@
   .sidebar-content {
     position: absolute;
     text-align: center;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.05em;
     font-size: large;
-    top: 29%;
+    top: 27.5%;
   }
 
   .sidebar::before {
@@ -32,24 +32,24 @@
   }
 
   .sidebar-text a {
-    padding: 16px;
+    padding: 16px 4vw;
     font-size: 1.5vw;
-    margin-left: 7vw;
     text-decoration: none;
-    border-radius: 24px;
+    border-radius: 0x;
     display: block;
-    width:auto;
+    width:100%;
     color:rgb(170, 170, 170);
     transition: 0.3s;
     overflow: visible;
     transform: scale(1);
+    justify-content: center;
   }
 
   .sidebar-text a:hover {
     transition: 0.3s;
     color: black;
     background-color: rgb(255, 210, 11);
-    transform: scale(1.2);
+    transform: scale(1);
   }
 
   .sidebar-text a:active {

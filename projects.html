@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callen Betts - Game Developer Portfilio</title>
+
+  <!-- Style sheets -->
+  <link rel="stylesheet" href="index.css"> 
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="section.css">
+  <link rel="stylesheet" href="word.css">
+  <link rel="stylesheet" href="hamburger.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="video-player.css">
+  <link rel="stylesheet" href="game-project.css">
+  <link rel="stylesheet" href="carousel-container.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="Utility/scrollbar.css">
+  <link rel="stylesheet" href="Utility/image.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+
+<!-- Hamburger Menu -->
+<button class="hamburger-menu" id = "hamburger" onclick="toggleSidebar()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</button>
+
+<div class="sidebar" id="mySidebar">
+  <div class="sidebar-content">
+    <div class="sidebar-text"><a href="index.html"><span>Home</span></a></div><br>
+    <div class="sidebar-text"><a href="projects.html"><span>Projects</span></a></div><br>
+    <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
+    <div class="sidebar-text"><a href="gallery.html"><span>Gallery</span></a></div><br>
+    <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories"
+        target="_blank"><span>Github</span></a></div><br>
+  </div>
+</div>
+<div id="overlay" class="overlay"></div>
+
+<div class="custom-video-player" id="player">
+  
+  <div class="top-bar"></div>
+  <button class="close-btn">&#10005;</button> <!-- Unicode character for "X" -->
+  <video id="video" poster="">
+      <source src="Videos/Video.mp4" type="video/mp4" >
+      Your browser does not support the video tag.
+  </video>
+  <div class="video-overlay"></div> <!-- Overlay for play/pause icon -->
+  <div class="controls">
+      <button id="playPause" class="control-button"><i class="fas fa-play"></i></button>
+      <input type="range" id="seekbar" value="0" min="0">
+      <button id="muteToggle" class="control-button"><i class="fas fa-volume-up"></i></button>
+      <button id="fullScreen" class="control-button"><i class="fas fa-expand"></i></button>
+  </div>
+</div>
+
+<div class = "page-overlay" id = "page-overlay">
+  <div class="upper-container">
+    
+<!-- About Icon -->
+<!-- <a href="about.html" class="profile-container">
+  <img src="Images/profile.jpg" alt="Profile" class="profile">
+  <span class="profile-text">Callen Betts</span>
+</a> -->
+
+  <!-- The informative text -->
+  <div class="game-container">
+    <div class="game-text-container">
+      <h1></h1>
+      <div class = "game-text-role">Developer</div>
+      <p>
+        <a href="" target = "_blank"><div class="game-text-link">Go to project</div></a>
+      </p>
+      <img src="Images/Steam.png" class="slide-icon" alt="Icon Description">
+    </div>
+
+    <div class="slideshow-container">
+        <div class="slide" id="mainImage">
+          <img src="Images/Thumbnails/Earthward.png" alt="Slideshow Image">
+        </div>
+    </div>
+    
+    <button class="player-button" id = "playButton">
+      Trailer <i class="fas fa-play-circle"></i> <!-- Font Awesome Play Icon -->
+    </button>
+  </div>
+    
+  <!-- End of upper container -->
+  </div>
+
+
+  <div class="lower-container">
+
+    <br><br><br><br>
+
+      <!-- Game Titles -->
+      <div class = "titleWord">Game Titles</div>
+
+      <div class="carousel-container" id="games-carousel">
+        <div class="carousel-slide">
+        </div>
+        <button class="prev" onclick="moveSlide(-1, 'games-carousel')">&#10094;</button>
+        <button class="next" onclick="moveSlide(1, 'games-carousel')">&#10095;</button>
+      </div>
+      <!-- Engines -->
+      <div class="titleWord">Custom Engines</div>
+
+      <div class="carousel-container" id="engines-carousel">
+        <div class="carousel-slide">
+        </div>
+        <button class="prev" onclick="moveSlide(-1, 'engines-carousel')">&#10094;</button>
+        <button class="next" onclick="moveSlide(1, 'engines-carousel')">&#10095;</button>
+      </div>
+      <!-- Other -->
+      <div class="titleWord">Cool Projects</div>
+      
+      <div class="carousel-container" id="other-carousel">
+        <div class="carousel-slide">
+        </div>
+        <button class="prev" onclick="moveSlide(-1, 'other-carousel')">&#10094;</button>
+        <button class="next" onclick="moveSlide(1, 'other-carousel')">&#10095;</button>
+      </div>
+
+    <br><br><br>
+  </div>
+</div>
+
+<!-- End main body -->
+<script>
+window.addEventListener('load', function() {
+  document.body.classList.add('fade-in');
+});
+  
+</script>
+<script src="word.js"></script>
+<script src="sidebar.js"></script>
+<script src="navbar.js"></script>
+<script src="video-player.js"></script>
+<script src="load-projects.js"></script>
+<script src="carousel-container.js"></script>
+
+</body>
+</html>

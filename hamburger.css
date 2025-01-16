@@ -3,8 +3,8 @@
 /* Hamburger Menu Button */
 .hamburger-menu {
   position: fixed;
-  top: 1.5%;
-  right: 1%;
+  top: 0.35%;
+  right: 0.5%;
   z-index: 151;
   background: none;
   border: none;
@@ -16,7 +16,7 @@
   justify-content: space-around; /* Distributes spacing evenly */
   align-items: center; /* Centers bars horizontally */
   transition: 0.3s; /* Animation for hover effect */
-  border-radius: 24px;
+  border-radius: 12px;
   padding: 1.1vmin;
   transform: scale(1);
 }
@@ -26,7 +26,7 @@
   background-color: rgb(255, 210, 11);
   padding-top: 6px;
   padding-bottom: 6px;
-  transform: scale(1.1);
+  transform: scale(1.075);
 }
 
 .hamburger-menu:active {
@@ -39,7 +39,7 @@
 .hamburger-menu .bar {
   width: 2vw; /* Adjust width to your preference */
   height: .4vh;
-  background-color: #b5b5b5;  /* Color of the hamburger icon */
+  background-color: #d3d3d3;  /* Color of the hamburger icon */
   border-radius: 24px;
   transition: 0.3s;
 }

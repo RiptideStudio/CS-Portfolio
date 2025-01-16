@@ -12,137 +12,114 @@
   <link rel="stylesheet" href="word.css">
   <link rel="stylesheet" href="hamburger.css">
   <link rel="stylesheet" href="sidebar.css">
-  <link rel="stylesheet" href="video-player.css">
-  <link rel="stylesheet" href="game-project.css">
-  <link rel="stylesheet" href="carousel-container.css">
+  <link rel="stylesheet" href="about.css">
   <link rel="stylesheet" href="profile.css">
   <link rel="stylesheet" href="Utility/scrollbar.css">
   <link rel="stylesheet" href="Utility/image.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
-<body>
 
+<div class="about-page">
+<!-- Quick Navbar for home page -->
+<nav id="navbar">
+  <a href="index.html" class="nav-link github">Home</a>
+  <a href="projects.html" class="nav-link projects">Games</a>
+  <a href="gallery.html" class="nav-link github">Gallery</a>
+  <a href="contact.html" class="nav-link github">Contact</a>
+  <a href="https://github.com/RiptideStudio?tab=repositories" target = "_blank" class="nav-link github">Github</a>
+</nav>
 
 <!-- Hamburger Menu -->
-<button class="hamburger-menu" id = "hamburger" onclick="toggleSidebar()">
+<button class="hamburger-menu" onclick="toggleSidebar()">
   <div class="bar"></div>
   <div class="bar"></div>
   <div class="bar"></div>
 </button>
 
-<div class="sidebar" id="mySidebar">
-  <div class="sidebar-content">
-    <div class="sidebar-text"><a href="about.html"><span>Home</span></a></div><br>
-    <div class="sidebar-text"><a href="index.html"><span>Projects</span></a></div><br>
-    <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
-    <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories"
-        target="_blank"><span>Github</span></a></div><br>
+  <div class="sidebar" id="mySidebar">
+    <div class="sidebar-content">
+      <div class="sidebar-text"><a href="index.html"><span>Home</span></a></div><br>
+      <div class="sidebar-text"><a href="projects.html"><span>Projects</span></a></div><br>
+      <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
+      <div class="sidebar-text"><a href="gallery.html"><span>Gallery</span></a></div><br>
+      <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories"
+          target="_blank"><span>Github</span></a></div><br>
+    </div>
   </div>
-</div>
-<div id="overlay" class="overlay"></div>
+  <div id="overlay" class="overlay"></div>
 
-<div class="custom-video-player" id="player">
-  
-  <div class="top-bar"></div>
-  <button class="close-btn">&#10005;</button> <!-- Unicode character for "X" -->
-  <video id="video" poster="">
-      <source src="Videos/Video.mp4" type="video/mp4" >
-      Your browser does not support the video tag.
-  </video>
-  <div class="video-overlay"></div> <!-- Overlay for play/pause icon -->
-  <div class="controls">
-      <button id="playPause" class="control-button"><i class="fas fa-play"></i></button>
-      <input type="range" id="seekbar" value="0" min="0">
-      <button id="muteToggle" class="control-button"><i class="fas fa-volume-up"></i></button>
-      <button id="fullScreen" class="control-button"><i class="fas fa-expand"></i></button>
-  </div>
+<div class="thumbnail-header">
+<img src="Images/About/ThumbnailHeader.png">
 </div>
 
-<div class = "page-overlay" id = "page-overlay">
-  <div class="upper-container">
-    
-<!-- About Icon -->
-<!-- <a href="about.html" class="profile-container">
-  <img src="Images/profile.jpg" alt="Profile" class="profile">
-  <span class="profile-text">Callen Betts</span>
-</a> -->
+<div class="thumbnail">
+  <img src="Images/About/ProfileBackground.png">
+</div>
 
-  <!-- The informative text -->
-  <div class="game-container">
-    <div class="game-text-container">
-      <h1></h1>
-      <div class = "game-text-role">Developer</div>
-      <p>
-        <a href="" target = "_blank"><div class="game-text-link">Go to project</div></a>
-      </p>
-      <img src="Images/Steam.png" class="slide-icon" alt="Icon Description">
-    </div>
-
-    <div class="slideshow-container">
-        <div class="slide" id="mainImage">
-          <img src="Images/Thumbnails/Earthward.png" alt="Slideshow Image">
-        </div>
-    </div>
-    
-    <button class="player-button" id = "playButton">
-      Trailer <i class="fas fa-play-circle"></i> <!-- Font Awesome Play Icon -->
-    </button>
+<!-- Start Main body -->
+<div class="text-wrapper">
+  <div class="aboutTitle">
+    <h1>
+      HI, I'M CALLEN.
+    </h1>
+    <h3>
+      <span class="fade-word">PROGRAMMER,</span>
+      <span class="fade-word">GAME DEVELOPER,</span>
+      <span class="yellow-text fade-word">CREATOR.</span>
+    </h3>
   </div>
-    
-  <!-- End of upper container -->
+  <div class="aboutText">
+    In 2013, when I was only 9 years old, my dad taught me how to use Gamemaker Studio. It was the first game engine I ever used. 
+    Now, more than a decade later, I'm about to complete my undergraduate degree in computer science and game design. 
+    <br><br>
+    Developing games has always felt like a hobby to me - but the journey hasn't always been smooth.
+    <br><br>
+    To really make something good, you need to understand a little bit of everything: how an artist thinks, how a programmer writes code, 
+    and how a musician brings a song to life. Being just a programmer or artist might be enough to make a good game;
+    but it takes a creator to make a great game. 
+    <br><br>
+    This realization was a huge part of my journey to becoming a game developer, and in turn a better programmer.
+    <br><br>
+    During highschool I spent a lot of my time participating in game jams, working in small teams with
+    other indie game developers in the community. They inspired me to begin posting devlogs of my development process on YouTube, 
+    where I amassed a following of over 5,000 people. It gave me a good excuse
+    to take a break and goof off every now and then, but even better, it provided me with a community for my games.
+    <br><br>
+    Bitlands was released on Steam in 2022 during my senior year of highschool. It managed to raise $1,000 for charity,
+    which at the time was an incredible number to me.
+    <br><br>
+    All of these experiences have helped me take ownership of my education and identify what parts of my career really matter.
+    <br>
+    Right now, I'm developing my next indie game title, Earthward.
+    Go check it out!
   </div>
+</div>
 
+<hr class="horizontal-line">
+<hr class="horizontal-line-thin">
+<hr class="vertical-line-hamburger">
 
-  <div class="lower-container">
+<div class="project-select">
+  <a href="index.html">Browse Projects</a>
+</div>
 
-    <br><br><br><br>
-
-      <!-- Game Titles -->
-      <div class = "titleWord">Game Titles</div>
-
-      <div class="carousel-container" id="games-carousel">
-        <div class="carousel-slide">
-        </div>
-        <button class="prev" onclick="moveSlide(-1, 'games-carousel')">&#10094;</button>
-        <button class="next" onclick="moveSlide(1, 'games-carousel')">&#10095;</button>
-      </div>
-      <!-- Engines -->
-      <div class="titleWord">Custom Engines</div>
-
-      <div class="carousel-container" id="engines-carousel">
-        <div class="carousel-slide">
-        </div>
-        <button class="prev" onclick="moveSlide(-1, 'engines-carousel')">&#10094;</button>
-        <button class="next" onclick="moveSlide(1, 'engines-carousel')">&#10095;</button>
-      </div>
-      <!-- Other -->
-      <div class="titleWord">Cool Projects</div>
-      
-      <div class="carousel-container" id="other-carousel">
-        <div class="carousel-slide">
-        </div>
-        <button class="prev" onclick="moveSlide(-1, 'other-carousel')">&#10094;</button>
-        <button class="next" onclick="moveSlide(1, 'other-carousel')">&#10095;</button>
-      </div>
-
-    <br><br><br>
+<div class="bottom-headline-wrapper">
+  <div class="bottom-headline">
+  <div class="copyright-text">(2025) Created By Callen Betts</div>
   </div>
 </div>
 
 <!-- End main body -->
+
 <script>
 window.addEventListener('load', function() {
   document.body.classList.add('fade-in');
 });
-  
 </script>
+
 <script src="word.js"></script>
 <script src="sidebar.js"></script>
 <script src="navbar.js"></script>
-<script src="video-player.js"></script>
-<script src="load-projects.js"></script>
-<script src="carousel-container.js"></script>
-
+  
 </body>
 </html>
