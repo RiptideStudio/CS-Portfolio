@@ -13,8 +13,9 @@
   margin-top: 18vh;
   width: 65%;
   font-style: normal;
-  position: absolute;
+  position: relative;
   line-height: 3.5vh;
+  letter-spacing: 0.05em;
   font-family: "Arial"
 }
 
@@ -23,36 +24,25 @@
   justify-content: center;
   display: flex;
   margin-top: 4vh;
-  color: rgb(201, 201, 201);
+  color: rgb(183, 183, 183);
 }
+
+.bottom-headline-wrapper {
+  position: relative;
+  z-index: -1; 
+}
+
 
 .bottom-headline-wrapper {
   display: block;
   position: relative;
   z-index: -1; 
-  margin-top: 60%;
 }
 
 .bottom-headline {
   text-align: center;
   padding: 40px 0px;
   background-color: #080808;
-  width: 100%;
-}
-
-.thumbnail-header {
-  justify-content: center;
-  display: flex;
-  position: relative;
-  z-index: -4;
-}
-
-.thumbnail {
-  justify-content: center;
-  display: flex;
-  position: relative;
-  margin-top: 6vh;
-  z-index: -1;
 }
 
 .info-card {
@@ -85,38 +75,6 @@
   font-size: calc(0.45vw + 0.45vh);
 }
 
-/* For bottom information links on about page */
-.horizontal-line {
-  border: none;
-  height: 7.5%;
-  position: fixed;
-  background-color: #080808;
-  width: 100%;
-  top: -2vh;
-  z-index: 1;
-}
-
-.vertical-line-hamburger {
-  border: none;
-  height: 7.5%;
-  position: fixed;
-  background-color: #1f1f1f;
-  width: 1px;
-  top: -2vh;
-  margin-left: 96%;
-  z-index: 1;
-}
-
-/* For bottom information links on about page */
-.horizontal-line-thin {
-  border: none;
-  height: 1px;
-  position: fixed;
-  background-color: #212121;
-  width: 100%;
-  top: 5.5%;
-  z-index: 5;
-}
 
 /* Styling for the whole HTML and body */
 html, body {
@@ -190,19 +148,21 @@ body {
 }
 
 .project-select {
-  font-size: calc(0.6vw + 0.6vh);
-  color:rgb(179, 179, 179);
+  color:rgb(241, 241, 241);
   position: relative;
   align-content: center;
+  font-family: "Arial Narrow";
   text-align: center;
-  left: 50%;
-  margin: 6vh 0px;
-  width: 9vw;
-  height: 6vh;
+  margin-top: -4vh;
+  width: fit-content;
+  padding: 0 24px;
+  height: 5vh;
   background-color: rgb(43, 43, 43);
-  border-radius: 24px;
+  border-radius: 4px;
   transition: 0.2s;
   cursor: pointer;
+  font-weight: bold;
+  font-size: larger;
   letter-spacing: 0.025em;
   animation: idleAnimation 3s infinite;
 }
@@ -215,7 +175,7 @@ body {
 
 .project-select:active {
   background-color: rgb(121, 29, 187);
-  scale: 0.9;
+  scale: 0.95;
   color:black;
 }
 

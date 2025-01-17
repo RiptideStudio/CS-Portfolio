@@ -63,7 +63,7 @@ document.getElementById('sendButton').addEventListener('click', function() {
         from_name: name
     };
     
-    overlayText.textContent = "Waiting...";
+    overlayText.textContent = "Sending...";
 
     emailjs.send('service_zutcgda', 'template_nylct2n', templateParams)
     .then(function(response) {

@@ -4,7 +4,7 @@
   top: 0.5%; /* Start off-screen */
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Offset by half of the navbar's width */
-  width: 40vw;
+  width: 80%;
   text-align: center;
   z-index: 100;
   border-radius: 240px;
@@ -31,18 +31,23 @@
 
 #navbar a {
   display: inline-block; /* Changed from block to inline-block for centering */
-  margin: 0 10px; /* Add some space between buttons */
+  margin: 0 -3px; /* Add some space between buttons */
   color: #f3f2f2b0; /* Text color */
-  padding: 14px 12px; /* Padding inside the buttons */
+  padding: 14px 28px; /* Padding inside the buttons */
   text-decoration: none; /* No underline on links */
-  border-radius: 24px; /* Rounded corners */
   transition: background-color 0.2s, color 0.2s, transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
 #navbar a:hover {
   background-color: rgb(255, 210, 11);
   color: black; /* Text color on hover and click */
-  transform: scale(1.075); /* Enlarges the button */
+  transform: scale(1); /* Enlarges the button */
+}
+
+#navbar a:active {
+  background-color: rgb(111, 26, 172);
+  color: black; /* Text color on hover and click */
+  transform: scale(1); /* Enlarges the button */
 }
 
 #navbar a.nav-link {
@@ -60,4 +65,45 @@
   transition: opacity 0.3s, transform 0.3s; /* This will be overridden by animation on hover */
   pointer-events: none;
   z-index: 101; /* Above other content */
+}
+
+.vertical-line-hamburger {
+  border: none;
+  height: 7.5%;
+  position: fixed;
+  background-color: #1f1f1f;
+  width: 1px;
+  top: -2vh;
+  margin-left: 96%;
+  z-index: 6;
+}
+
+.horizontal-line {
+  border: none;
+  height: 7.5%;
+  position: fixed;
+  background-color: #080808;
+  width: 100%;
+  top: -2vh;
+  z-index: 4;
+}
+
+.horizontal-line-thin {
+  border: none;
+  height: 1px;
+  position: fixed;
+  background-color: #212121;
+  width: 100%;
+  top: 5.5%;
+  z-index: 5;
+}
+
+.nav-background {
+  border: none;
+  height: 7.5%;
+  position: fixed;
+  background-color: #000000;
+  width: 100%;
+  top: -2vh;
+  z-index: 4;
 }

@@ -23,26 +23,27 @@
 
 /* Upper container that should not scroll */
 .upper-container {
-  height: 55vh; /* Half of the screen */
+  height: 60vh; /* Half of the screen */
+  top: 4.5vh;
   overflow: hidden; /* No scrolling */
-  background-image: linear-gradient(to top, rgb(12, 12, 12), rgb(22, 22, 22));
+  background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(14, 14, 14));
 }
 
 /* Lower container that should scroll */
 .lower-container {
-  height: 45vh; /* Half of the screen */
+  height: 40vh; /* Half of the screen */
   overflow-x: hidden; /* Enable vertical scrolling */
-  background-image: linear-gradient(to top, rgb(17, 17, 17), rgb(27, 27, 27));
+  background-image: linear-gradient(to top, rgb(10, 10, 10), rgb(19, 19, 19));
 }
 
-.upper-container::after {
+.lower-container::after {
   content: '';
-  position: absolute;
+  position: fixed;
   left: 0px;
-  height: 4px;
-  top: 99.75%;
+  height: 1px;
+  top: 60%;
   width: 100%;
-  background-color: rgb(59, 59, 59);
+  background-color: rgb(41, 41, 41);
 }
 
 /* Example of setting z-index */

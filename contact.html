@@ -29,14 +29,17 @@
 </head>
 
 <div class="about-page">
-  <!-- Quick Navbar for home page -->
-  <nav id="navbar">
-    <a href="index.html" class="nav-link github">Home</a>
-    <a href="projects.html" class="nav-link projects">Projects</a>
-    <a href="contact.html" class="nav-link github">Contact</a>
-    <a href="gallery.html" class="nav-link github">Gallery</a>
-    <a href="https://github.com/RiptideStudio?tab=repositories" target = "_blank" class="nav-link github">Github</a>
-  </nav>
+<!-- Quick Navbar for home page -->
+<nav id="navbar">
+  <a href="index.html" class="nav-link github">Home</a>
+  <a href="projects.html" class="nav-link projects">Games</a>
+  <a href="gallery.html" class="nav-link github">Art Gallery</a>
+  <a href="contact.html" class="nav-link github">Contact</a>
+  <a href="https://github.com/RiptideStudio?tab=repositories" target = "_blank" class="nav-link github">Github</a>
+</nav>
+
+<hr class="horizontal-line">
+<hr class="horizontal-line-thin">
 
   <!-- Hamburger Menu -->
   <button class="hamburger-menu" onclick="toggleSidebar()">
@@ -60,10 +63,12 @@
     OK
   </button>
 
-  <div id = "overlayText" class = "overlay-text">
+  <div id="overlay" class="overlay">
+    <div id = "overlayText" class = "overlay-text">
+    </div>
   </div>
-  <div id="overlay" class="overlay"></div>
 
+ 
   <!-- MAIN BODY -->
 
   <div class = "chat-text-wrapper">
@@ -74,7 +79,7 @@
       Let me know!
     </div>
     <div class = "chat-subtext">
-      You can expect a response in about 1-3 business days.
+      Send a secure email. You can expect a response in about 1-3 business days.
     </div>
   </div>
 
@@ -89,7 +94,7 @@
       <textarea id = "nameText" placeholder="Name*"></textarea>
     </div>
     <div id = "email" class="message-box">
-      <textarea id = "emailText" placeholder="Email*"></textarea>
+      <textarea id = "emailText" placeholder="Your Email*"></textarea>
     </div>
     <div id = "subject" class="message-box">
       <textarea id = "subjectText" placeholder="Subject"></textarea>
@@ -102,19 +107,6 @@
       Send
     </button>
   </div>
-
-  <!-- Top left info card -->
-  <div class="info-card">
-    Callen Betts
-  </div>
-
-  <div class="info-card-description">
-    Computer Science/Game Design Student
-  </div>
-
-  <hr class="horizontal-line">
-
-  <div class="copyright-text">(2024) Created By Callen Betts<br>Open Source</div>
 
   <!-- End main body -->
 

@@ -4,11 +4,14 @@
   left: 15%;
   top: 35%;
   max-width: 30%;
+  font-family: "Arial";
+  letter-spacing: 0.05em;
 }
 
 .chat-text {
   color:white;
   font-size: calc(1.3vw + 1.3vh);
+  font-weight: bold;
 }
 
 .chat-subtext {
@@ -39,7 +42,8 @@
     left: 50%;
     top: 15%;
     padding: 32px;
-    border-radius: 24px;
+    border-radius: 8px;
+    box-shadow: -16px 16px 32px rgba(0, 0, 0, 0.33);
     background-color: rgb(38, 38, 38);
     width: 35%;
     height: 62%;
@@ -85,6 +89,21 @@
   outline-color: rgba(151, 151, 151, 0);
   outline-style: solid;
   transition: 0.3s;
+}
+
+/* Base styles for overlay text */
+.overlay-text {
+  position: relative;
+  font-size: calc(1vw + 1vh);
+  justify-content: center;
+  display: flex;
+  margin-top: 20%;
+  font-style: italic;
+  font-weight: bold;
+  opacity: 0; /* Set opacity to visible */
+  z-index: 150;
+  transition: transform 0.4s; /* Include transform in the transition */
+  transform: scale(1); /* Start scaled down to match image */
 }
 
 .message-box:hover {

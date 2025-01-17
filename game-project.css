@@ -4,8 +4,9 @@
     margin-top: 5vh;
     margin-left: 6vw;
     width: 100%;
+    font-family: "Arial";
     max-width: 33%;
-    font-size: calc(0.4vw + 0.4vh + .5vmin);
+    font-size: calc(0.4vw + 0.4vh + .55vmin);
 }
 
 .game-container {
@@ -17,12 +18,14 @@ p {
     width: 35vw;
     white-space: normal;
     word-wrap: break-word;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.025em;
+    font-size: 1.2em;
+    line-height: 2.75vh;
 }
 
 h1 {
     margin-top: 3vh;
-    letter-spacing: 0.075em;
+    letter-spacing: 0.035em;
     margin-bottom: 4vh;
 }
 
@@ -31,7 +34,7 @@ h1::after {
     position: fixed;
     left: 6vw; /* Extend the line to the left */
     height: .25vh;
-    top: 12.25vh;
+    top: 16.5vh;
     width: 30%;
     background-image: linear-gradient(to right, rgb(79, 79, 79), rgba(53, 23, 186, 0));
 }
@@ -45,16 +48,16 @@ h1::after {
 
 .slide img {
     margin-top: -3vh;
-    width: 53vw;
+    width: 55vw;
     height: 60vh;
     object-fit: cover;
     display: block;
     mask-image: linear-gradient(
         to right, 
         rgba(0, 0, 0, 0) 0%, 
-        rgba(0, 0, 0, 0.5) 20%, 
+        rgba(0, 0, 0, 1) 15%, 
         black 50%, 
-        rgba(0, 0, 0, 0.5) 80%, 
+        rgba(0, 0, 0, 1) 90%, 
         rgba(0, 0, 0, 0) 100%
     );
 }
@@ -71,7 +74,7 @@ h1::after {
 .player-button {
     position: fixed;
     left: 33%;
-    top: 42%;
+    top: 43%;
     width: 8vw;
     font-size: calc(0.5vw + 0.5vh + .5vmin);
     height: 6.5vh;
@@ -107,15 +110,6 @@ h1::after {
     transform: scale(0.9);
 }
 
-.titleWord {
-  position:relative;
-  font-size: 1.25em; 
-  text-shadow: 0px 3px 4px #0000002a;
-  letter-spacing: 0.125em;
-  margin-left: 2.1%;
-  top: -1%;
-}
-
 .slide-icon {
     position: relative;
     width: calc(2.5vh + 2.5vw);
@@ -136,7 +130,7 @@ h1::after {
     text-shadow: 0px 3px 4px #0000002a;
     letter-spacing: 0.1em;
     margin-left: 1vw;
-    top: -1vh;
+    top: -5vh;
 }
 
 /* Genre of the game */

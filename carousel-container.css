@@ -1,7 +1,7 @@
 .carousel-container {
     position: relative;
-    overflow: visible;
     margin-bottom: 9.5vh;
+    top: -10%;
 }
 
 .carousel-slide {
@@ -43,26 +43,6 @@
 .carousel-slide img.selected {
     opacity: 0.5;
     transform: scale(1);
-}
-
-/* Base styles for overlay text */
-.overlay-text {
-    position: absolute;
-    bottom: 2vh; /* Position text at the bottom of the image */
-    right: 1vw; /* Position text at the right of the image */
-    font-size: calc(0.8vw + 0.8vh);
-    font-weight: bold;
-    font-style: italic;
-    text-align: left;
-    opacity: 0; /* Set opacity to visible */
-    z-index: 10;
-    transition: transform 0.4s; /* Include transform in the transition */
-    text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-    transform: scale(0); /* Start scaled down to match image */
 }
 
 /* Base styles for overlay image */
