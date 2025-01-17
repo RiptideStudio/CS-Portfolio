@@ -137,22 +137,22 @@ body {
 }
 
 .project-select {
-  color:rgb(241, 241, 241);
+  color:rgb(214, 214, 214);
   position: relative;
   align-content: center;
-  font-family: "Calibri";
+  font-family: "Arial";
   text-align: center;
   margin-top: -4vh;
   width: fit-content;
-  padding: 0 24px;
+  font-weight: bold;
+  padding: 2px 32px;
   height: 5vh;
-  background-color: rgb(65, 78, 79);
+  background-color: rgb(49, 56, 57);
   border-radius: 4px;
   transition: 0.2s;
   cursor: pointer;
-  font-weight: bold;
-  font-size: larger;
-  letter-spacing: 0.025em;
+  font-size: large;
+  letter-spacing: 0em;
   animation: idleAnimation 3s infinite;
 }
 
