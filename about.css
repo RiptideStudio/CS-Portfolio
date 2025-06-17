@@ -1,22 +1,61 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 65vw;
+  margin: 0 auto 48px auto;
+}
+
 .aboutTitle {
+  position: static;
+  width: 100%;
+  text-align: center;
   font-size: calc(0.75vw + 0.75vh);
-  position: absolute;
   font-style: normal;
-  width: 65%;
-  font-family: "Arial Narrow"
+  font-family: 'Poppins', sans-serif;
+}
+
+.aboutTitle h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.aboutTitle h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.thumbnail {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 6vh;
+}
+
+.thumbnail img {
+  width: 105%;
+  aspect-ratio: 16 / 6.5;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
 }
 
 .aboutText {
-  font-size: calc(0.65vw + 0.65vh);
-  margin-top: 18vh;
-  width: 65%;
-  font-style: normal;
-  position: relative;
-  line-height: 3.5vh;
-  letter-spacing: 0.05em;
-  font-family: "Arial"
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: calc(0.9em + 0.2vw);
+  line-height: 1.7;
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  position: static;
+  letter-spacing: 0.0035em;
 }
 
 .text-wrapper {
@@ -153,7 +192,60 @@ body {
   cursor: pointer;
   font-size: large;
   letter-spacing: 0em;
+  overflow: hidden;
   animation: idleAnimation 3s infinite;
+}
+
+@keyframes idleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.075);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.project-select::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60px;
+  width: 40px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+  opacity: 0;
+  filter: blur(1.5px);
+  transform: skewX(-20deg);
+  transition: opacity 0.2s;
+  animation: none;
+}
+
+.project-select:hover::after {
+  opacity: 1;
+  animation: sparkleStreak 0.7s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes sparkleStreak {
+  0% {
+    left: -60px;
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    left: 100%;
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0.1;
+  }
 }
 
 .project-select:hover {
@@ -168,24 +260,17 @@ body {
   color:black;
 }
 
-/* Define keyframe animations */
-@keyframes idleAnimation {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.075);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
 .video-wrapper {
   opacity: 0.05;
   position: absolute;
   display: block;
   z-index: -1000;
+}
+
+.contact-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
 }

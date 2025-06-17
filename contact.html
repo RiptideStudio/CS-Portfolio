@@ -1,124 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Callen Betts - Game Developer Portfilio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callen Betts - Game Developer Portfilio</title>
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-      (function(){
-          emailjs.init("CLaE060TVuRL-AWVq");
-      })();
-  </script>
-  
-  <!-- Style sheets -->
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="navbar.css">
-  <link rel="stylesheet" href="section.css">
-  <link rel="stylesheet" href="word.css">
-  <link rel="stylesheet" href="hamburger.css">
-  <link rel="stylesheet" href="contact.css">
-  <link rel="stylesheet" href="sidebar.css">
-  <link rel="stylesheet" href="about.css">
-  <link rel="stylesheet" href="profile.css">
-  <link rel="stylesheet" href="Utility/scrollbar.css">
-  <link rel="stylesheet" href="Utility/image.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("CLaE060TVuRL-AWVq");
+        })();
+    </script>
 
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="section.css">
+    <link rel="stylesheet" href="word.css">
+    <link rel="stylesheet" href="hamburger.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="Utility/scrollbar.css">
+    <link rel="stylesheet" href="Utility/image.css">
 </head>
 
-<div class="about-page">
-<!-- Quick Navbar for home page -->
-<nav id="navbar">
-  <a href="index.html" class="nav-link github">Home</a>
-  <a href="projects.html" class="nav-link projects">Games</a>
-  <a href="gallery.html" class="nav-link github">Art Gallery</a>
-  <a href="contact.html" class="nav-link github">Contact</a>
-  <a href="https://github.com/RiptideStudio?tab=repositories" target = "_blank" class="nav-link github">Github</a>
-</nav>
+<body>
+    <div class="about-page">
+        <!-- Quick Navbar for home page -->
+        <nav id="navbar">
+            <a href="index.html" class="nav-link github">Home</a>
+            <a href="projects.html" class="nav-link projects">Games</a>
+            <!-- <a href="gallery.html" class="nav-link github">Art Gallery</a> -->
+            <a href="contact.html" class="nav-link github">Contact</a>
+            <a href="https://github.com/RiptideStudio?tab=repositories" target="_blank" class="nav-link github">Github</a>
+        </nav>
 
-<hr class="horizontal-line">
-<hr class="horizontal-line-thin">
+        <hr class="horizontal-line">
+        <hr class="horizontal-line-thin">
 
-  <!-- Hamburger Menu -->
-  <button class="hamburger-menu" onclick="toggleSidebar()">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </button>
+        <!-- Hamburger Menu -->
+        <button class="hamburger-menu" onclick="toggleSidebar()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
 
-  <div class="sidebar" id="mySidebar">
-    <div class="sidebar-content">
-      <div class="sidebar-text"><a href="index.html"><span>Home</span></a></div><br>
-      <div class="sidebar-text"><a href="projects.html"><span>Projects</span></a></div><br>
-      <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
-      <div class="sidebar-text"><a href="gallery.html"><span>Gallery</span></a></div><br>
-      <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories"
-          target="_blank"><span>Github</span></a></div><br>
+        <div class="sidebar" id="mySidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-text"><a href="index.html"><span>Home</span></a></div><br>
+                <div class="sidebar-text"><a href="projects.html"><span>Projects</span></a></div><br>
+                <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
+                <!-- <div class="sidebar-text"><a href="gallery.html"><span>Gallery</span></a></div><br> -->
+                <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories" target="_blank"><span>Github</span></a></div><br>
+            </div>
+        </div>
+
+        <button id="okButton" class="okButton">OK</button>
+
+        <div id="overlay" class="overlay">
+            <div id="overlayText" class="overlay-text"></div>
+        </div>
+
+        <!-- MAIN BODY -->
+        <div class="chat-text-wrapper">
+            <div class="chat-text">Want to connect?</div>
+            <div class="chat-subtext">Let me know!</div>
+            <div class="chat-subtext">Send a secure email. You can expect a response in 1-3 business days.</div>
+        </div>
+
+        <div class="message-box-wrapper">
+            <div class="message-box-title">Powered by EmailJS</div>
+            <div class="gmail-image">
+                <img src="Images/Contact/Gmail.png">
+            </div>
+            <div id="name" class="message-box">
+                <textarea id="nameText" placeholder="Name*"></textarea>
+            </div>
+            <div id="email" class="message-box">
+                <textarea id="emailText" placeholder="Your Email*"></textarea>
+            </div>
+            <div id="subject" class="message-box">
+                <textarea id="subjectText" placeholder="Subject"></textarea>
+            </div>
+            <div id="message" class="message-box-description">
+                <textarea id="messageText" placeholder="What do you want to say?"></textarea>
+            </div>
+            <button id="sendButton" class="send-button">
+                <image src="Images/Contact/SendButton.png"></image>
+                Send
+            </button>
+        </div>
+
+        <!-- End main body -->
+
+        <script>
+            window.addEventListener('load', function() {
+                document.body.classList.add('fade-in');
+            });
+        </script>
+
+        <script src="word.js"></script>
+        <script src="sidebar.js"></script>
+        <script src="navbar.js"></script>
+        <script src="contact.js"></script>
     </div>
-  </div>
-
-  <button id = "okButton" class="okButton">
-    OK
-  </button>
-
-  <div id="overlay" class="overlay">
-    <div id = "overlayText" class = "overlay-text">
-    </div>
-  </div>
-
- 
-  <!-- MAIN BODY -->
-
-  <div class = "chat-text-wrapper">
-    <div class = "chat-text">
-      Working on something cool?
-    </div>
-    <div class = "chat-subtext">
-      Let me know!
-    </div>
-    <div class = "chat-subtext">
-      Send a secure email. You can expect a response in about 1-3 business days.
-    </div>
-  </div>
-
-  <div class="message-box-wrapper">
-    <div class="message-box-title">
-      Send me a message.
-    </div>
-    <div class="gmail-image">
-      <img src="Images/Contact/Gmail.png">
-    </div>
-    <div id = "name" class="message-box">
-      <textarea id = "nameText" placeholder="Name*"></textarea>
-    </div>
-    <div id = "email" class="message-box">
-      <textarea id = "emailText" placeholder="Your Email*"></textarea>
-    </div>
-    <div id = "subject" class="message-box">
-      <textarea id = "subjectText" placeholder="Subject"></textarea>
-    </div>
-    <div id = "message" class="message-box-description">
-      <textarea id = "messageText" placeholder="What do you want to say?"></textarea>
-    </div>
-    <button id = "sendButton" class="send-button">
-      <image src = "Images/Contact/SendButton.png"></image>
-      Send
-    </button>
-  </div>
-
-  <!-- End main body -->
-
-  <script>
-    window.addEventListener('load', function () {
-      document.body.classList.add('fade-in');
-    });
-  </script>
-
-  <script src="word.js"></script>
-  <script src="sidebar.js"></script>
-  <script src="navbar.js"></script>
-  <script src="contact.js"></script>
-
-  </body>
+</body>

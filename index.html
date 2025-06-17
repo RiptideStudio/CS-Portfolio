@@ -1,147 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Callen Betts - Game Developer Portfilio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callen Betts - Game Developer Portfilio</title>
 
-  <!-- Style sheets -->
-  <link rel="stylesheet" href="index.css"> 
-  <link rel="stylesheet" href="navbar.css">
-  <link rel="stylesheet" href="section.css">
-  <link rel="stylesheet" href="word.css">
-  <link rel="stylesheet" href="hamburger.css">
-  <link rel="stylesheet" href="thumbnail.css">
-  <link rel="stylesheet" href="sidebar.css">
-  <link rel="stylesheet" href="about.css">
-  <link rel="stylesheet" href="profile.css">
-  <link rel="stylesheet" href="Utility/scrollbar.css">
-  <link rel="stylesheet" href="Utility/image.css">
-
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="section.css">
+    <link rel="stylesheet" href="word.css">
+    <link rel="stylesheet" href="hamburger.css">
+    <link rel="stylesheet" href="thumbnail.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="Utility/scrollbar.css">
+    <link rel="stylesheet" href="Utility/image.css">
 </head>
 
 <div class="about-page">
-<!-- Quick Navbar for home page -->
-<nav id="navbar">
-  <a href="index.html" class="nav-link github">Home</a>
-  <a href="projects.html" class="nav-link projects">Games</a>
-  <a href="gallery.html" class="nav-link github">Art Gallery</a>
-  <a href="contact.html" class="nav-link github">Contact</a>
-  <a href="https://github.com/RiptideStudio?tab=repositories" target = "_blank" class="nav-link github">Github</a>
-</nav>
+    <!-- Quick Navbar for home page -->
+    <nav id="navbar">
+        <a href="index.html" class="nav-link github">Home</a>
+        <a href="projects.html" class="nav-link projects">Games</a>
+        <!-- <a href="gallery.html" class="nav-link github">Art Gallery</a> -->
+        <a href="contact.html" class="nav-link github">Contact</a>
+        <a href="https://github.com/RiptideStudio?tab=repositories" target="_blank" class="nav-link github">Github</a>
+    </nav>
 
-<hr class="horizontal-line">
-<hr class="horizontal-line-thin">
+    <hr class="horizontal-line">
+    <hr class="horizontal-line-thin">
 
-<!-- Hamburger Menu -->
-<button class="hamburger-menu" onclick="toggleSidebar()">
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-</button>
+    <!-- Hamburger Menu -->
+    <button class="hamburger-menu" onclick="toggleSidebar()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
 
-  <div class="sidebar" id="mySidebar">
-    <div class="sidebar-content">
-      <div class="sidebar-text"><a href="index.html"><span>Home</span></a></div><br>
-      <div class="sidebar-text"><a href="projects.html"><span>Projects</span></a></div><br>
-      <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
-      <div class="sidebar-text"><a href="gallery.html"><span>Gallery</span></a></div><br>
-      <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories"
-          target="_blank"><span>Github</span></a></div><br>
-    </div>
-  </div>
-  <div id="overlay" class="overlay"></div>
-
-<div class="thumbnail-header">
-<img src="Images/About/ThumbnailHeader.png">
-</div>
-
-<div class="thumbnail">
-  <img src="Images/About/ProfileBackground.png">
-</div>
-
-<!-- Start Main body -->
-<div class="text-wrapper">
-  <div class="aboutTitle">
-    <h1>
-      HI, I'M CALLEN.
-    </h1>
-    <h3>
-      <span class="fade-word">PROGRAMMER,</span>
-      <span class="fade-word">GAME DEVELOPER,</span>
-      <span class="yellow-text fade-word">CREATOR.</span>
-    </h3>
-  </div>
-  <div class="aboutText">
-    In 2013, when I was only 9 years old, my dad taught me how to use Gamemaker Studio. It was the first game engine I ever used. 
-    Now, more than a decade later, I've worked on nearly twenty games. 
-    <br><br>
-    I've always loved programming - but the journey hasn't been easy.
-    <br><br>
-    To make a game, you need to understand a little bit of everything: how an artist thinks, how a programmer writes code, 
-    and how a musician brings a song to life. Being just a programmer or artist might be enough to make a good game,
-    but it takes a creator to make a great game. 
-    <br><br>
-    This realization was a huge part of my journey to becoming a better programmer.
-    <br><br>
-    During highschool I spent a lot of my time participating in game jams, working in small teams with
-    other indie game developers in the community. They inspired me to begin posting devlogs of my development process on YouTube, 
-    where I amassed a following of over 5,000 people. It gave me a good excuse
-    to goof off every now and then, but even better, it provided me with a community for my games.
-    <br><br>
-    Bitlands was released on Steam in 2022 during my senior year of highschool. It managed to raise $1,000 for charity,
-    which at the time was an incredible number to me.
-    <br><br>
-    Right now, I'm developing my next indie game title, Earthward.
-    Go check it out!
-  </div>
-</div>
-
-<!-- Main project thumbnail -->
-<div class="project-thumbnail-wrapper">
-  <div class="project-thumbnail">
-    <a href="projects.html"><span>      <img src="Images/About/Earthward.png">    </span></a>
-
-      <div class="project-thumbnail-text-wrapper">
-          <div class="project-select">
-            <a href="projects.html">Earthward</a>
-          </div>
-        <div class="project-thumbnail-text">
-          Over one-hundred years ago, the surface was destroyed by a terrible evil, forcing surviving civilization underground. 
-          <br><br>
-          Explore a vast world filled to the brim with creatures and critters...but beware the various secrets lurking in the caves! 
-          Craft armor and weapons, fight powerful monsters, and reclaim the surface for all who dwell beneath it.
+    <div class="sidebar" id="mySidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-text"><a href="index.html"><span>Home</span></a></div><br>
+            <div class="sidebar-text"><a href="projects.html"><span>Projects</span></a></div><br>
+            <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
+            <!-- <div class="sidebar-text"><a href="gallery.html"><span>Gallery</span></a></div><br> -->
+            <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories" target="_blank"><span>Github</span></a></div><br>
         </div>
-      </div>
-  </div>
-</div>
+    </div>
+    <div id="overlay" class="overlay"></div>
 
-<br><br><br><br>
-<center>
-<div class="project-select">
-  <a href="projects.html">Browse Game Library</a>
-</div>
-</center>
-<br><br><br><br>
+    <div class="header-banner">
+        <div class="header-title">Callen Betts</div>
+        <div class="header-icons">
+            <a href="https://steamcommunity.com/profiles/76561199193791468/" target="_blank" title="Steam">
+                <img src="Images/Steam.png" alt="Steam">
+            </a>
+            <a href="https://github.com/RiptideStudio" target="_blank" title="Github">
+                <img src="Images/Github.png" alt="Github">
+            </a>
+            <a href="https://riptide-studios.itch.io/" target="_blank" title="Itch.io">
+                <img src="Images/Itch.png" alt="Itch.io">
+            </a>
+            <a href="https://www.youtube.com/@RiptideDev_" target="_blank" title="YouTube">
+                <img src="Images/Youtube.png" alt="YouTube">
+            </a>
+        </div>
+    </div>
 
-<div class="bottom-headline-wrapper">
-  <div class="bottom-headline">
-  <div class="copyright-text">(2025) Created By Callen Betts</div>
-  </div>
-</div>
+    <div class="about-section">
+        <div class="aboutTitle">
+            <h1>HI, I'M CALLEN.</h1>
+            <h3>
+                <span class="fade-word">PROGRAMMER,</span>
+                <span class="fade-word">GAME DEVELOPER,</span>
+                <span class="yellow-text fade-word">CREATOR.</span>
+            </h3>
+        </div>
+        <div class="thumbnail">
+            <img src="Images/About/ProfileBackground.jpg">
+        </div>
+        <div class="aboutText">
+            In 2013, when I was only 9 years old, my dad taught me how to use Gamemaker Studio. It was the first game engine I ever used. 
+            Now, more than a decade later, I've worked on nearly twenty games.
+            <br><br>
+            I've always loved programming - but the journey hasn't been easy.
+            <br><br>
+            To make a game, you need to understand a little bit of everything: how an artist thinks, how a programmer writes code,
+            and how a musician brings a song to life. Being just a programmer or artist might be enough to make a good game,
+            but it takes a creator to make a great game.
+            <br><br>
+            This realization was a huge part of my journey to becoming a better programmer.
+            <br><br>
+            During highschool I spent a lot of my time participating in game jams, working in small teams with
+            other indie game developers in the community. They inspired me to begin posting devlogs of my development process on YouTube,
+            where I amassed a following of over 5,000 people. It gave me a good excuse
+            to goof off every now and then, but even better, it provided me with a community for my games.
+            <br><br>
+            Bitlands was released on Steam in 2022 during my senior year of highschool. It managed to raise $1,000 for charity,
+            which at the time was an incredible number to me.
+            <br><br>
+            Right now, I'm developing my next indie game title, Earthward.
+            Go check it out!
+        </div>
+    </div>
 
+    <!-- Main project thumbnail -->
+    <div class="project-thumbnail-wrapper">
+        <div class="project-thumbnail">
+            <a href="projects.html">
+                <span><img src="Images/About/Earthward.png"></span>
+            </a>
 
-<!-- End main body -->
+            <div class="project-thumbnail-text-wrapper">
+                <div class="project-select">
+                    <a href="projects.html">Earthward</a>
+                </div>
+                <div class="project-thumbnail-text">
+                    Over one-hundred years ago, the surface was destroyed by a terrible evil, forcing surviving civilization underground.
+                    <br><br>
+                    Explore a vast world filled to the brim with creatures and critters...but beware the various secrets lurking in the caves!
+                    Craft gear, fight powerful monsters, and reclaim the surface for all who dwell beneath it.
+                </div>
+            </div>
+        </div>
+    </div>
 
-<script>
-window.addEventListener('load', function() {
-  document.body.classList.add('fade-in');
-});
-</script>
+    <br><br><br><br>
+    <center>
+        <div class="project-select">
+            <a href="projects.html">Browse Game Library</a>
+        </div>
+    </center>
+    <br><br><br><br>
 
-<script src="word.js"></script>
-<script src="sidebar.js"></script>
-<script src="navbar.js"></script>
-  
+    <div class="bottom-headline-wrapper">
+        <div class="bottom-headline">
+            <div class="copyright-text">(2025) Created By Callen Betts</div>
+        </div>
+    </div>
+
+    <!-- End main body -->
+
+    <script>
+        window.addEventListener('load', function() {
+            document.body.classList.add('fade-in');
+        });
+    </script>
+
+    <script src="word.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="navbar.js"></script>
+
+    <a href="contact.html" class="contact-fab" id="contactFab" title="Contact">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#fff">
+        <circle cx="12" cy="12" r="12" fill="#7b2ff2"/>
+        <path d="M17.707 16.293l-2.387-2.387a1 1 0 0 0-1.414 0l-.793.793a11.05 11.05 0 0 1-4.95-4.95l.793-.793a1 1 0 0 0 0-1.414L7.707 6.293a1 1 0 0 0-1.414 0l-1.293 1.293a2 2 0 0 0-.293 2.293c1.707 3.707 4.586 6.586 8.293 8.293a2 2 0 0 0 2.293-.293l1.293-1.293a1 1 0 0 0 0-1.414z" fill="#fff"/>
+      </svg>
+    </a>
+    <script>
+      window.addEventListener('scroll', function() {
+        const fab = document.getElementById('contactFab');
+        const scrollY = window.scrollY || window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+        if (scrollY + windowHeight >= docHeight - 10) {
+          fab.style.opacity = '1';
+          fab.style.pointerEvents = 'auto';
+        } else {
+          fab.style.opacity = '0';
+          fab.style.pointerEvents = 'none';
+        }
+      });
+    </script>
+
 </body>
 </html>
