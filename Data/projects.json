@@ -158,9 +158,6 @@
         "carousel": "Engines",
         "year": "2022"
     },
-
-
-
     {
         "title": "Portfolio",
         "role": "Developer",
@@ -211,6 +208,54 @@
         "projectLink": "https://steamcommunity.com/sharedfiles/filedetails/?id=2925249383&searchtext=sorcery",
         "carousel": "Other",
         "year": "tModloader, 2023"
+    },
+    {
+        "title": "Riptide's Mod",
+        "role": "Developer",
+        "genre": "Terraria Mod",
+        "background": "Images/Backgrounds/RiptideMod.png",
+        "description": "Want to make a Terraria mod? Learn how tModloader works by watching the YouTube series where I make swords, staffs, armor, and more! Understand basic programming principles and how to apply them to make engaging and fun mods.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/RiptideMod.png",
+        "youtube": "https://www.youtube.com/watch?v=3r-oQmzyXeQ&list=PL2j68jF83kP1ffowiMIwbTndwLgmxGFpd&index=1",
+        "projectLink": "https://github.com/RiptideStudio/RiptideMod",
+        "carousel": "Other",
+        "year": "tModloader, 2024"
+    },
+    {
+        "title": "Room Editor",
+        "role": "Developer",
+        "genre": "Development Tool",
+        "background": "Images/Backgrounds/RoomEditor.png",
+        "description": "Create and design your own levels by painting tiles and placing objects. All data is exported to JSON, making it practical for several game engines. This tool was made for chunk-based generation in Earthward.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/RoomEditor.png",
+        "projectLink": "https://github.com/RiptideStudio/roomeditor",
+        "carousel": "Other",
+        "year": "Earthward, 2025"
+    },
+    {
+        "title": "Behavior Tree Editor",
+        "role": "Developer",
+        "genre": "Development Tool",
+        "background": "Images/Backgrounds/BehaviorTree.png",
+        "description": "Create a simple behavior tree with action nodes, decorators, and composite nodes, all completely customizable. Save to a .bt file or export to json. This tool was made for enemy AI in Earthward.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/BehaviorTree.png",
+        "projectLink": "https://github.com/RiptideStudio/BehaviorTreeEditor",
+        "carousel": "Other",
+        "year": "Earthward, 2025"
+    },
+    {
+        "title": "Earth Edit",
+        "role": "Developer",
+        "genre": "Development Tool",
+        "background": "Images/Backgrounds/EarthEdit.png",
+        "description": "Create and edit items, accessories, and more using preset data schemas that can export to JSON. Shows a display of all images related to the open item. This tool was made primarily for Earthward.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/EarthEdit.png",
+        "projectLink": "https://github.com/RiptideStudio/EarthEdit",
+        "carousel": "Other",
+        "year": "Earthward, 2025"
     }
-
 ]
