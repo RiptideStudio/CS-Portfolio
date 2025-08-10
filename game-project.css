@@ -14,7 +14,7 @@
     transition: 0.3s;
 }
 
-p {
+.game-text-container p {
     width: 35vw;
     white-space: normal;
     word-wrap: break-word;
@@ -142,15 +142,7 @@ h1::after {
     margin-bottom: 2vh;
 }
 
-.horizontal-line {
-    position: fixed;
-    top: 15%; /* Aligns with the content vertically */
-    left: 7%; /* Positioning the line correctly between the text and image */
-    height: 3px; /* Adjust based on your design needs */
-    width: 480px; /* Line thickness */
-    background-color: rgba(192, 192, 192, 0.683);
-    margin-top: 2px;
-}
+/* Removed horizontal line that was causing the big white line */
 
 /* Vertical line separator */
 .vertical-line {

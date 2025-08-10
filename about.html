@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Callen Betts</title>
+
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="section.css">
+    <link rel="stylesheet" href="word.css">
+    <link rel="stylesheet" href="hamburger.css">
+    <link rel="stylesheet" href="thumbnail.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="Utility/scrollbar.css">
+    <link rel="stylesheet" href="Utility/image.css">
+</head>
+
+<div class="about-page">
+    <!-- Quick Navbar for home page -->
+    <nav id="navbar">
+        <a href="index.html" class="nav-link github">Home</a>
+        <a href="about.html" class="nav-link projects">About</a>
+        <a href="projects.html" class="nav-link projects">Games</a>
+        <!-- <a href="gallery.html" class="nav-link github">Art Gallery</a> -->
+        <a href="contact.html" class="nav-link github">Contact</a>
+    </nav>
+
+    <hr class="horizontal-line">
+    <hr class="horizontal-line-thin">
+
+    <!-- Hamburger Menu -->
+    <button class="hamburger-menu" onclick="toggleSidebar()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+
+    <div class="sidebar" id="mySidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-text"><a href="index.html"><span>Home</span></a></div><br>
+            <div class="sidebar-text"><a href="about.html"><span>About</span></a></div><br>
+            <div class="sidebar-text"><a href="projects.html"><span>Projects</span></a></div><br>
+            <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
+            <!-- <div class="sidebar-text"><a href="gallery.html"><span>Gallery</span></a></div><br> -->
+            <div class="sidebar-text"><a href="https://github.com/RiptideStudio?tab=repositories" target="_blank"><span>Github</span></a></div><br>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Hero Section -->
+    <!-- <div class="header-banner">
+        <div class="header-title">Callen Betts</div>
+        <div class="header-icons">
+            <a href="https://steamcommunity.com/profiles/76561199193791468/" target="_blank" title="Steam">
+                <img src="Images/Steam.png" alt="Steam">
+            </a>
+            <a href="https://github.com/RiptideStudio" target="_blank" title="Github">
+                <img src="Images/Github.png" alt="Github">
+            </a>
+            <a href="https://riptide-studios.itch.io/" target="_blank" title="Itch.io">
+                <img src="Images/Itch.png" alt="Itch.io">
+            </a>
+            <a href="https://www.youtube.com/@RiptideDev_" target="_blank" title="YouTube">
+                <img src="Images/Youtube.png" alt="YouTube">
+            </a>
+        </div>
+    </div> -->
+
+    <!-- About Me Section -->
+    <div class="about-section">
+        <div class="aboutTitle">
+            <h1>Hi, I'm Callen!</h1>
+            <h3>
+                <span class="fade-word">GAME DEVELOPER,</span>
+                <span class="fade-word">PROGRAMMER</span>
+                <span class="yellow-text fade-word">CREATOR.</span>
+            </h3>
+        </div>
+        
+        <!-- About Me Section -->
+        <div class="about-row">
+            <div class="about-image">
+                <img src="Images/About/ProfileBackground.jpg" alt="Callen Betts">
+            </div>
+            <div class="about-text">
+                <h3>About Me</h3>
+                <p>My dad taught me how to code when I was 10 years old.
+                    A decade later, I've created nearly twenty games, working and learning alongside industry professionals.
+                    My peers taught me that collaboration is just as important as knowing how to code, and that great games need a great team to be successful.</p>
+                <p>
+                    When I'm not making games, you can find me enjoying the latest Brandon Sanderson book, or traveling with my friends.
+                    I was born in Lisbon, Portugal, and every year I visit our family and explore the beautiful streets of Cascais!
+                    I'm also a huge fan of Percy Jackson (which is how I got my online alias!)
+                </p>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="about-row">
+            <div class="about-text">
+                <h3>Projects</h3>
+                <p>I've published <a href="https://store.steampowered.com/app/1881710/Bitlands/" target="_blank">Bitlands</a> on Steam, a 2D action platformer that raised $1,000 for charity. My YouTube channel <a href="https://www.youtube.com/@RiptideDev_" target="_blank">RiptideDev</a> has grown to 5,000+ followers where I share my development process and tutorials. I regularly participate in game jams and have created nearly twenty games across various genres. Currently working on <strong><a href="https://www.youtube.com/watch?v=VL3dSbLk_OU&t=2s&ab_channel=RiptideDev" target="_blank">Earthward</a></strong>, an ambitious roguelike RPG that represents my biggest project yet.</p>
+            </div>
+            <div class="about-image">
+                <img src="Images/Thumbnails/Bitlands.png" alt="Bitlands Game">
+            </div>
+        </div>
+
+        <!-- Teaching Section -->
+        <div class="about-row">
+            <div class="about-image">
+                <img src="Images/About/Card.ps" alt="Teaching">
+            </div>
+            <div class="about-text">
+                <h3>Coding With Kids</h3>
+                <p>In my spare time, I work as an instructor at Coding with Kids, 
+                   helping them learn how to create their own games. It isn't always easy working in a classroom-
+                   but seeing the look on their faces when
+                   they get something to work is priceless. I've also worked for TIE, a non-profit that
+                   focuses on reforming how teachers develop their in-class cirriculum.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-headline-wrapper">
+        <div class="bottom-headline">
+            <div class="copyright-text">(2025) Created By Callen Betts</div>
+        </div>
+    </div>
+
+    <!-- End main body -->
+
+    <script>
+        window.addEventListener('load', function() {
+            document.body.classList.add('fade-in');
+        });
+    </script>
+
+    <script src="word.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="navbar.js"></script>
+
+    <a href="contact.html" class="contact-fab" id="contactFab" title="Contact">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#fff">
+        <circle cx="12" cy="12" r="12" fill="#7b2ff2"/>
+        <path d="M17.707 16.293l-2.387-2.387a1 1 0 0 0-1.414 0l-.793.793a11.05 11.05 0 0 1-4.95-4.95l.793-.793a1 1 0 0 0 0-1.414L7.707 6.293a1 1 0 0 0-1.414 0l-1.293 1.293a2 2 0 0 0-.293 2.293c1.707 3.707 4.586 6.586 8.293 8.293a2 2 0 0 0 2.293-.293l1.293-1.293a1 1 0 0 0 0-1.414z" fill="#fff"/>
+      </svg>
+    </a>
+    <script>
+      window.addEventListener('scroll', function() {
+        const fab = document.getElementById('contactFab');
+        const scrollY = window.scrollY || window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+        if (scrollY + windowHeight >= docHeight - 10) {
+          fab.style.opacity = '1';
+          fab.style.pointerEvents = 'auto';
+        } else {
+          fab.style.opacity = '0';
+          fab.style.pointerEvents = 'none';
+        }
+      });
+    </script>
+
+</body>
+</html> 
