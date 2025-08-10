@@ -1,16 +1,18 @@
 /* Initial state of the navbar before any animation */
 #navbar {
   position: fixed;
-  top: 0.5%; /* Start off-screen */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Offset by half of the navbar's width */
-  width: 80%;
+  top: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
   z-index: 100;
-  border-radius: 240px;
+  border-radius: 0;
   opacity: 1; /* Start fully transparent */
   transition: top 0.4s ease, opacity 0.3s ease; /* Transition for scrolling */
   font-size: calc(0.6vw + 0.6vh);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Animation that runs when the page loads */
@@ -33,9 +35,12 @@
   display: inline-block; /* Changed from block to inline-block for centering */
   margin: 0 -3px; /* Add some space between buttons */
   color: #f3f2f2b0; /* Text color */
-  padding: 14px 28px; /* Padding inside the buttons */
+  padding: 3vh 2.4vw; /* Increased padding to match text position and create proper hover area */
   text-decoration: none; /* No underline on links */
   transition: background-color 0.2s, color 0.2s, transform 0.3s ease; /* Smooth transition for hover effect */
+  line-height: 1; /* Ensure consistent vertical alignment */
+  min-height: 3vh; /* Ensure minimum height */
+  margin-bottom: -2.8vh; /* Remove margin-top since we're using padding instead */
 }
 
 #navbar a:hover {
@@ -71,7 +76,7 @@
   border: none;
   height: 7.5%;
   position: fixed;
-  background-color: #1f1f1f;
+  background-color: rgba(31, 31, 31, 0.3);
   width: 1px;
   top: -2vh;
   margin-left: 96%;
@@ -79,31 +84,54 @@
 }
 
 .horizontal-line {
-  border: none;
-  height: 7.5%;
-  position: fixed;
-  background-color: #080808;
-  width: 100%;
-  top: -2vh;
-  z-index: 4;
+  display: none; /* Hide decorative line that might be causing issues */
 }
 
 .horizontal-line-thin {
-  border: none;
-  height: 1px;
-  position: fixed;
-  background-color: #212121;
-  width: 100%;
-  top: 5.5%;
-  z-index: 5;
+  display: none; /* Hide the thin line that's causing the white line */
+}
+
+/* Responsive design for navbar */
+@media (max-width: 768px) {
+  #navbar {
+    width: 100%;
+    font-size: calc(0.8vw + 0.8vh);
+    border-radius: 0;
+  }
+  
+  #navbar a {
+    padding: 2.5vh 2vw;
+    margin: 0 -2px;
+    min-height: 2.5vh;
+  }
+  
+  .vertical-line-hamburger {
+    display: none;
+  }
+  
+  .horizontal-line {
+    display: none;
+  }
+  
+  .horizontal-line-thin {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  #navbar {
+    width: 100%;
+    font-size: calc(1vw + 1vh);
+    border-radius: 0;
+  }
+  
+  #navbar a {
+    padding: 2vh 1.6vw;
+    margin: 0 -1px;
+    min-height: 2vh;
+  }
 }
 
 .nav-background {
-  border: none;
-  height: 7.5%;
-  position: fixed;
-  background-color: #000000;
-  width: 100%;
-  top: -2vh;
-  z-index: 4;
+  display: none; /* Hide the background bar that's causing the white line */
 }

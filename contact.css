@@ -216,28 +216,71 @@
 }
 
 /* Responsive design */
+@media (max-width: 1200px) {
+  .contact-container {
+    max-width: 90%;
+    gap: 48px;
+    padding: 24px;
+  }
+  
+  .contact-info {
+    flex: 0 0 300px;
+  }
+  
+  .contact-form {
+    flex: 0 0 500px;
+  }
+}
+
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
     gap: 32px;
     padding: 24px;
     margin-top: 32px;
+    max-width: 95%;
   }
   
   .contact-info {
-    max-width: none;
+    flex: none;
+    width: 100%;
+    margin-top: 0;
+  }
+  
+  .chat-text-wrapper {
+    margin-top: 0;
   }
   
   .contact-form {
-    max-width: none;
+    flex: none;
+    width: 100%;
   }
   
   .chat-text {
-    font-size: 2em;
+    font-size: 1.8em;
   }
   
   .message-box-wrapper {
-    padding: 24px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 16px;
+    margin: 24px auto 16px auto;
+  }
+  
+  .chat-text {
+    font-size: 1.6em;
+  }
+  
+  .message-box-wrapper {
+    padding: 16px;
+  }
+  
+  .message-box-title {
+    font-size: 1.1em;
   }
 }
 

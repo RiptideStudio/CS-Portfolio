@@ -9,15 +9,17 @@
   background: none;
   border: none;
   cursor: pointer;
-  width: calc(2vw + 2vh);
-  height: calc(2vw + 2vh);
+  width: 5vh;
+  margin-top: 0.8vh;
+
+  height: 5vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around; /* Distributes spacing evenly */
   align-items: center; /* Centers bars horizontally */
   transition: 0.3s; /* Animation for hover effect */
   border-radius: 12px;
-  padding: 1.1vmin;
+  padding: 1vh;
   transform: scale(1);
 }
 
@@ -37,8 +39,8 @@
 }
 
 .hamburger-menu .bar {
-  width: 2vw; /* Adjust width to your preference */
-  height: .4vh;
+  width: 3vh; /* Increased width for wider bars */
+  height: 0.4vh;
   background-color: #d3d3d3;  /* Color of the hamburger icon */
   border-radius: 24px;
   transition: 0.3s;
@@ -48,4 +50,31 @@
 .hamburger-menu:hover .bar {
   transition: 0.3s;
   background-color: #000000;
+}
+
+/* Responsive design for hamburger menu */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    width: 3.5vh;
+    height: 3.5vh;
+    padding: 0.8vh;
+  }
+  
+  .hamburger-menu .bar {
+    width: 2.5vh;
+    height: 0.35vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger-menu {
+    width: 3vh;
+    height: 3vh;
+    padding: 0.7vh;
+  }
+  
+  .hamburger-menu .bar {
+    width: 2.5vh;
+    height: 0.5vh;
+  }
 }

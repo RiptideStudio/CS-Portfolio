@@ -46,67 +46,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Add animated background elements */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(255, 194, 11, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(123, 47, 242, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: -1;
-  animation: backgroundShift 20s ease-in-out infinite;
-}
+/* Removed animated background elements to prevent color flash during fade-in */
 
-@keyframes backgroundShift {
-  0%, 100% {
-    transform: translateX(0) translateY(0);
-  }
-  25% {
-    transform: translateX(-10px) translateY(-5px);
-  }
-  50% {
-    transform: translateX(5px) translateY(-10px);
-  }
-  75% {
-    transform: translateX(-5px) translateY(5px);
-  }
-}
-
-/* Floating particles for homepage */
-.home-page::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, rgba(255, 194, 11, 0.15), transparent),
-    radial-gradient(2px 2px at 40px 70px, rgba(123, 47, 242, 0.15), transparent),
-    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.1), transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(255, 194, 11, 0.1), transparent),
-    radial-gradient(2px 2px at 160px 30px, rgba(123, 47, 242, 0.15), transparent);
-  background-repeat: repeat;
-  background-size: 200px 100px;
-  animation: float 15s linear infinite;
-  pointer-events: none;
-  z-index: -1;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-100px);
-  }
-}
+/* Removed floating particles to prevent color flash during fade-in */
 
 body {
   opacity: 0;
@@ -115,6 +57,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .title h1:after {
@@ -130,7 +73,6 @@ body {
 
 body.fade-in {
   opacity: 1;
-  transition: opacity 0.3s ease-in-out; /* Faster, smoother transition */
 }
 
 .navigation button {
