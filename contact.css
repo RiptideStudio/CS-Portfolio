@@ -4,7 +4,7 @@
 .contact-container {
   max-width: 1000px;
   margin: 48px auto 32px auto;
-  padding: 32px;
+  padding: 64px;
   display: flex;
   gap: 64px;
   align-items: flex-start;
@@ -142,7 +142,7 @@
   background-color: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
-  margin-top: 12px;
+  margin-top: 16px;
   text-align: left;
   width: 100%;
   height: auto;

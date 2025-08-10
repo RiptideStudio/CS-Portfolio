@@ -24,20 +24,21 @@
     position: relative;
     cursor: pointer;
     flex-shrink: 0;
-    transform: scale(1);
-    transition: 0.3s;
-    transform: translateY(2%);
+    transform: translateY(2%) scale(1);
+    transition: transform 0.3s ease;
 }
 
+/* Subtle sheen/light sweep for thematic polish */
+/* Removed hover sheen overlay to avoid white animation sweep */
+
 .image-container:hover {
-    transition: 0.3s;
-    transform: scale(1.05);
-    transform: translateY(0%);
+    transition: transform 0.3s ease;
+    transform: translateY(0%) scale(1.1);
 }
 
 .image-container:active {
     transition: 0.2s ease-out;
-    transform: scale(0.95);
+    transform: translateY(0%) scale(0.95);
 }
 
 .carousel-slide img.selected {
@@ -54,15 +55,23 @@
     font-weight: bold;
     font-style: italic;
     text-align: left;
-    opacity: 0; /* Set opacity to visible */
+    opacity: 0; /* Hidden by default */
     z-index: 10;
-    transition: transform 0.4s; /* Include transform in the transition */
+    transition: opacity 0.3s ease, transform 0.4s ease; /* Smooth reveal */
     text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
-    transform: scale(0); /* Start scaled down to match image */
+    transform: translateY(6px) scale(0.92); /* Subtle pop-in */
+    display: none !important; /* Hide role text entirely */
+}
+
+/* Reveal overlay text on hover or when active */
+.image-container:hover .overlay-text,
+.image-container.active .overlay-text {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 /* Base styles for overlay image */
@@ -73,17 +82,29 @@
     object-fit: cover; 
     transition: transform 0.5s ease, opacity 0.5s ease;
     transform: scale(0.9);
-    opacity: 0.3;
+    opacity: 0.2;
     cursor: pointer;
     border: 2px transparent;
     transition: 0.3s;
+    will-change: transform, filter;
+    border-radius: 15px;
 }
 
 .carousel-slide .carousel-image.active {
     transform: scale(1);
     border: 2px solid #c0c0c0;
     transition: 0.3s;
+    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.85), 0 0 0 2px rgba(255, 255, 255, 0.08) inset;
+    filter: saturate(1.18) contrast(1.12) brightness(1.04);
 }
+
+/* Ensure the currently active slide pops a bit more */
+.image-container.active .carousel-image {
+    transform: scale(1.04) !important;
+}
+
+/* Netflix-style silent preview video overlay */
+/* Per-slide preview removed; using hero preview */
 
 .carousel-slide .image-container .overlay-image {
     width: 4vw;
@@ -111,26 +132,36 @@
     border: 4px white;
 }
 
+/* Make overlay badge visible on active slide as well */
+.image-container.active .overlay-image {
+    opacity: 1;
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.6));
+}
+
 .prev, .next {
     position: absolute;
     top: 27%;
     font-size: calc(1vw + 1vh + .5vmin);
     color: white;
-    background-color: rgba(0,0,0,0.5); /* Semi-transparent black background */
+    background-color: rgba(0,0,0,0.6); /* Slightly stronger */
     padding: calc(1vw + 1vh - 0.5vmin);
     border-radius: 5%;
     cursor: pointer;
     border: 0; /* No border */
     transform: scale(1);
     transition: transform 0.2s ease, color 0.2s ease;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+    z-index: 2; /* Above edge vignettes */
 }
 
 /* Hover effect */
 .prev:hover, .next:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
     transition: transform 0.2s ease, color 0.2s ease;
     color: rgb(255, 210, 11);
-    background-color: rgba(0,0,0,0.7); /* Darker on hover */
+    background-color: rgba(0,0,0,0.72); /* Darker on hover */
 }
 
 /* Active (click) effect */
@@ -142,3 +173,25 @@
 
 .prev { left: 3%; }
 .next { right: 3%; }
+
+/* Edge vignettes to focus attention toward the center */
+.carousel-container::before,
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 12vw;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0));
+}
+
+.carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0));
+}

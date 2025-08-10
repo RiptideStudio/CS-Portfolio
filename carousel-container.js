@@ -1,6 +1,20 @@
 let slideIndexes = {};
 var carouselsCreated = 0;
 var selectedCarouselId = -1;
+const PREVIEW_DELAY_MS = 900; // Linger delay before auto-preview
+let previewTimerBySlide = new Map();
+// Use a single global flag so other scripts (player) can update it
+if (typeof window !== 'undefined' && typeof window.isPlayerOpen === 'undefined') {
+    window.isPlayerOpen = false;
+}
+// Track whether the user has interacted (so we can play quiet audio without being blocked)
+if (typeof window !== 'undefined' && typeof window.userInteracted === 'undefined') {
+    window.userInteracted = false;
+    const markInteracted = () => { window.userInteracted = true; };
+    ['pointerdown', 'keydown', 'touchstart', 'wheel'].forEach(evt => {
+        window.addEventListener(evt, markInteracted, { once: true, passive: true });
+    });
+}
 
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 let whooshBuffer;
@@ -45,7 +59,54 @@ function moveSlide(step, carouselId) {
     carousel.scrollIntoView({ behavior: 'smooth', block: 'center'});
 
     deactivateAllSlides(carouselId);
+    // cancel previews in other carousels and non-active slides in this one
+    const carouselEl = document.getElementById(carouselId);
+    document.querySelectorAll('.image-container').forEach(slide => {
+        if (!carouselEl.contains(slide) || !slide.classList.contains('active')) {
+            clearPreviewForSlide(slide);
+        }
+    });
     playWhooshSound();
+}
+
+// Normalize various YouTube inputs (id, share URL, watch URL) to just the video id
+function extractYouTubeId(raw) {
+    if (!raw) return '';
+    const value = String(raw).trim();
+    try {
+        // Full watch URL
+        if (value.includes('youtube.com')) {
+            const url = new URL(value);
+            const v = url.searchParams.get('v');
+            if (v) return v;
+            // sometimes embed form
+            const parts = url.pathname.split('/');
+            return parts.pop() || '';
+        }
+        // Short share URL
+        if (value.includes('youtu.be/')) {
+            const after = value.split('youtu.be/')[1];
+            return (after || '').split('?')[0];
+        }
+        // Raw id with possible extra query (e.g., abc123?si=...)
+        return value.split('?')[0];
+    } catch {
+        return value.split('?')[0];
+    }
+}
+
+function normalizeVideoPath(raw) {
+    if (!raw) return '';
+    const v = String(raw).trim();
+    if (v.toLowerCase() === 'undefined') return '';
+    return v;
+}
+
+function hasValidMp4(raw) {
+    const v = normalizeVideoPath(raw);
+    if (!v) return false;
+    const path = v.split('?')[0].toLowerCase();
+    return path.endsWith('.mp4');
 }
 
 // Function to deactivate all slides in all carousels
@@ -146,12 +207,25 @@ function updateActiveSlides(carouselId) {
     if (activeSlide) {
         const activeImg = activeSlide.querySelector('.carousel-image');
         const activeOverlay = activeSlide.querySelector('.overlay-image');
+        const heroPreview = document.getElementById('heroPreview');
+        const heroPreviewYT = document.getElementById('heroPreviewYT');
         
         if (activeImg && activeOverlay) {
             activeImg.classList.add('active');
             activeImg.style.opacity = '1';
             activeImg.style.transform = 'scale(1)';
             activeOverlay.style.transform = 'scale(0.75)';
+
+            // reset hero preview
+            if (heroPreview) {
+                heroPreview.pause();
+                heroPreview.currentTime = 0;
+                heroPreview.classList.remove('is-visible');
+            }
+            if (heroPreviewYT) {
+                heroPreviewYT.src = '';
+                heroPreviewYT.classList.remove('is-visible');
+            }
         }
     }
 
@@ -164,14 +238,17 @@ function updateActiveSlides(carouselId) {
     {
         activeSlide.classList.add('active');
 
+        // schedule auto-preview on linger
+        schedulePreviewForSlide(activeSlide);
+
         // disable the trailer button if we have no video
         const trailerButton = document.getElementById('playButton');
         const videoPath = activeSlide.dataset.video;
-        const youtubeLink = activeSlide.dataset.youtube;
+        const youtubeLink = extractYouTubeId(activeSlide.dataset.youtube);
 
         trailerButton.style.display = 'block';
 
-        if (videoPath == 'undefined' && youtubeLink == 'undefined')
+        if ((!videoPath || videoPath === 'undefined' || String(videoPath).trim() === '') && (!youtubeLink || youtubeLink === 'undefined' || String(youtubeLink).trim() === ''))
         {
             console.log(videoPath);
             trailerButton.style.display = 'none';   
@@ -193,6 +270,100 @@ function updateActiveSlides(carouselId) {
     updateActiveSlideDisplay(carouselId);
 }
 
+function schedulePreviewForSlide(slideEl) {
+    clearPreviewForSlide(slideEl);
+    if (isPlayerOpen) return; // do not start previews while player is open
+    const videoPath = normalizeVideoPath(slideEl?.dataset?.video);
+    let youtubeId = extractYouTubeId(slideEl?.dataset?.youtube);
+    // Fallback: try to parse ID from projectLink if explicit youtube field is missing/invalid
+    if (!youtubeId || youtubeId.length !== 11) {
+        youtubeId = extractYouTubeId(slideEl?.dataset?.projectLink);
+    }
+    const hasProjectLink = !!normalizeVideoPath(slideEl?.dataset?.projectLink);
+    const heroPreview = document.getElementById('heroPreview');
+    const heroPreviewYT = document.getElementById('heroPreviewYT');
+    const mp4Ok = hasValidMp4(videoPath);
+    // Rule: If there is no mp4 and no link, do NOT try YouTube; keep the static image
+    const canUseYouTube = !!youtubeId && youtubeId.length === 11 && hasProjectLink;
+    if ((!mp4Ok && !canUseYouTube) || (!heroPreview && !heroPreviewYT)) return;
+
+    const startTimer = setTimeout(() => {
+        // start preview
+        try {
+            if (mp4Ok && heroPreview) {
+                heroPreview.src = videoPath;
+                heroPreview.volume = 0.5;
+                heroPreview.muted = !window.userInteracted; // unmute only after a user gesture
+                heroPreview.currentTime = 0;
+                heroPreview.play().catch(() => {
+                    // Autoplay with audio might be blocked; fallback to muted
+                    heroPreview.muted = true;
+                    heroPreview.play().catch(() => {});
+                });
+                heroPreview.classList.add('is-visible');
+                if (heroPreviewYT) {
+                    heroPreviewYT.src = '';
+                    heroPreviewYT.classList.remove('is-visible');
+                }
+            } else if (canUseYouTube && heroPreviewYT) {
+                const mutedParam = window.userInteracted ? 0 : 1;
+                const params = `autoplay=1&mute=${mutedParam}&controls=0&playsinline=1&loop=1&modestbranding=1&rel=0&enablejsapi=1`;
+                const embedUrl = `https://www.youtube.com/embed/${youtubeId}?${params}&playlist=${youtubeId}`;
+                heroPreviewYT.src = embedUrl;
+                heroPreviewYT.classList.add('is-visible');
+                // add a class on the slide container to draw a gradient over YT buttons
+                const mainSlide = document.getElementById('mainImage');
+                if (mainSlide) mainSlide.classList.add('yt-visible');
+                // If user has interacted, try to set volume to 20% and unmute via postMessage
+                if (window.userInteracted) {
+                    setTimeout(() => {
+                        try {
+                            heroPreviewYT.contentWindow.postMessage(JSON.stringify({
+                                event: 'command',
+                                func: 'setVolume',
+                                args: [20]
+                            }), '*');
+                            heroPreviewYT.contentWindow.postMessage(JSON.stringify({
+                                event: 'command',
+                                func: 'unMute',
+                                args: []
+                            }), '*');
+                        } catch (e) {}
+                    }, 400);
+                }
+                if (heroPreview) {
+                    try { heroPreview.pause(); } catch (e) {}
+                    heroPreview.classList.remove('is-visible');
+                }
+            } else {
+                // invalid media; keep static image
+                return;
+            }
+            const mainSlide = document.getElementById('mainImage');
+            if (mainSlide) mainSlide.classList.add('is-previewing');
+        } catch (e) {}
+    }, PREVIEW_DELAY_MS);
+
+    previewTimerBySlide.set(slideEl, startTimer);
+}
+
+function clearPreviewForSlide(slideEl) {
+    const t = previewTimerBySlide.get(slideEl);
+    if (t) clearTimeout(t);
+    const heroPreview = document.getElementById('heroPreview');
+    const heroPreviewYT = document.getElementById('heroPreviewYT');
+    if (heroPreview) {
+        try { heroPreview.pause(); } catch (e) {}
+        heroPreview.classList.remove('is-visible');
+    }
+    if (heroPreviewYT) {
+        heroPreviewYT.src = '';
+        heroPreviewYT.classList.remove('is-visible');
+    }
+    const mainSlide = document.getElementById('mainImage');
+    if (mainSlide) { mainSlide.classList.remove('is-previewing'); mainSlide.classList.remove('yt-visible'); }
+}
+
 function startVideo(activeSlide)
 {
     let videoSource = document.getElementById('video');
@@ -200,16 +371,25 @@ function startVideo(activeSlide)
     const overlaySource = document.getElementById('page-overlay');
     const videoOverlay = document.querySelector('.video-overlay');
     const hamburgerSource = document.getElementById('hamburger');
-    const videoPath = activeSlide.dataset.video;
-    const youtubeLink = activeSlide.dataset.youtube;
+    const rawVideoPath = activeSlide?.dataset?.video;
+    const rawYoutubeLink = activeSlide?.dataset?.youtube;
+    const videoPath = (rawVideoPath && rawVideoPath !== 'undefined' && String(rawVideoPath).trim() !== '') ? rawVideoPath : '';
+    const youtubeLink = extractYouTubeId((rawYoutubeLink && rawYoutubeLink !== 'undefined' && String(rawYoutubeLink).trim() !== '') ? rawYoutubeLink : '');
     const controls = document.querySelector('.controls');
     let closeButton = player.querySelector('.close-btn');
 
     console.log(videoOverlay);
-    if (videoPath == 'undefined' && youtubeLink == 'undefined')
+    if (!videoPath && !youtubeLink)
     {
         return;
     }
+
+    // Ensure hero preview is stopped/hidden while the player is open
+    clearPreviewForSlide(activeSlide);
+    const heroPreview = document.getElementById('heroPreview');
+    const heroPreviewYT = document.getElementById('heroPreviewYT');
+    if (heroPreview) { try { heroPreview.pause(); } catch (e) {} heroPreview.classList.remove('is-visible'); }
+    if (heroPreviewYT) { heroPreviewYT.src = ''; heroPreviewYT.classList.remove('is-visible'); }
 
     // Clear any existing YouTube iframe if present
     const existingIframe = player.querySelector('iframe');
@@ -222,13 +402,14 @@ function startVideo(activeSlide)
     overlaySource.style.opacity = 0.2;
     player.style.transform = 'scale(1)';
     player.style.opacity = '1';
+    isPlayerOpen = true;
 
     // close button should come back
     closeButton.style.display = 'block';
     player.style.display = 'flex';
 
     // if the link is a youtube link, set the youtube video player
-    if (youtubeLink !== 'undefined')
+    if (youtubeLink)
     {
         // append the youtube embed URL if we have one
         const youtubeEmbedUrl = `https://www.youtube.com/embed/${youtubeLink}?autoplay=1`;
@@ -259,13 +440,16 @@ function startVideo(activeSlide)
             closeVideoPlayer();
         };
 
-        if (videoSource) 
+        if (videoSource) {
             videoSource.style.display = 'none';
+            videoSource.pause();
+            videoSource.removeAttribute('src');
+        }
 
         controls.style.display = 'none';
         videoOverlay.style.display = 'none';
     }
-    else
+    else if (videoPath)
     {
         // If the video is an in-page video, load custom video player
         if (!videoSource) {
@@ -276,8 +460,10 @@ function startVideo(activeSlide)
         }
 
         // if the video is an in-page video, load custom video player
-        videoSource.poster = activeSlide.dataset.imageSrc;
+        // don't auto-play here; this launcher is optional per your last request
+        videoSource.poster = activeSlide?.dataset?.imageSrc || '';
         videoSource.src = videoPath;
+        videoOverlay.style.display = 'flex';
         
         let closeButton = player.querySelector('.close-btn');
         if (!closeButton) {
@@ -295,6 +481,7 @@ function startVideo(activeSlide)
 
         controls.style.display = 'flex';
         videoSource.style.display = 'block';
+        videoSource.load();
     }
 }
 
@@ -327,12 +514,14 @@ function setupClickListeners(carouselId) {
                 if (currentIndex === index) {
                     // cause the video player's z Index to be primary target, and scale up the video player (animation)
                     const activeSlide = carousel.querySelector('.image-container.active');
+                    // stop any preview before opening player
+                    clearPreviewForSlide(activeSlide);
                     startVideo(activeSlide);
                 } else {
                     let step = index - currentIndex; // Calculate the steps needed to make the clicked slide the active slide
                     moveSlide(step, carouselId); // Call moveSlide with the calculated step
                     // Clear active class from all slides
-                    slides.forEach(s => s.classList.remove('active'));
+                    slides.forEach(s => { s.classList.remove('active'); clearPreviewForSlide(s); });
                     // Set active class to the clicked slide
                     slide.classList.add('active');
                 }
@@ -342,11 +531,12 @@ function setupClickListeners(carouselId) {
                     let step = index - currentIndex; // Calculate the steps needed to make the clicked slide the active slide
                     moveSlide(step, carouselId); // Call moveSlide with the calculated step
                     // Clear active class from all slides
-                    slides.forEach(s => s.classList.remove('active'));
+                    slides.forEach(s => { s.classList.remove('active'); clearPreviewForSlide(s); });
                     // Set active class to the clicked slide
                     slide.classList.add('active');       
             }
             selectedCarouselId = carouselId;
+            schedulePreviewForSlide(slide);
         });
     });
 }

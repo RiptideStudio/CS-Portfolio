@@ -18,15 +18,17 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     const playPauseIcon = playPauseButton.querySelector('i');
-    playPauseButton.addEventListener('click', function() {
-        if (video.paused) {
-            video.play();
-            playPauseIcon.className = 'fas fa-pause'; // Change icon to 'pause'
-        } else {
-            video.pause();
-            playPauseIcon.className = 'fas fa-play'; // Change icon to 'play'
-        }
-    });
+    if (playPauseButton) {
+        playPauseButton.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                playPauseIcon.className = 'fas fa-pause'; // Change icon to 'pause'
+            } else {
+                video.pause();
+                playPauseIcon.className = 'fas fa-play'; // Change icon to 'play'
+            }
+        });
+    }
 
     const muteToggleIcon = muteToggleButton.querySelector('i');
     muteToggleButton.addEventListener('click', function() {
@@ -79,6 +81,17 @@ function closeVideoPlayer()
     {
         video.pause();
     }
+
+    // ensure hero preview can resume later
+    try {
+        window.isPlayerOpen = false;
+        // reschedule hero preview for the currently active slide
+        const activeCarousel = document.getElementById(window.selectedCarouselId);
+        const activeSlide = activeCarousel && activeCarousel.querySelector('.image-container.active');
+        if (typeof schedulePreviewForSlide === 'function' && activeSlide) {
+            schedulePreviewForSlide(activeSlide);
+        }
+    } catch (e) {}
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -162,6 +175,16 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!isClickOnInteractiveElements(event.target)) {
             console.log("Clicked on non-interactive area of the video player.");
             closeVideoPlayer();
+            // after closing via outside click, resume hero preview
+            setTimeout(() => {
+                try {
+                    const activeCarousel = document.getElementById(window.selectedCarouselId);
+                    const activeSlide = activeCarousel && activeCarousel.querySelector('.image-container.active');
+                    if (typeof schedulePreviewForSlide === 'function' && activeSlide) {
+                        schedulePreviewForSlide(activeSlide);
+                    }
+                } catch (e) {}
+            }, 0);
         } else {
             console.log("Clicked on video or controls.");
         }

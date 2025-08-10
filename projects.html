@@ -97,6 +97,8 @@
     <div class="slideshow-container">
         <div class="slide" id="mainImage">
           <img src="Images/Thumbnails/Earthward.png" alt="Slideshow Image">
+          <video id="heroPreview" muted playsinline preload="metadata"></video>
+          <iframe id="heroPreviewYT" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
     </div>
     
@@ -159,6 +161,31 @@ window.addEventListener('load', function() {
 <script src="video-player.js"></script>
 <script src="load-projects.js"></script>
 <script src="carousel-container.js"></script>
+<script>
+  // expose flag for player state so previews can respect it
+  window.isPlayerOpen = false;
+  // also flip flag when player closes via ESC fullscreen or other means
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { window.isPlayerOpen = false; }
+  });
+  // minimal guard if player element is hidden by any other code
+  const player = document.getElementById('player');
+  const observer = new MutationObserver(() => {
+    const visible = player && player.style && player.style.opacity === '1';
+    if (!visible) {
+      window.isPlayerOpen = false;
+      // try to resume hero preview when player becomes hidden
+      try {
+        const activeCarousel = document.getElementById(window.selectedCarouselId);
+        const activeSlide = activeCarousel && activeCarousel.querySelector('.image-container.active');
+        if (typeof schedulePreviewForSlide === 'function' && activeSlide) {
+          schedulePreviewForSlide(activeSlide);
+        }
+      } catch (e) {}
+    }
+  });
+  if (player) observer.observe(player, { attributes: true, attributeFilter: ['style'] });
+</script>
 
 </body>
 </div>

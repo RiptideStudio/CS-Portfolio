@@ -36,6 +36,8 @@ function createCarouselSlide(item) {
     img.src = item.imageSrc;
     imageContainer.appendChild(img);
 
+    // Per-slide preview removed; previews now play in the hero area
+
     // Add overlay text
     const overlayText = document.createElement('div');
     overlayText.className = 'overlay-text';
