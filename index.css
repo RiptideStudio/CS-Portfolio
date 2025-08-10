@@ -22,6 +22,11 @@ a:active {
 
 html {
   height: 100%;
+  background: #000000;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 body {
@@ -29,10 +34,87 @@ body {
   font-size: 16px; /* Set the base font size */
   color: #c9c9c9;
   letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%, #0a0a0a 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Add animated background elements */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 194, 11, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(123, 47, 242, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundShift 20s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-10px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(5px) translateY(-10px);
+  }
+  75% {
+    transform: translateX(-5px) translateY(5px);
+  }
+}
+
+/* Floating particles for homepage */
+.home-page::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 194, 11, 0.15), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(123, 47, 242, 0.15), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 194, 11, 0.1), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(123, 47, 242, 0.15), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: float 15s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
 }
 
 body {
   opacity: 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%, #0a0a0a 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .title h1:after {
@@ -48,7 +130,7 @@ body {
 
 body.fade-in {
   opacity: 1;
-  transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out; /* Apply a smooth transition */
+  transition: opacity 0.3s ease-in-out; /* Faster, smoother transition */
 }
 
 .navigation button {
@@ -107,6 +189,8 @@ p {
   background-image: url('Images/About/HomeHeader.jpg');
   background-size: cover;
   background-position: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Overlay for readability */
@@ -162,12 +246,111 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.header-icons a {
+  position: relative;
+}
+
+
+
+.header-icons a .sparkle1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 8px;
+  color: #ffffff;
+  text-shadow: 0 0 4px #ffffff, 0 0 8px #ffffff;
+  animation: sparkleRise1 3s ease-out infinite;
+  animation-delay: 0s;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.header-icons a .sparkle2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 6px;
+  color: #ffffff;
+  text-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff;
+  animation: sparkleRise2 3s ease-out infinite;
+  animation-delay: 1s;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.header-icons a .sparkle3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 7px;
+  color: #ffffff;
+  text-shadow: 0 0 3px #ffffff, 0 0 6px #ffffff;
+  animation: sparkleRise3 3s ease-out infinite;
+  animation-delay: 2s;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
 .header-icons a img:hover {
   opacity: 1;
   transform: scale(1.15);
   background: rgba(255, 194, 11, 0.15);
   border-color: rgba(255, 194, 11, 0.3);
   box-shadow: 0 4px 12px rgba(255, 194, 11, 0.2);
+}
+
+@keyframes sparkleRise1 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(-20px) translateY(0px);
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(-15px) translateY(-30px);
+  }
+}
+
+@keyframes sparkleRise2 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(15px) translateY(0px);
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(10px) translateY(-25px);
+  }
+}
+
+@keyframes sparkleRise3 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(0px) translateY(0px);
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateX(5px) translateY(-35px);
+  }
 }
 
 @media (max-width: 700px) {
@@ -188,17 +371,16 @@ p {
 }
 
 /* Intro Section for Homepage */
-.intro-section {
-  max-width: 800px;
-  margin: 64px auto 80px auto;
-  padding: 0 48px;
-  text-align: center;
+body .home-page .intro-section {
+  max-width: 800px !important;
+  margin: 0px auto 0px auto !important;
+  padding: 32px 48px !important;
+  text-align: center !important;
 }
 
 .intro-content h1 {
   font-size: 3em;
   color: #fff;
-  margin-bottom: 24px;
   font-weight: 600;
 }
 
@@ -212,38 +394,60 @@ p {
   margin-right: auto;
 }
 
-.intro-stats {
-  display: flex;
-  justify-content: center;
-  gap: 64px;
-  margin-top: 48px;
+body .home-page .intro-stats {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 64px !important;
+  margin-top: 16px !important;
+  align-items: center !important;
+  min-height: 20px !important;
+  padding: 0 !important;
+  height: auto !important;
+  max-height: 30px !important;
 }
 
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+body .home-page .stat {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.stat-number {
-  font-size: 2.5em;
-  font-weight: 700;
-  color: rgb(255, 194, 11);
-  margin-bottom: 8px;
+body .home-page .stat-number {
+  font-size: 2em !important;
+  font-weight: 700 !important;
+  color: rgb(255, 194, 11) !important;
+  margin-bottom: 2px !important;
+  line-height: 1 !important;
+  display: block !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
 }
 
-.stat-label {
-  font-size: 0.9em;
-  color: #919191;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+body .home-page .stat-label {
+  font-size: 0.8em !important;
+  color: #919191 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1 !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Featured Projects Section */
 .featured-projects {
   max-width: 1200px;
-  margin: 80px auto 48px auto;
-  padding: 0 48px;
+  margin: 32px auto 48px auto;
+  padding: 64px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .featured-projects h2 {
@@ -251,6 +455,7 @@ p {
   font-size: 2.5em;
   color: #fff;
   margin-bottom: 48px;
+  margin-top: -16px;
   font-weight: 600;
 }
 
@@ -262,16 +467,18 @@ p {
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 20px rgba(255, 194, 11, 0.2);
+  border-color: rgba(255, 194, 11, 0.3);
 }
 
 .project-card.featured {
@@ -499,20 +706,14 @@ p {
   .featured-projects {
     padding: 0 24px;
   }
-  
-  /* Work experience section removed */
-  
-  .intro-section {
-    padding: 0 24px;
-  }
-  
+
   .intro-content h1 {
     font-size: 2em;
   }
   
-  .intro-stats {
-    flex-direction: column;
-    gap: 32px;
+  body .home-page .intro-stats {
+    flex-direction: column !important;
+    gap: 32px !important;
   }
   
   .about-section {
@@ -579,4 +780,40 @@ body:not(.about-page) .page-overlay {
   overflow: hidden;
   position: relative;
   z-index: 2;
+}
+
+/* Fix about page copyright */
+body:not(.home-page) .bottom-headline-wrapper {
+  display: block !important;
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 96px !important;
+  width: 100% !important;
+  bottom: 0 !important;
+}
+
+body:not(.home-page) .bottom-headline {
+  text-align: center !important;
+  padding: 32px 0px !important;
+  background: #000000 !important;
+  width: 100% !important;
+  position: relative !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+body:not(.home-page) .bottom-headline .copyright-text {
+  color: #919191 !important;
+  font-size: calc(0.45vw + 0.45vh) !important;
+  letter-spacing: 0.05em !important;
+  font-weight: 400 !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: none !important;
+  font-family: 'Arial', sans-serif !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }

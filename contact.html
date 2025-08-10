@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Callen Betts - Game Developer Portfilio</title>
+    <title>Callen Betts - Game Developer Portfolio</title>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -50,6 +50,7 @@
         <div class="sidebar" id="mySidebar">
             <div class="sidebar-content">
                 <div class="sidebar-text"><a href="index.html"><span>Home</span></a></div><br>
+                <div class="sidebar-text"><a href="about.html"><span>About</span></a></div><br>
                 <div class="sidebar-text"><a href="projects.html"><span>Projects</span></a></div><br>
                 <div class="sidebar-text"><a href="contact.html"><span>Contact</span></a></div><br>
                 <!-- <div class="sidebar-text"><a href="gallery.html"><span>Gallery</span></a></div><br> -->
@@ -64,34 +65,46 @@
         </div>
 
         <!-- MAIN BODY -->
-        <div class="chat-text-wrapper">
-            <div class="chat-text">Want to connect?</div>
-            <div class="chat-subtext">Let me know!</div>
-            <div class="chat-subtext">Send a secure email. You can expect a response in 1-3 business days.</div>
+        <div class="contact-container">
+            <!-- Left side - Contact info -->
+            <div class="contact-info">
+                <div class="chat-text-wrapper">
+                    <div class="chat-text">Want to connect?</div>
+                    <div class="chat-subtext">Let me know!</div>
+                    <div class="chat-subtext">Send a secure email. You can expect a response in 1-3 business days.</div>
+                </div>
+            </div>
+
+            <!-- Right side - Contact form -->
+            <div class="contact-form">
+                <div class="message-box-wrapper">
+                    <div class="message-box-title">
+                        Powered by EmailJS
+                        <div class="gmail-image">
+                            <img src="Images/Contact/Gmail.png" alt="Gmail">
+                        </div>
+                    </div>
+                    <div id="name" class="message-box">
+                        <textarea id="nameText" placeholder="Name*"></textarea>
+                    </div>
+                    <div id="email" class="message-box">
+                        <textarea id="emailText" placeholder="Your Email*"></textarea>
+                    </div>
+                    <div id="subject" class="message-box">
+                        <textarea id="subjectText" placeholder="Subject"></textarea>
+                    </div>
+                    <div id="message" class="message-box-description">
+                        <textarea id="messageText" placeholder="What do you want to say?"></textarea>
+                    </div>
+                    <button id="sendButton" class="send-button">
+                        <img src="Images/Contact/SendButton.png" alt="Send">
+                        Send
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <div class="message-box-wrapper">
-            <div class="message-box-title">Powered by EmailJS</div>
-            <div class="gmail-image">
-                <img src="Images/Contact/Gmail.png">
-            </div>
-            <div id="name" class="message-box">
-                <textarea id="nameText" placeholder="Name*"></textarea>
-            </div>
-            <div id="email" class="message-box">
-                <textarea id="emailText" placeholder="Your Email*"></textarea>
-            </div>
-            <div id="subject" class="message-box">
-                <textarea id="subjectText" placeholder="Subject"></textarea>
-            </div>
-            <div id="message" class="message-box-description">
-                <textarea id="messageText" placeholder="What do you want to say?"></textarea>
-            </div>
-            <button id="sendButton" class="send-button">
-                <image src="Images/Contact/SendButton.png"></image>
-                Send
-            </button>
-        </div>
+
 
         <!-- End main body -->
 
@@ -107,3 +120,4 @@
         <script src="contact.js"></script>
     </div>
 </body>
+</html>
