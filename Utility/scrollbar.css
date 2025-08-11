@@ -27,9 +27,9 @@
   top: 4.5vh;
   overflow: hidden; /* No scrolling */
   background:
-    radial-gradient(1000px 500px at 15% 90%, rgba(123, 47, 242, 0.06), rgba(0,0,0,0) 60%),
-    radial-gradient(800px 400px at 85% 10%, rgba(255,255,255,0.03), rgba(0,0,0,0) 55%),
-    linear-gradient(to top, rgb(0,0,0), rgb(14,14,14));
+    radial-gradient(1000px 500px at 15% 90%, rgba(255,255,255, 0.07), rgba(0,0,0,0) 60%),
+    radial-gradient(800px 400px at 85% 10%, rgba(255,255,255,0.05), rgba(0,0,0,0) 55%),
+    linear-gradient(to top, rgb(12,12,12), rgb(22,22,22));
   position: relative;
 }
 
@@ -49,9 +49,9 @@
   height: 40vh; /* Half of the screen */
   overflow-x: hidden; /* Enable vertical scrolling */
   background:
-    radial-gradient(900px 400px at 10% 20%, rgba(123, 47, 242, 0.05), rgba(0,0,0,0) 60%),
-    radial-gradient(700px 350px at 90% 80%, rgba(255,255,255,0.025), rgba(0,0,0,0) 55%),
-    linear-gradient(to top, rgb(10,10,10), rgb(19,19,19));
+    radial-gradient(900px 400px at 10% 20%, rgba(255,255,255, 0.06), rgba(0,0,0,0) 60%),
+    radial-gradient(700px 350px at 90% 80%, rgba(255,255,255,0.04), rgba(0,0,0,0) 55%),
+    linear-gradient(to top, rgb(12,12,12), rgb(24,24,24));
   position: relative;
 }
 
@@ -60,7 +60,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  box-shadow: inset 0 40px 80px rgba(0,0,0,0.6);
+  box-shadow: inset 0 30px 60px rgba(0,0,0,0.4);
 }
 
 .lower-container::after {
@@ -70,7 +70,7 @@
   height: 1px;
   top: 60%;
   width: 100%;
-  background: linear-gradient(to right, rgba(123,47,242,0), rgba(123,47,242,0.4), rgba(123,47,242,0));
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.24), rgba(255,255,255,0));
 }
 
 /* Example of setting z-index */

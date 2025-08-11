@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto 48px auto;
 }
 
@@ -17,6 +16,7 @@
   font-size: calc(0.75vw + 0.75vh);
   font-style: normal;
   font-family: 'Poppins', sans-serif;
+  margin-bottom: 16px;
 }
 
 .aboutTitle h1 {
@@ -101,7 +101,6 @@
   font-size: calc(0.45vw + 0.45vh);
 }
 
-
 /* Styling for the whole HTML and body */
 html, body {
   margin: 0;
@@ -144,12 +143,6 @@ body {
 .info-title {
   color: rgb(200, 200, 200);
   font-size: larger;
-}
-
-.info-text {
-  color: #919191;
-  margin-top: 0.75vh;
-  font-size: calc(0.45vw + 0.45vh);
 }
 
 .copyright-text {
@@ -269,25 +262,107 @@ body {
   gap: 60px;
   margin-bottom: 80px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding: 28px 28px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  z-index: 0;
 }
 
-.about-row.reverse {
-  flex-direction: row-reverse;
+.about-row.reverse { 
+  flex-direction: row-reverse !important; 
 }
+
+/* subtle ambient vignette behind each card */
+.about-row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  background: radial-gradient(80% 60% at 20% 50%, rgba(255,255,255,0.045), rgba(0,0,0,0) 60%),
+              radial-gradient(80% 60% at 80% 50%, rgba(255,255,255,0.03), rgba(0,0,0,0) 60%);
+  filter: blur(6px);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* edge-to-edge card background depending on image side */
+.about-row.left-edge {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+.about-row.right-edge {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+/* Background extension for left-edge cards (image on left) */
+.about-section .about-row.left-edge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(-100vw);
+  right: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  z-index: -1;
+}
+
+/* Background extension for right-edge cards (image on right) */
+.about-section .about-row.right-edge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: calc(-100vw);
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  z-index: -1;
+}
+
+/* Enforce correct ordering for the right-edge row */
+.about-row.right-edge .about-text { order: 1; }
+.about-row.right-edge .about-image { order: 2; }
 
 .about-image {
-  flex: 0 0 350px;
-  height: 400px;
+  flex: 0 0 min(35vw, 350px);
+  height: auto;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 450px;
+  display: block;
 }
 
 .about-text {
@@ -323,9 +398,14 @@ body {
 
 /* Mobile responsive */
 @media (max-width: 768px) {
-  .about-row,
-  .about-row.reverse {
+  .about-row {
     flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .about-row.reverse {
+    flex-direction: column-reverse;
     gap: 30px;
     margin-bottom: 50px;
   }

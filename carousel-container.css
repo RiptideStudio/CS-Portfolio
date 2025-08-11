@@ -22,18 +22,34 @@
 
 .image-container {
     position: relative;
+    display: grid; /* grid to center overlay over image */
     cursor: pointer;
     flex-shrink: 0;
     transform: translateY(2%) scale(1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    padding: 0.25vw; /* thinner frame so grey background is smaller */
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.015));
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    overflow: hidden; /* ensure image aligns with card corners */
+    margin-left: 2.2vw; /* move spacing from image to the card */
+    line-height: 0; /* remove inline-gap that can cause bottom sliver */
 }
 
 /* Subtle sheen/light sweep for thematic polish */
 /* Removed hover sheen overlay to avoid white animation sweep */
 
 .image-container:hover {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
     transform: translateY(0%) scale(1.1);
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+    border-color: rgba(255,255,255,0.28);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.38);
+}
+.image-container.active {
+    border-color: rgba(255, 210, 11, 0.6);
 }
 
 .image-container:active {
@@ -76,50 +92,54 @@
 
 /* Base styles for overlay image */
 .carousel-slide .carousel-image {
+    grid-area: 1 / 1; /* occupy same grid as overlay */
     width: 20vw;
     aspect-ratio: 16 / 9;
-    margin-left: 2.2vw;
+    margin-left: 0; /* spacing handled by card */
     object-fit: cover; 
     transition: transform 0.5s ease, opacity 0.5s ease;
     transform: scale(0.9);
-    opacity: 0.2;
+    opacity: 0.6;
     cursor: pointer;
     border: 2px transparent;
     transition: 0.3s;
     will-change: transform, filter;
-    border-radius: 15px;
+    border-radius: 16px;
 }
 
 .carousel-slide .carousel-image.active {
     transform: scale(1);
-    border: 2px solid #c0c0c0;
+    border: 0; /* avoid inner outline; card provides the frame */
     transition: 0.3s;
     box-shadow: 0 22px 70px rgba(0, 0, 0, 0.85), 0 0 0 2px rgba(255, 255, 255, 0.08) inset;
-    filter: saturate(1.18) contrast(1.12) brightness(1.04);
+    filter: saturate(1.15) contrast(1.08) brightness(1.06);
 }
 
-/* Ensure the currently active slide pops a bit more */
+/* Removed accent ring to avoid double outlines/purple tint */
+
+/* Avoid cropping: don't upscale image inside rounded card when active */
 .image-container.active .carousel-image {
-    transform: scale(1.04) !important;
+    transform: scale(1) !important;
 }
 
 /* Netflix-style silent preview video overlay */
 /* Per-slide preview removed; using hero preview */
 
 .carousel-slide .image-container .overlay-image {
-    width: 4vw;
-    position: absolute;
+    grid-area: 1 / 1; /* center over image */
+    width: 3.2vw;
+    max-width: 56px;
+    justify-self: center;
+    align-self: center;
+    position: relative;
     object-fit: contain;
     text-align: center;
-    cursor: pointer;
-    margin-left: -12vw;
-    bottom: 35%;
+    pointer-events: none; /* don't affect click target */
     border-radius: 100%;
-    box-shadow: -8px 8px 32px rgba(0, 0, 0, 1);
-    transition: 0.4s;
-    z-index: 1;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    transition: 0.3s ease;
+    z-index: 2;
     opacity: 0;
-    border: 32px black;
 }
 
 .carousel-slide .image-container:active  .overlay-image {
@@ -129,7 +149,6 @@
 .carousel-slide .image-container:hover .overlay-image {
     transition: 0.3s;
     opacity: 1;
-    border: 4px white;
 }
 
 /* Make overlay badge visible on active slide as well */
@@ -143,7 +162,7 @@
     top: 27%;
     font-size: calc(1vw + 1vh + .5vmin);
     color: white;
-    background-color: rgba(0,0,0,0.6); /* Slightly stronger */
+    background-color: rgba(0,0,0,0.45); /* Lighter */
     padding: calc(1vw + 1vh - 0.5vmin);
     border-radius: 5%;
     cursor: pointer;
@@ -151,8 +170,8 @@
     transform: scale(1);
     transition: transform 0.2s ease, color 0.2s ease;
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
     z-index: 2; /* Above edge vignettes */
 }
 
@@ -160,7 +179,7 @@
 .prev:hover, .next:hover {
     transform: scale(1.15);
     transition: transform 0.2s ease, color 0.2s ease;
-    color: rgb(255, 210, 11);
+    color: #f0f0f0;
     background-color: rgba(0,0,0,0.72); /* Darker on hover */
 }
 
@@ -181,17 +200,17 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 12vw;
+    width: 8vw;
     pointer-events: none;
     z-index: 1;
 }
 
 .carousel-container::before {
     left: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
 }
 
 .carousel-container::after {
     right: 0;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0));
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
 }

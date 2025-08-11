@@ -197,7 +197,7 @@ function updateActiveSlides(carouselId) {
             const img = slide.querySelector('.carousel-image');
 
             if (img) {
-                img.style.opacity = '0.1'; // Far slides opacity
+                img.style.opacity = '0.25'; // brighten far slides slightly
                 img.style.transform = 'scale(1)';
             }
         }
@@ -229,9 +229,7 @@ function updateActiveSlides(carouselId) {
         }
     }
 
-    slides.forEach((slide, index) => {
-        slides.forEach(s => s.classList.remove('active'));
-    });
+    slides.forEach(s => s.classList.remove('active'));
 
     // if the active slide is valid, flag it as such
     if (activeSlide)

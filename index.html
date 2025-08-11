@@ -53,6 +53,7 @@
 
     <!-- Hero Section -->
     <div class="header-banner">
+        <canvas id="heroParticles"></canvas>
         <div class="header-title">Callen Betts</div>
         <div class="header-icons">
             <a href="https://steamcommunity.com/profiles/76561199193791468/" target="_blank" title="Steam">
@@ -104,7 +105,8 @@
 
     <!-- Featured Projects Section -->
     <div class="featured-projects">
-        <h2>Featured Projects</h2>
+        <canvas id="projectsParticles"></canvas>
+        <h2>Featured Games</h2>
         <div class="projects-grid">
             <!-- Earthward -->
             <div class="project-card featured">
@@ -205,6 +207,54 @@
         window.addEventListener('load', function() {
             document.body.classList.add('fade-in');
         });
+    </script>
+    <script>
+      // lightweight particle system for header and projects sections
+      (function() {
+        function Particles(canvas, opts) {
+          this.c = canvas.getContext('2d');
+          this.canvas = canvas;
+          this.opts = Object.assign({ count: 20, maxR: 2.2, minR: 0.6, speed: 0.1, drift: 0.3, color: 'rgba(255,255,255,0.5)' }, opts||{});
+          this.resize();
+          this.init();
+        }
+        Particles.prototype.resize = function() {
+          const rect = this.canvas.parentElement.getBoundingClientRect();
+          this.canvas.width = rect.width; this.canvas.height = rect.height;
+        };
+        Particles.prototype.init = function() {
+          const n = this.opts.count;
+          this.p = new Array(n).fill(0).map(()=>({
+            x: Math.random()*this.canvas.width,
+            y: Math.random()*this.canvas.height,
+            r: this.opts.minR + Math.random()*(this.opts.maxR - this.opts.minR),
+            vx: (Math.random()-0.5)*this.opts.drift,
+            vy: -this.opts.speed*(0.5+Math.random())
+          }));
+        };
+        Particles.prototype.step = function() {
+          const c = this.c; const w = this.canvas.width; const h = this.canvas.height;
+          c.clearRect(0,0,w,h);
+          c.fillStyle = this.opts.color;
+          for (let i=0;i<this.p.length;i++){
+            const a = this.p[i];
+            a.x += a.vx; a.y += a.vy;
+            if (a.y < -10) { a.y = h + 10; a.x = Math.random()*w; }
+            if (a.x < -10) a.x = w + 10; if (a.x > w+10) a.x = -10;
+            c.beginPath(); c.arc(a.x, a.y, a.r, 0, Math.PI*2); c.fill();
+          }
+        };
+        function start(id, options){
+          const el = document.getElementById(id); if (!el) return;
+          const sys = new Particles(el, options);
+          const loop = ()=>{ sys.step(); requestAnimationFrame(loop); };
+          const ro = new ResizeObserver(()=> sys.resize()); ro.observe(el.parentElement);
+          loop();
+        }
+        window.addEventListener('load', function(){
+          start('projectsParticles', { count: 40, color: 'rgba(255,255,255,0.25)', speed: 0.14, drift: 0.05, maxR: 1.6 });
+        });
+      })();
     </script>
 
     <script src="word.js"></script>

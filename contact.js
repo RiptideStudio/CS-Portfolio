@@ -23,6 +23,7 @@ document.getElementById('sendButton').addEventListener('click', function() {
     overlay.classList.add('active');
     okButton.classList.add('active');
     overlayText.classList.add('active');
+    overlayText.textContent = 'Sending...';
 
     // Rate limiter using localStorage
     const maxRequests = 5; // Maximum allowed requests
@@ -71,6 +72,12 @@ document.getElementById('sendButton').addEventListener('click', function() {
         submissionHistory.push(now);
         localStorage.setItem('submissionHistory', JSON.stringify(submissionHistory));
         overlayText.textContent = "Message delivered!";
+        // auto-hide after a short delay
+        setTimeout(function(){
+          overlay.classList.remove('active');
+          okButton.classList.remove('active');
+          overlayText.classList.remove('active');
+        }, 1800);
     }, function(error) {
         alert('Failed to send message: ' + error.text);
         overlayText.textContent = "Failed to send message. Bad connection?";
