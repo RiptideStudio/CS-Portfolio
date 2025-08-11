@@ -114,6 +114,11 @@ h1::after {
         rgba(0, 0, 0, 1) 90%, 
         rgba(0, 0, 0, 0) 100%
     );
+    /* Prevent focus and interaction to hide UI elements */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #heroPreviewYT.is-visible {

@@ -305,13 +305,28 @@ function schedulePreviewForSlide(slideEl) {
                 }
             } else if (canUseYouTube && heroPreviewYT) {
                 const mutedParam = window.userInteracted ? 0 : 1;
-                const params = `autoplay=1&mute=${mutedParam}&controls=0&playsinline=1&loop=1&modestbranding=1&rel=0&enablejsapi=1`;
+                const params = `autoplay=1&mute=${mutedParam}&controls=0&playsinline=1&loop=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&autohide=1`;
                 const embedUrl = `https://www.youtube.com/embed/${youtubeId}?${params}&playlist=${youtubeId}`;
                 heroPreviewYT.src = embedUrl;
                 heroPreviewYT.classList.add('is-visible');
-                // add a class on the slide container to draw a gradient over YT buttons
                 const mainSlide = document.getElementById('mainImage');
                 if (mainSlide) mainSlide.classList.add('yt-visible');
+                
+                // Unfocus the iframe after a short delay to hide YouTube UI
+                setTimeout(() => {
+                    if (heroPreviewYT.contentWindow) {
+                        heroPreviewYT.blur();
+                        document.body.focus();
+                        // Create and immediately remove a dummy element to steal focus
+                        const dummyElement = document.createElement('div');
+                        dummyElement.tabIndex = -1;
+                        dummyElement.style.position = 'absolute';
+                        dummyElement.style.left = '-9999px';
+                        document.body.appendChild(dummyElement);
+                        dummyElement.focus();
+                        document.body.removeChild(dummyElement);
+                    }
+                }, 100);
                 // If user has interacted, try to set volume to 20% and unmute via postMessage
                 if (window.userInteracted) {
                     setTimeout(() => {
