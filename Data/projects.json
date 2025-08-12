@@ -117,7 +117,7 @@
         "description": "Built for windows and created using DirectX 11, this engine is currently being made to develop 'Otherglow', a first person RPG. It features a lighting engine, editor, collision physics, and serializable game components.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/OtherGlowThumbnail.png",
-        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
+        "projectLink": "https://github.com/callenbv/GlowEngine",
         "video": "Videos/GlowEnginePreview.mp4",
         "carousel": "Engines",
         "year": "In Development"
@@ -155,7 +155,7 @@
         "description": "This engine was created with the sole purpose of learning more about game engines and the graphics pipeline. It can generate vertices for 3D objects, and light them using simple point lights, all done in DirectX 11.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/RealEngineThumbnail.png",
-        "projectLink": "https://github.com/RiptideStudio/Real-Engine",
+        "projectLink": "https://github.com/callenbv/Real-Engine",
         "carousel": "Engines",
         "year": "2022"
     },
@@ -167,7 +167,7 @@
         "description": "The website you're currently using is made using Javascript, CSS, and HTML. It features project slides, carousels, and a custom video player, complete with thumbnails, backgrounds, and trailers! Data is completely serialized as JSON objects, making it easy to add a new project.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/Portfolio.png",
-        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
+        "projectLink": "https://github.com/callenbv/GlowEngine",
         "carousel": "Other",
         "year": "2024"
     },
@@ -218,8 +218,7 @@
         "description": "Want to make a Terraria mod? Learn how tModloader works by watching the YouTube series where I make swords, staffs, armor, and more! Understand basic programming principles and how to apply them to make engaging and fun mods.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/RiptideMod.png",
-        "youtube": "https://www.youtube.com/watch?v=3r-oQmzyXeQ&list=PL2j68jF83kP1ffowiMIwbTndwLgmxGFpd&index=1",
-        "projectLink": "https://github.com/RiptideStudio/RiptideMod",
+        "projectLink": "https://github.com/callenbv/RiptideMod",
         "carousel": "Other",
         "year": "tModloader, 2024"
     },
@@ -231,7 +230,7 @@
         "description": "Create and design your own levels by painting tiles and placing objects. All data is exported to JSON, making it practical for several game engines. This tool was made for chunk-based generation in Earthward.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/RoomEditor.png",
-        "projectLink": "https://github.com/RiptideStudio/roomeditor",
+        "projectLink": "https://github.com/callenbv/roomeditor",
         "carousel": "Other",
         "year": "Earthward, 2025"
     },
@@ -243,7 +242,7 @@
         "description": "Create a simple behavior tree with action nodes, decorators, and composite nodes, all completely customizable. Save to a .bt file or export to json. This tool was made for enemy AI in Earthward.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/BehaviorTree.png",
-        "projectLink": "https://github.com/RiptideStudio/BehaviorTreeEditor",
+        "projectLink": "https://github.com/callenbv/BehaviorTreeEditor",
         "carousel": "Other",
         "year": "Earthward, 2025"
     },
@@ -255,7 +254,7 @@
         "description": "Create and edit items, accessories, and more using preset data schemas that can export to JSON. Shows a display of all images related to the open item. This tool was made primarily for Earthward.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/EarthEdit.png",
-        "projectLink": "https://github.com/RiptideStudio/EarthEdit",
+        "projectLink": "https://github.com/callenbv/EarthEdit",
         "carousel": "Other",
         "year": "Earthward, 2025"
     }

@@ -129,7 +129,7 @@
         "description": "Built for windows and created using DirectX 11, this engine is currently being made to develop 'Otherglow', a first person RPG. It features a lighting engine, editor, collision physics, and fully serializable components.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/OtherGlowThumbnail.png",
-        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
+        "projectLink": "https://github.com/callenbv/GlowEngine",
         "carousel": "Engines",
         "year": "In Development"
     },
@@ -141,7 +141,7 @@
         "description": "Lynx Engine was developed with a team of seven people, intended as a general 2D game engine that can be easily scripted in simple C++. It features a robust graphics pipeline, shader support, collision, physics, ImGui, level serialization, custom math libraries, and many gameplay components that can be given to entities.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/LynxEngineThumbnail.png",
-        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
+        "projectLink": "https://github.com/callenbv/GlowEngine",
         "carousel": "Engines",
         "year": "2024"
     },
@@ -154,7 +154,7 @@
         "description": "This engine was created with the sole purpose of learning more about game engines and the graphics pipeline. It can generate vertices for 3D objects, and light them using simple point lights created in DirectX 11.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/RealEngineThumbnail.png",
-        "projectLink": "https://github.com/RiptideStudio/Real-Engine",
+        "projectLink": "https://github.com/callenbv/Real-Engine",
         "carousel": "Engines",
         "year": "2022"
     },
@@ -166,7 +166,7 @@
         "description": "Currently under development, the Starlight Engine will be used to create 'Moonborne', a story-heavy RPG with a focus in exploration and discovery. This engine is developed in OpenGL.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/StarlightEngine.png",
-        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
+        "projectLink": "https://github.com/callenbv/GlowEngine",
         "carousel": "Engines",
         "year": "In Development"
     },
@@ -181,7 +181,7 @@
         "description": "The website you're currently using is made using Javascript, CSS, and HTML. It features project slides, carousels, and a custom video player, complete with thumbnails, backgrounds, and trailers! Data is completely serialized as JSON objects, making it easy to add a new project.",
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/Portfolio.png",
-        "projectLink": "https://github.com/RiptideStudio/GlowEngine",
+        "projectLink": "https://github.com/callenbv/GlowEngine",
         "carousel": "Other",
         "year": "2024"
     },
