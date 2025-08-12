@@ -123,6 +123,19 @@
         "year": "In Development"
     },
     {
+        "title": "Earth Engine",
+        "role": "Creator",
+        "genre": "2D Engine",
+        "background": "Images/Backgrounds/EarthEngine.png",
+        "description": "Earth Engine is a cross-platform game engine developed in C# using the Monogame Framework. Notable features include a custom runtime, prefab editor, tile editor, lighting, collisions, physics, and spatial audio. It is currently being used to make 'The Legend of Ayla', a narrative-heavy RPG in the likeness of The Legend of Zelda.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/EarthEngine.png",
+        "video": "Videos/EarthEngine.mp4",
+        "projectLink": "https://github.com/callenbv/Earth-Engine",
+        "carousel": "Engines",
+        "year": "In Development"
+    },
+    {
         "title": "Lynx Engine",
         "role": "Graphics Programmer",
         "genre": "2D Engine",
@@ -133,18 +146,6 @@
         "projectLink": "https://github.com/Swedeachu/LynxEngine-Wiki/wiki",
         "carousel": "Engines",
         "year": "2024"
-    },
-    {
-        "title": "Moonborne",
-        "role": "Creator",
-        "genre": "2D Engine",
-        "background": "Images/Backgrounds/StarlightEngine.png",
-        "description": "Currently under development, the Moonborne Engine will be used to make 'Moonborne', a narrative-heavy RPG focusing on exploration and adventure. It features a tilemap painter and scene editor, allowing the developer to edit objects and rooms in-game.",
-        "overlayImageSrc": "Images/Github.png",
-        "imageSrc": "Images/Thumbnails/StarlightEngine.png",
-        "projectLink": "https://github.com/RiptideStudio/Moonborne",
-        "carousel": "Engines",
-        "year": "In Development"
     },
     {
         "title": "Graphics Engine",
