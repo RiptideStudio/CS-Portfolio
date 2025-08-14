@@ -8,7 +8,7 @@
         "description": "Over one-hundred years ago, the surface was destroyed by a terrible evil, forcing surviving civilization underground. Explore a vast world filled to the brim with creatures and critters...but beware the various secrets lurking in the caves! Craft armor and weapons, fight powerful monsters, and reclaim the surface for all who dwell beneath it.",
         "overlayImageSrc": "Images/Steam.png",
         "imageSrc": "Images/Thumbnails/Earthward.png",
-        "youtube": "96soSkSqDeI?si",
+        "video": "Videos/Earthward2.mp4",
         "projectLink": "https://www.youtube.com/watch?v=VL3dSbLk_OU&t=2s&ab_channel=RiptideDev",
         "carousel": "Games",
         "year": "2025"
@@ -222,6 +222,9 @@
         "carousel": "Other",
         "year": "tModloader, 2024"
     },
+
+
+
     {
         "title": "Room Editor",
         "role": "Developer",
@@ -231,20 +234,32 @@
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/RoomEditor.png",
         "projectLink": "https://github.com/callenbv/roomeditor",
-        "carousel": "Other",
-        "year": "Earthward, 2025"
+        "carousel": "AppDevelopment",
+        "year": "Earthward, 2024"
     },
     {
-        "title": "Behavior Tree Editor",
+        "title": "Budget Master",
         "role": "Developer",
-        "genre": "Development Tool",
-        "background": "Images/Backgrounds/BehaviorTree.png",
-        "description": "Create a simple behavior tree with action nodes, decorators, and composite nodes, all completely customizable. Save to a .bt file or export to json. This tool was made for enemy AI in Earthward.",
+        "genre": "Financial App",
+        "background": "Images/Backgrounds/KiraBudget.png",
+        "description": "A comprehensive budget management application that helps users track expenses, set financial goals, and visualize spending patterns. Features include expense categorization, budget planning, and graph visualization of spending.",
         "overlayImageSrc": "Images/Github.png",
-        "imageSrc": "Images/Thumbnails/BehaviorTree.png",
-        "projectLink": "https://github.com/callenbv/BehaviorTreeEditor",
-        "carousel": "Other",
-        "year": "Earthward, 2025"
+        "imageSrc": "Images/Thumbnails/KiraBudget.png",
+        "projectLink": "https://github.com/callenbv/BudgetMaster",
+        "carousel": "AppDevelopment",
+        "year": "2025"
+    },
+    {
+        "title": "Kira AI Agent",
+        "role": "Developer",
+        "genre": "AI Assistant",
+        "background": "Images/Backgrounds/KiraAI.png",
+        "description": "An intelligent AI agent designed to assist with various tasks including data analysis, automation, and decision support. Built with modern AI technologies to provide contextual and helpful responses.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/KiraAI.png",
+        "projectLink": "https://github.com/callenbv/Kira-AI-Agent",
+        "carousel": "AppDevelopment",
+        "year": "2025"
     },
     {
         "title": "Earth Edit",
@@ -255,7 +270,19 @@
         "overlayImageSrc": "Images/Github.png",
         "imageSrc": "Images/Thumbnails/EarthEdit.png",
         "projectLink": "https://github.com/callenbv/EarthEdit",
-        "carousel": "Other",
+        "carousel": "AppDevelopment",
+        "year": "Earthward, 2024"
+    },
+    {
+        "title": "Behavior Tree Editor",
+        "role": "Developer",
+        "genre": "Development Tool",
+        "background": "Images/Backgrounds/BehaviorTree.png",
+        "description": "Create a simple behavior tree with action nodes, decorators, and composite nodes, all completely customizable. Save to a .bt file or export to json. This tool was made for enemy AI in Earthward.",
+        "overlayImageSrc": "Images/Github.png",
+        "imageSrc": "Images/Thumbnails/BehaviorTree.png",
+        "projectLink": "https://github.com/callenbv/BehaviorTreeEditor",
+        "carousel": "AppDevelopment",
         "year": "Earthward, 2025"
     }
 ]
