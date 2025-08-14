@@ -44,6 +44,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Removed animated background elements to prevent color flash during fade-in */
@@ -124,7 +125,7 @@ p {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 48px auto 16px auto;
+  margin: 80px auto 16px auto;
   overflow: hidden;
   padding: 0 48px;
   box-sizing: border-box;
@@ -310,7 +311,7 @@ p {
   .header-banner {
     height: 80px;
     padding: 0 12px;
-    margin-top: 32px;
+    margin: 60px auto 16px auto;
   }
   .header-title {
     font-size: 1.5em;
@@ -332,13 +333,13 @@ body .home-page .intro-section {
 }
 
 .intro-content h1 {
-  font-size: 3em;
+  font-size: clamp(2em, 4vw, 3em);
   color: #fff;
   font-weight: 600;
 }
 
 .intro-content p {
-  font-size: 1.2em;
+  font-size: clamp(1em, 2vw, 1.2em);
   line-height: 1.7;
   color: #c9c9c9;
   margin-bottom: 48px;
@@ -350,7 +351,7 @@ body .home-page .intro-section {
 body .home-page .intro-stats {
   display: flex !important;
   justify-content: center !important;
-  gap: 64px !important;
+  gap: clamp(32px, 6vw, 64px) !important;
   margin-top: 16px !important;
   align-items: center !important;
   min-height: 20px !important;
@@ -370,7 +371,7 @@ body .home-page .stat {
 }
 
 body .home-page .stat-number {
-  font-size: 2em !important;
+  font-size: clamp(1.5em, 3vw, 2em) !important;
   font-weight: 700 !important;
   color: rgb(255, 194, 11) !important;
   margin-bottom: 6px !important;
@@ -384,7 +385,7 @@ body .home-page .stat-number {
 }
 
 body .home-page .stat-label {
-  font-size: 0.8em !important;
+  font-size: clamp(0.7em, 1.5vw, 0.8em) !important;
   color: #919191 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
@@ -424,7 +425,7 @@ body .home-page .stat-label {
 .featured-projects {
   max-width: 1200px;
   margin: 32px auto 48px auto;
-  padding: 64px;
+  padding: clamp(32px, 6vw, 64px);
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -435,8 +436,8 @@ body .home-page .stat-label {
 
 .featured-projects h2 {
   text-align: center;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  margin-bottom: 48px;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  margin-bottom: clamp(32px, 5vw, 48px);
   margin-top: -16px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -475,8 +476,8 @@ body .home-page .stat-label {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
-  margin-bottom: 48px;
+  gap: clamp(24px, 4vw, 32px);
+  margin-bottom: clamp(32px, 5vw, 48px);
 }
 
 .project-card {
@@ -560,31 +561,31 @@ body .home-page .stat-label {
 }
 
 .project-info {
-  padding: 24px;
+  padding: clamp(16px, 3vw, 24px);
 }
 
 .project-card.wide .project-info,
 .project-card.compact .project-info {
-  padding: 16px 24px;
+  padding: clamp(12px, 2.5vw, 16px) clamp(16px, 3vw, 24px);
 }
 
 .project-info h3 {
   color: #fff;
-  font-size: 1.4em;
+  font-size: clamp(1.2em, 2.5vw, 1.4em);
   margin-bottom: 8px;
   font-weight: 600;
 }
 
 .project-genre {
   color: rgb(255, 194, 11);
-  font-size: 0.9em;
+  font-size: clamp(0.8em, 1.8vw, 0.9em);
   margin-bottom: 12px;
   font-weight: 500;
 }
 
 .project-description {
   color: #919191;
-  font-size: 0.95em;
+  font-size: clamp(0.85em, 1.9vw, 0.95em);
   line-height: 1.6;
 }
 
@@ -594,13 +595,13 @@ body .home-page .stat-label {
 
 .view-projects-btn {
   display: inline-block;
-  padding: 16px 32px;
+  padding: clamp(12px, 2.5vw, 16px) clamp(24px, 4vw, 32px);
   background: rgb(255, 194, 11);
   color: #000 !important;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: clamp(1em, 2vw, 1.1em);
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
@@ -699,6 +700,7 @@ body .home-page .stat-label {
   
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
   
   .project-card.featured {
@@ -717,22 +719,47 @@ body .home-page .stat-label {
   }
   
   .featured-projects {
-    padding: 0 24px;
+    padding: 24px;
+    margin: 16px auto 32px auto;
   }
 
   .intro-content h1 {
-    font-size: 2em;
+    font-size: clamp(1.8em, 5vw, 2em);
   }
   
   body .home-page .intro-stats {
     flex-direction: column !important;
-    gap: 32px !important;
+    gap: 24px !important;
   }
   
   .about-section {
     margin-top: 270px;
     padding-left: 24px;
     padding-right: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-projects {
+    padding: 16px;
+    margin: 8px auto 24px auto;
+  }
+  
+  .projects-grid {
+    gap: 16px;
+  }
+  
+  .project-info {
+    padding: 12px;
+  }
+  
+  .project-card.wide .project-info,
+  .project-card.compact .project-info {
+    padding: 8px 12px;
+  }
+  
+  body .home-page .intro-section {
+    padding: 16px 24px !important;
   }
 }
 
